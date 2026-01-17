@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Brain, Activity, Zap, Heart, ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const domains = [
   {
@@ -73,27 +74,29 @@ const ClinicalDomainsSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card 
-                className={`h-full cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-2 border-2 ${domain.borderColor} ${domain.accentColor} group`}
-              >
-                <CardContent className="p-6 text-center flex flex-col h-full">
-                  <div 
-                    className={`w-14 h-14 mx-auto mb-4 rounded-2xl flex items-center justify-center ${domain.iconBg} transition-transform group-hover:scale-110`}
-                  >
-                    <domain.icon className={`w-7 h-7 ${domain.iconColor}`} />
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">
-                    {domain.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed flex-grow mb-4">
-                    {domain.description}
-                  </p>
-                  <div className="flex items-center justify-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-all">
-                    <span>למידע נוסף</span>
-                    <ArrowLeft className="w-4 h-4" />
-                  </div>
-                </CardContent>
-              </Card>
+              <Link to={domain.link}>
+                <Card 
+                  className={`h-full cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-2 border-2 ${domain.borderColor} ${domain.accentColor} group`}
+                >
+                  <CardContent className="p-6 text-center flex flex-col h-full">
+                    <div 
+                      className={`w-14 h-14 mx-auto mb-4 rounded-2xl flex items-center justify-center ${domain.iconBg} transition-transform group-hover:scale-110`}
+                    >
+                      <domain.icon className={`w-7 h-7 ${domain.iconColor}`} />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-3">
+                      {domain.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed flex-grow mb-4">
+                      {domain.description}
+                    </p>
+                    <div className="flex items-center justify-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-all">
+                      <span>למידע נוסף</span>
+                      <ArrowLeft className="w-4 h-4" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             </motion.div>
           ))}
         </div>
