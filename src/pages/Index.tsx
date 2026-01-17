@@ -1,10 +1,8 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import GapSection from "@/components/GapSection";
-import ClinicalDomainsSection from "@/components/ClinicalDomainsSection";
-import ScienceTrustSection from "@/components/ScienceTrustSection";
 import SolutionSection from "@/components/SolutionSection";
-import ProcessSection from "@/components/ProcessSection";
+import ClinicalDomainsSection from "@/components/ClinicalDomainsSection";
 import LeadCaptureSection from "@/components/LeadCaptureSection";
 import Footer from "@/components/Footer";
 
@@ -12,13 +10,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main>
+      <main className="space-y-8 md:space-y-12">
         <HeroSection />
+        <div className="py-8" />
         <GapSection />
-        <ClinicalDomainsSection />
-        <ScienceTrustSection />
+        <div className="py-8" />
         <SolutionSection />
-        <ProcessSection />
+        <div className="py-8" />
+        <ClinicalDomainsSection />
+        <div className="py-8" />
         <LeadCaptureSection />
       </main>
       <Footer />
