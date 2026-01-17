@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { AlertTriangle } from "lucide-react";
 
 const MentalProblemSection = () => {
   return (
@@ -12,32 +11,6 @@ const MentalProblemSection = () => {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto"
         >
-          {/* Visual indicator */}
-          <div className="flex justify-center mb-8">
-            <motion.div
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="w-20 h-20 rounded-full bg-destructive/10 flex items-center justify-center">
-                <motion.div
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                  className="w-14 h-14 rounded-full bg-destructive/20 flex items-center justify-center"
-                >
-                  <AlertTriangle className="w-7 h-7 text-destructive" />
-                </motion.div>
-              </div>
-              {/* Pulsing rings */}
-              <motion.div
-                className="absolute inset-0 rounded-full border-2 border-destructive/30"
-                animate={{ scale: [1, 1.5], opacity: [0.5, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              />
-            </motion.div>
-          </div>
-
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-8">
             כשהמערכת תקועה על מצב <span className="text-destructive">"ON"</span>
           </h2>

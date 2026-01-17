@@ -50,8 +50,8 @@ const MentalScienceSection = () => {
               transition={{ delay: index * 0.2 }}
               className="group"
             >
-              <div className={`h-full rounded-2xl bg-gradient-to-br ${card.gradient} p-1`}>
-                <div className="h-full bg-card rounded-xl p-8 border border-border/50 transition-shadow hover:shadow-xl">
+              <div className={`rounded-2xl bg-gradient-to-br ${card.gradient} p-1`}>
+                <div className="bg-card rounded-xl p-8 border border-border/50 transition-shadow hover:shadow-xl">
                   {/* Icon */}
                   <div className={`w-14 h-14 rounded-xl ${card.iconBg} flex items-center justify-center mb-6`}>
                     <card.icon className={`w-7 h-7 ${card.iconColor}`} />
