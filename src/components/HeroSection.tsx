@@ -79,57 +79,51 @@ const HeroSection = () => {
           duration: 1,
           delay: 0.4
         }} className="relative flex items-center justify-center order-first lg:order-last">
-            {/* Brain Image with badges */}
-            <div className="relative w-full max-w-lg mx-auto py-8 px-12">
-              <motion.img src={brainImage} alt="3D Brain Visualization" className="w-full" animate={{
-              y: [0, -10, 0]
-            }} transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }} />
+            {/* Brain Image with fade effect */}
+            <div className="relative w-full max-w-xl mx-auto">
+              {/* Radial fade container */}
+              <div className="relative" style={{ 
+                maskImage: 'radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 100%)',
+                WebkitMaskImage: 'radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 100%)'
+              }}>
+                <motion.img 
+                  src={brainImage} 
+                  alt="3D Brain Visualization" 
+                  className="w-full" 
+                  animate={{ y: [0, -10, 0] }} 
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} 
+                />
+              </div>
               
-              {/* Floating Badges */}
-              <motion.div initial={{
-              opacity: 0,
-              scale: 0
-            }} animate={{
-              opacity: 1,
-              scale: 1
-            }} transition={{
-              duration: 0.5,
-              delay: 0.8
-            }} className="absolute -top-2 left-1/2 -translate-x-1/2 floating-badge z-10">
-                <span className="node-dot"></span>
+              {/* Floating Badges - positioned like reference */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0 }} 
+                animate={{ opacity: 1, scale: 1 }} 
+                transition={{ duration: 0.5, delay: 0.8 }} 
+                className="absolute top-[10%] left-1/2 -translate-x-1/2 floating-badge z-10"
+              >
                 <span className="text-foreground text-sm">נוירומודולציה</span>
+                <span className="node-dot"></span>
               </motion.div>
               
-              <motion.div initial={{
-              opacity: 0,
-              scale: 0
-            }} animate={{
-              opacity: 1,
-              scale: 1
-            }} transition={{
-              duration: 0.5,
-              delay: 1
-            }} className="absolute top-[40%] left-0 floating-badge z-10">
-                <span className="node-dot"></span>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0 }} 
+                animate={{ opacity: 1, scale: 1 }} 
+                transition={{ duration: 0.5, delay: 1 }} 
+                className="absolute top-[45%] -left-4 floating-badge z-10"
+              >
                 <span className="text-foreground text-sm">ויסות עצבי</span>
+                <span className="node-dot"></span>
               </motion.div>
               
-              <motion.div initial={{
-              opacity: 0,
-              scale: 0
-            }} animate={{
-              opacity: 1,
-              scale: 1
-            }} transition={{
-              duration: 0.5,
-              delay: 1.2
-            }} className="absolute bottom-[15%] left-[20%] floating-badge z-10">
-                <span className="node-dot"></span>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0 }} 
+                animate={{ opacity: 1, scale: 1 }} 
+                transition={{ duration: 0.5, delay: 1.2 }} 
+                className="absolute bottom-[20%] right-[5%] floating-badge z-10"
+              >
                 <span className="text-foreground text-sm">שיקום תפקודי</span>
+                <span className="node-dot"></span>
               </motion.div>
             </div>
           </motion.div>
