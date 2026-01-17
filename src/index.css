@@ -47,8 +47,10 @@
     --teal-light: 168 50% 92%;
     --navy: 220 60% 20%;
     --navy-light: 220 40% 35%;
-    --lavender: 260 30% 96%;
+    --lavender: 270 40% 94%;
+    --lavender-soft: 280 30% 97%;
     --gradient-brain: linear-gradient(135deg, hsl(180 60% 60%), hsl(280 50% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(var(--lavender-soft)) 0%, hsl(var(--lavender)) 30%, hsl(var(--lavender-soft)) 70%, hsl(var(--background)) 100%);
     --shadow-soft: 0 4px 20px -4px hsl(220 60% 20% / 0.08);
     --shadow-card: 0 8px 30px -8px hsl(220 60% 20% / 0.1);
   }

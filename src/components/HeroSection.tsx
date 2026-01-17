@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { MessageCircle, BookOpen } from "lucide-react";
 import brainImage from "@/assets/brain-hero.png";
 const HeroSection = () => {
-  return <section className="min-h-screen pt-24 pb-16 relative bg-gradient-to-b from-background via-lavender/30 to-background">
+  return <section className="min-h-screen pt-24 pb-16 relative" style={{ background: 'linear-gradient(180deg, hsl(280 30% 97%) 0%, hsl(270 40% 94%) 30%, hsl(280 30% 97%) 70%, hsl(240 20% 99%) 100%)' }}>
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Text Content - Right side (RTL) */}
