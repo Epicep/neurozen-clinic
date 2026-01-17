@@ -4,6 +4,7 @@ import GapSection from "@/components/GapSection";
 import SolutionSection from "@/components/SolutionSection";
 import ClinicalDomainsSection from "@/components/ClinicalDomainsSection";
 import ProcessSection from "@/components/ProcessSection";
+import LeadCaptureSection from "@/components/LeadCaptureSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -16,6 +17,7 @@ const Index = () => {
         <SolutionSection />
         <ClinicalDomainsSection />
         <ProcessSection />
+        <LeadCaptureSection />
       </main>
       <Footer />
     </div>
