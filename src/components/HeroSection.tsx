@@ -79,17 +79,26 @@ const HeroSection = () => {
           duration: 1,
           delay: 0.4
         }} className="relative flex items-center justify-center order-first lg:order-last">
-            {/* Brain Image with fade effect */}
+            {/* Brain Image with seamless fade */}
             <div className="relative w-full max-w-xl mx-auto">
-              {/* Radial fade container */}
-              <div className="relative" style={{ 
-                maskImage: 'radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 100%)',
-                WebkitMaskImage: 'radial-gradient(ellipse 70% 70% at 50% 50%, black 40%, transparent 100%)'
-              }}>
+              {/* Soft glow background */}
+              <div 
+                className="absolute inset-0 rounded-full blur-3xl opacity-30"
+                style={{ background: 'radial-gradient(circle, hsl(270 40% 85%) 0%, transparent 70%)' }}
+              />
+              
+              {/* Brain with smooth edge fade */}
+              <div 
+                className="relative"
+                style={{ 
+                  maskImage: 'radial-gradient(ellipse 80% 75% at 50% 50%, black 30%, transparent 70%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse 80% 75% at 50% 50%, black 30%, transparent 70%)'
+                }}
+              >
                 <motion.img 
                   src={brainImage} 
                   alt="3D Brain Visualization" 
-                  className="w-full" 
+                  className="w-full drop-shadow-2xl" 
                   animate={{ y: [0, -10, 0] }} 
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} 
                 />

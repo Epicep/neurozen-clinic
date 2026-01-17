@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import neuralVideo from "@/assets/neural-animation.mp4";
 
 const SolutionSection = () => {
   return (
@@ -26,7 +27,7 @@ const SolutionSection = () => {
             </p>
           </motion.div>
 
-          {/* Abstract Visual */}
+          {/* Video Visual with fade edges */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -34,62 +35,31 @@ const SolutionSection = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="relative h-80 lg:h-96 rounded-3xl bg-gradient-to-br from-teal-light via-accent to-lavender overflow-hidden">
-              {/* Abstract wave pattern */}
-              <div className="absolute inset-0">
-                {[...Array(5)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"
-                    style={{ top: `${20 + i * 15}%` }}
-                    animate={{
-                      x: ["-100%", "100%"],
-                    }}
-                    transition={{
-                      duration: 3 + i * 0.5,
-                      repeat: Infinity,
-                      ease: "linear",
-                      delay: i * 0.3,
-                    }}
-                  />
-                ))}
-              </div>
+            <div 
+              className="relative h-80 lg:h-96 rounded-3xl overflow-hidden"
+              style={{
+                maskImage: 'radial-gradient(ellipse 90% 90% at 50% 50%, black 50%, transparent 100%)',
+                WebkitMaskImage: 'radial-gradient(ellipse 90% 90% at 50% 50%, black 50%, transparent 100%)'
+              }}
+            >
+              {/* Background video */}
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover opacity-70"
+              >
+                <source src={neuralVideo} type="video/mp4" />
+              </video>
               
-              {/* Glowing orbs */}
-              <motion.div
-                className="absolute top-1/4 left-1/4 w-32 h-32 rounded-full bg-primary/20 blur-3xl"
-                animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-                transition={{ duration: 4, repeat: Infinity }}
+              {/* Overlay gradient for blending */}
+              <div 
+                className="absolute inset-0"
+                style={{
+                  background: 'radial-gradient(ellipse at center, transparent 30%, hsl(270 40% 94% / 0.5) 70%, hsl(270 40% 94%) 100%)'
+                }}
               />
-              <motion.div
-                className="absolute bottom-1/4 right-1/4 w-40 h-40 rounded-full bg-accent/40 blur-3xl"
-                animate={{ scale: [1.2, 1, 1.2], opacity: [0.4, 0.6, 0.4] }}
-                transition={{ duration: 5, repeat: Infinity }}
-              />
-              
-              {/* Nerve fiber lines */}
-              <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 300">
-                <motion.path
-                  d="M0,150 Q100,100 200,150 T400,150"
-                  fill="none"
-                  stroke="hsl(168 65% 45% / 0.3)"
-                  strokeWidth="2"
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 2 }}
-                />
-                <motion.path
-                  d="M0,180 Q100,220 200,180 T400,180"
-                  fill="none"
-                  stroke="hsl(168 65% 45% / 0.2)"
-                  strokeWidth="1.5"
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 2, delay: 0.3 }}
-                />
-              </svg>
             </div>
           </motion.div>
         </div>
