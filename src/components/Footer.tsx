@@ -1,0 +1,105 @@
+import { motion } from "framer-motion";
+import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const Footer = () => {
+  return (
+    <footer className="bg-secondary text-secondary-foreground py-16">
+      <div className="container mx-auto px-6">
+        <div className="grid md:grid-cols-4 gap-12">
+          {/* Brand */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="space-y-4"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-xl">N</span>
+              </div>
+              <span className="text-2xl font-bold">
+                Neuro<span className="text-primary">Zen</span>
+              </span>
+            </div>
+            <p className="text-secondary-foreground/70 text-sm leading-relaxed">
+              המרכז לנוירופונקטורה בישראל. מחזירים את מערכת העצבים לאיזון.
+            </p>
+          </motion.div>
+
+          {/* Quick Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="space-y-4"
+          >
+            <h4 className="font-semibold text-lg">קישורים מהירים</h4>
+            <ul className="space-y-2">
+              {["אודות", "השיטה", "שירותים", "צור קשר"].map((item) => (
+                <li key={item}>
+                  <a href="#" className="text-secondary-foreground/70 hover:text-primary transition-colors">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Contact */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="space-y-4"
+          >
+            <h4 className="font-semibold text-lg">יצירת קשר</h4>
+            <ul className="space-y-3">
+              <li className="flex items-center gap-3 text-secondary-foreground/70">
+                <Phone className="w-4 h-4 text-primary" />
+                <span>054-1234567</span>
+              </li>
+              <li className="flex items-center gap-3 text-secondary-foreground/70">
+                <Mail className="w-4 h-4 text-primary" />
+                <span>info@neurozen.co.il</span>
+              </li>
+              <li className="flex items-center gap-3 text-secondary-foreground/70">
+                <MapPin className="w-4 h-4 text-primary" />
+                <span>תל אביב, ישראל</span>
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="space-y-4"
+          >
+            <h4 className="font-semibold text-lg">התחילו עכשיו</h4>
+            <p className="text-secondary-foreground/70 text-sm">
+              בדקו אם הטיפול מתאים לכם בשיחה קצרה ללא התחייבות.
+            </p>
+            <Button variant="hero" size="lg" className="w-full">
+              <MessageCircle className="w-5 h-5" />
+              <span>שלחו הודעה בוואטסאפ</span>
+            </Button>
+          </motion.div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="mt-12 pt-8 border-t border-secondary-foreground/10 text-center">
+          <p className="text-secondary-foreground/50 text-sm">
+            © {new Date().getFullYear()} NeuroZen. כל הזכויות שמורות.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
