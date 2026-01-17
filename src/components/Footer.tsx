@@ -91,9 +91,18 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-secondary-foreground/10 text-center">
-          <p className="text-secondary-foreground/50 text-sm">
+        {/* Bottom Bar with Disclaimer */}
+        <div className="mt-12 pt-8 border-t border-secondary-foreground/20 space-y-4">
+          {/* Medical Disclaimer */}
+          <div className="bg-secondary-foreground/5 rounded-lg p-4 max-w-4xl mx-auto">
+            <p className="text-secondary-foreground/80 text-sm leading-relaxed text-center">
+              <strong>הבהרה רפואית:</strong> המידע המוצג באתר זה הינו למטרות מידע כללי בלבד ואינו מהווה ייעוץ רפואי, 
+              אבחון או טיפול. נוירופונקטורה היא שיטת טיפול משלימה ואינה מחליפה ייעוץ רפואי מקצועי. 
+              יש להתייעץ עם רופא מוסמך לפני תחילת כל טיפול.
+            </p>
+          </div>
+          
+          <p className="text-secondary-foreground/60 text-sm text-center">
             © {new Date().getFullYear()} NeuroZen. כל הזכויות שמורות.
           </p>
         </div>

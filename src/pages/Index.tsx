@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import GapSection from "@/components/GapSection";
 import SolutionSection from "@/components/SolutionSection";
+import ClinicalDomainsSection from "@/components/ClinicalDomainsSection";
 import ProcessSection from "@/components/ProcessSection";
 import Footer from "@/components/Footer";
 
@@ -13,6 +14,7 @@ const Index = () => {
         <HeroSection />
         <GapSection />
         <SolutionSection />
+        <ClinicalDomainsSection />
         <ProcessSection />
       </main>
       <Footer />
