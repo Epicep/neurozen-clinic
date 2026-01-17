@@ -17,9 +17,9 @@ const MentalScienceSection = () => {
       title: "Stellate Ganglion Modulation (SGM)",
       subtitle: "\"כיבוי שריפות\" במערכת הסימפתטית",
       description: "מודולציה של גנגליון הכוכב בצוואר – צומת העצבים האחראי על תגובת ה-Fight or Flight. המטרה הקלינית היא ויסות \"עודף עוררות\" והשפעה עקיפה על אזורי מוח לימביים (אמיגדלה והיפוקמפוס) להרגעת חרדה קיצונית וטראומה.",
-      gradient: "from-secondary/20 to-secondary/5",
-      iconBg: "bg-secondary/20",
-      iconColor: "text-secondary",
+      gradient: "from-teal/20 to-teal/5",
+      iconBg: "bg-teal/20",
+      iconColor: "text-teal",
     },
   ];
 
