@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import { MessageCircle, BookOpen } from "lucide-react";
 import brainImage from "@/assets/brain-hero.png";
 const HeroSection = () => {
-  return <section className="min-h-screen pt-24 pb-16 relative" style={{ background: 'linear-gradient(180deg, hsl(280 30% 97%) 0%, hsl(270 40% 94%) 30%, hsl(280 30% 97%) 70%, hsl(240 20% 99%) 100%)' }}>
+  return <section className="min-h-screen pt-24 pb-16 relative" style={{
+    background: 'linear-gradient(180deg, hsl(280 30% 97%) 0%, hsl(270 40% 94%) 30%, hsl(280 30% 97%) 70%, hsl(240 20% 99%) 100%)'
+  }}>
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Text Content - Right side (RTL) */}
@@ -18,10 +20,7 @@ const HeroSection = () => {
           delay: 0.2
         }} className="space-y-8">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-teal-light">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse-glow"></span>
-              <span className="text-primary font-medium text-sm">המרכז לנוירופונקטורה בישראל</span>
-            </div>
+            
 
             {/* Main Title */}
             <div className="space-y-4">
@@ -82,55 +81,63 @@ const HeroSection = () => {
             {/* Brain Image with seamless fade */}
             <div className="relative w-full max-w-xl mx-auto">
               {/* Soft glow background */}
-              <div 
-                className="absolute inset-0 rounded-full blur-3xl opacity-30"
-                style={{ background: 'radial-gradient(circle, hsl(270 40% 85%) 0%, transparent 70%)' }}
-              />
+              <div className="absolute inset-0 rounded-full blur-3xl opacity-30" style={{
+              background: 'radial-gradient(circle, hsl(270 40% 85%) 0%, transparent 70%)'
+            }} />
               
               {/* Brain with smooth edge fade */}
-              <div 
-                className="relative"
-                style={{ 
-                  maskImage: 'radial-gradient(ellipse 80% 75% at 50% 50%, black 30%, transparent 70%)',
-                  WebkitMaskImage: 'radial-gradient(ellipse 80% 75% at 50% 50%, black 30%, transparent 70%)'
-                }}
-              >
-                <motion.img 
-                  src={brainImage} 
-                  alt="3D Brain Visualization" 
-                  className="w-full drop-shadow-2xl" 
-                  animate={{ y: [0, -10, 0] }} 
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} 
-                />
+              <div className="relative" style={{
+              maskImage: 'radial-gradient(ellipse 80% 75% at 50% 50%, black 30%, transparent 70%)',
+              WebkitMaskImage: 'radial-gradient(ellipse 80% 75% at 50% 50%, black 30%, transparent 70%)'
+            }}>
+                <motion.img src={brainImage} alt="3D Brain Visualization" className="w-full drop-shadow-2xl" animate={{
+                y: [0, -10, 0]
+              }} transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }} />
               </div>
               
               {/* Floating Badges - positioned like reference */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0 }} 
-                animate={{ opacity: 1, scale: 1 }} 
-                transition={{ duration: 0.5, delay: 0.8 }} 
-                className="absolute top-[10%] left-1/2 -translate-x-1/2 floating-badge z-10"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              scale: 0
+            }} animate={{
+              opacity: 1,
+              scale: 1
+            }} transition={{
+              duration: 0.5,
+              delay: 0.8
+            }} className="absolute top-[10%] left-1/2 -translate-x-1/2 floating-badge z-10">
                 <span className="text-foreground text-sm">נוירומודולציה</span>
                 <span className="node-dot"></span>
               </motion.div>
               
-              <motion.div 
-                initial={{ opacity: 0, scale: 0 }} 
-                animate={{ opacity: 1, scale: 1 }} 
-                transition={{ duration: 0.5, delay: 1 }} 
-                className="absolute top-[45%] -left-4 floating-badge z-10"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              scale: 0
+            }} animate={{
+              opacity: 1,
+              scale: 1
+            }} transition={{
+              duration: 0.5,
+              delay: 1
+            }} className="absolute top-[45%] -left-4 floating-badge z-10">
                 <span className="text-foreground text-sm">ויסות עצבי</span>
                 <span className="node-dot"></span>
               </motion.div>
               
-              <motion.div 
-                initial={{ opacity: 0, scale: 0 }} 
-                animate={{ opacity: 1, scale: 1 }} 
-                transition={{ duration: 0.5, delay: 1.2 }} 
-                className="absolute bottom-[20%] right-[5%] floating-badge z-10"
-              >
+              <motion.div initial={{
+              opacity: 0,
+              scale: 0
+            }} animate={{
+              opacity: 1,
+              scale: 1
+            }} transition={{
+              duration: 0.5,
+              delay: 1.2
+            }} className="absolute bottom-[20%] right-[5%] floating-badge z-10">
                 <span className="text-foreground text-sm">שיקום תפקודי</span>
                 <span className="node-dot"></span>
               </motion.div>
