@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Brain, Activity, Zap, Heart } from "lucide-react";
+import { Brain, Activity, Zap, Heart, ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const domains = [
@@ -7,37 +7,41 @@ const domains = [
     icon: Brain,
     title: "חרדה ואיזון נפשי",
     description: "יציאה ממצב הישרדותי, טיפול בחרדה, דיכאון, PTSD ושיפור איכות השינה.",
-    accentColor: "bg-purple-100",
-    borderColor: "border-purple-300",
-    iconBg: "bg-purple-200",
+    accentColor: "bg-purple-50",
+    borderColor: "border-purple-200 hover:border-purple-400",
+    iconBg: "bg-purple-100",
     iconColor: "text-purple-600",
-  },
-  {
-    icon: Activity,
-    title: "שיקום נוירולוגי",
-    description: "תמיכה בפרקינסון, שיקום תנועה, והאטת התקדמות של מחלות ניווניות.",
-    accentColor: "bg-amber-50",
-    borderColor: "border-amber-300",
-    iconBg: "bg-amber-100",
-    iconColor: "text-amber-600",
+    link: "/mental-health",
   },
   {
     icon: Zap,
     title: "כאב כרוני",
     description: "טיפול בשורש העצבי של כאבי גב, מיגרנות, פיברומיאלגיה וכאב נוירופתי.",
     accentColor: "bg-sky-50",
-    borderColor: "border-sky-300",
+    borderColor: "border-sky-200 hover:border-sky-400",
     iconBg: "bg-sky-100",
     iconColor: "text-sky-600",
+    link: "/chronic-pain",
+  },
+  {
+    icon: Activity,
+    title: "שיקום נוירולוגי",
+    description: "תמיכה בפרקינסון, שיקום תנועה, והאטת התקדמות של מחלות ניווניות.",
+    accentColor: "bg-amber-50",
+    borderColor: "border-amber-200 hover:border-amber-400",
+    iconBg: "bg-amber-100",
+    iconColor: "text-amber-600",
+    link: "/neurological",
   },
   {
     icon: Heart,
     title: "איזון מטבולי",
     description: "סיוע באיזון סוכרת, לחץ דם, גיל המעבר ופעילות תקינה של המערכת ההורמונלית.",
     accentColor: "bg-emerald-50",
-    borderColor: "border-emerald-300",
+    borderColor: "border-emerald-200 hover:border-emerald-400",
     iconBg: "bg-emerald-100",
     iconColor: "text-emerald-600",
+    link: "/metabolic",
   },
 ];
 
@@ -53,10 +57,10 @@ const ClinicalDomainsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            במה אנחנו מטפלים?
+            באילו מצבים אנו מטפלים?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            נוירופונקטורה מתאימה למגוון רחב של מצבים בריאותיים
+            בחרו את התחום הרלוונטי לקריאה נוספת על הטיפול המותאם אישית:
           </p>
         </motion.div>
 
@@ -70,20 +74,24 @@ const ClinicalDomainsSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Card 
-                className={`h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-2 ${domain.borderColor} ${domain.accentColor}`}
+                className={`h-full cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-2 border-2 ${domain.borderColor} ${domain.accentColor} group`}
               >
-                <CardContent className="p-6 text-center">
+                <CardContent className="p-6 text-center flex flex-col h-full">
                   <div 
-                    className={`w-14 h-14 mx-auto mb-4 rounded-2xl flex items-center justify-center ${domain.iconBg}`}
+                    className={`w-14 h-14 mx-auto mb-4 rounded-2xl flex items-center justify-center ${domain.iconBg} transition-transform group-hover:scale-110`}
                   >
                     <domain.icon className={`w-7 h-7 ${domain.iconColor}`} />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-3">
                     {domain.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-grow mb-4">
                     {domain.description}
                   </p>
+                  <div className="flex items-center justify-center gap-2 text-primary font-medium text-sm group-hover:gap-3 transition-all">
+                    <span>למידע נוסף</span>
+                    <ArrowLeft className="w-4 h-4" />
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>
