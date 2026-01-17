@@ -21,38 +21,64 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+          >
             התהליך שלנו
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+          >
             שלושה שלבים להחזרת מערכת העצבים לאיזון
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
             <motion.div
               key={step.title}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.15,
+                ease: "easeOut"
+              }}
               className="group"
             >
-              <div className="bg-card rounded-2xl p-8 shadow-card border border-border/50 h-full hover:shadow-lg transition-shadow duration-300 hover:border-primary/30">
+              <motion.div 
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.3 }}
+                className="bg-card rounded-2xl p-8 shadow-card border border-border/50 h-full hover:shadow-lg transition-shadow duration-300 hover:border-primary/30"
+              >
                 {/* Icon */}
-                <div className="w-16 h-16 rounded-2xl bg-teal-light flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                <motion.div 
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.2 + index * 0.15, type: "spring" }}
+                  className="w-16 h-16 rounded-2xl bg-teal-light flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors"
+                >
                   <step.icon className="w-8 h-8 text-primary" />
-                </div>
+                </motion.div>
 
                 {/* Step Number */}
                 <div className="inline-flex items-center gap-2 mb-4">
@@ -69,7 +95,7 @@ const ProcessSection = () => {
                 <p className="text-muted-foreground leading-relaxed">
                   {step.description}
                 </p>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>

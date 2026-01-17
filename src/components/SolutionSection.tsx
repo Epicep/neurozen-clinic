@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import neuralVideo from "@/assets/neural-animation.mp4";
+import NeuralAnimation from "./NeuralAnimation";
 
 const SolutionSection = () => {
   return (
@@ -10,57 +10,50 @@ const SolutionSection = () => {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="space-y-6"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-4xl font-bold text-foreground"
+            >
               לטפל בביולוגיה, כדי שהנפש תוכל להחלים.
-            </h2>
+            </motion.h2>
             
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-lg text-muted-foreground leading-relaxed"
+            >
               בנוירופונקטורה אנחנו ניגשים ישירות למקור הפיזיולוגי של הבעיה. במקום לנסות "לשכנע" את המוח להירגע, אנחנו משתמשים בוויסות עצבי מדויק (Stellate Ganglion Modulation & Vagus Nerve Regulation) כדי לאותת למערכת העצבים שהסכנה חלפה.
-            </p>
+            </motion.p>
             
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-lg text-muted-foreground leading-relaxed"
+            >
               אנחנו עוצרים את מרוץ האדרנלין ומאפשרים לגוף לחזור לאיזון – מה שפותח דלת אמיתית לטיפול הרגשי ולחזרה לחיים.
-            </p>
+            </motion.p>
           </motion.div>
 
-          {/* Video Visual with fade edges */}
+          {/* Neural Animation */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="relative h-80 lg:h-96"
           >
-            <div 
-              className="relative h-80 lg:h-96 rounded-3xl overflow-hidden"
-              style={{
-                maskImage: 'radial-gradient(ellipse 90% 90% at 50% 50%, black 50%, transparent 100%)',
-                WebkitMaskImage: 'radial-gradient(ellipse 90% 90% at 50% 50%, black 50%, transparent 100%)'
-              }}
-            >
-              {/* Background video */}
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover opacity-70"
-              >
-                <source src={neuralVideo} type="video/mp4" />
-              </video>
-              
-              {/* Overlay gradient for blending */}
-              <div 
-                className="absolute inset-0"
-                style={{
-                  background: 'radial-gradient(ellipse at center, transparent 30%, hsl(270 40% 94% / 0.5) 70%, hsl(270 40% 94%) 100%)'
-                }}
-              />
-            </div>
+            <NeuralAnimation />
           </motion.div>
         </div>
       </div>
