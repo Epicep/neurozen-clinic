@@ -81,47 +81,24 @@ const HeroSection = () => {
         }} className="relative flex items-center justify-center order-first lg:order-last">
             {/* Brain Image with seamless fade */}
             <div className="relative w-full max-w-xl mx-auto">
-              {/* Multiple layered glows for seamless blend */}
+              {/* Soft glow background */}
               <div 
-                className="absolute inset-[-20%] rounded-full blur-[100px] opacity-40"
-                style={{ background: 'radial-gradient(circle, hsl(270 35% 88%) 0%, transparent 60%)' }}
-              />
-              <div 
-                className="absolute inset-[-10%] rounded-full blur-[60px] opacity-25"
-                style={{ background: 'radial-gradient(circle, hsl(275 30% 92%) 0%, transparent 50%)' }}
+                className="absolute inset-0 rounded-full blur-3xl opacity-30"
+                style={{ background: 'radial-gradient(circle, hsl(270 40% 85%) 0%, transparent 70%)' }}
               />
               
-              {/* Brain with ultra-smooth multi-layer fade */}
+              {/* Brain with smooth edge fade */}
               <div 
                 className="relative"
                 style={{ 
-                  maskImage: `
-                    radial-gradient(ellipse 90% 85% at 50% 50%, 
-                      black 0%, 
-                      black 25%, 
-                      rgba(0,0,0,0.8) 40%, 
-                      rgba(0,0,0,0.5) 55%, 
-                      rgba(0,0,0,0.2) 70%, 
-                      transparent 85%
-                    )
-                  `,
-                  WebkitMaskImage: `
-                    radial-gradient(ellipse 90% 85% at 50% 50%, 
-                      black 0%, 
-                      black 25%, 
-                      rgba(0,0,0,0.8) 40%, 
-                      rgba(0,0,0,0.5) 55%, 
-                      rgba(0,0,0,0.2) 70%, 
-                      transparent 85%
-                    )
-                  `
+                  maskImage: 'radial-gradient(ellipse 80% 75% at 50% 50%, black 30%, transparent 70%)',
+                  WebkitMaskImage: 'radial-gradient(ellipse 80% 75% at 50% 50%, black 30%, transparent 70%)'
                 }}
               >
                 <motion.img 
                   src={brainImage} 
                   alt="3D Brain Visualization" 
-                  className="w-full" 
-                  style={{ filter: 'drop-shadow(0 0 40px rgba(139, 92, 246, 0.15))' }}
+                  className="w-full drop-shadow-2xl" 
                   animate={{ y: [0, -10, 0] }} 
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} 
                 />
