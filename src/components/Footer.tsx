@@ -37,7 +37,7 @@ const Footer = () => {
           >
             <h4 className="font-semibold text-lg">קישורים מהירים</h4>
             <ul className="space-y-2">
-              {["אודות", "השיטה", "שירותים", "צור קשר"].map((item) => (
+              {["אודות", "על השיטה", "תחומי טיפול", "צור קשר"].map((item) => (
                 <li key={item}>
                   <a href="#" className="text-secondary-foreground/70 hover:text-primary transition-colors">
                     {item}

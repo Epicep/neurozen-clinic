@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { MessageCircle, BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 import brainImage from "@/assets/brain-hero.png";
 const HeroSection = () => {
   return <section className="min-h-screen pt-24 pb-16 relative" style={{
@@ -39,9 +40,11 @@ const HeroSection = () => {
                 <MessageCircle className="w-5 h-5" />
                 <span>בדיקת התאמה לטיפול בוואטסאפ</span>
               </Button>
-              <Button variant="heroOutline" size="xl">
-                <BookOpen className="w-5 h-5" />
-                <span>קראו עוד על השיטה</span>
+              <Button variant="heroOutline" size="xl" asChild>
+                <Link to="/method">
+                  <BookOpen className="w-5 h-5" />
+                  <span>קראו עוד על השיטה</span>
+                </Link>
               </Button>
             </div>
 

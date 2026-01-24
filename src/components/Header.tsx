@@ -6,10 +6,10 @@ const Header = () => {
     label: "אודות",
     href: "#about"
   }, {
-    label: "השיטה",
+    label: "על השיטה",
     href: "/method"
   }, {
-    label: "שירותים",
+    label: "תחומי טיפול",
     href: "#services"
   }, {
     label: "צור קשר",
