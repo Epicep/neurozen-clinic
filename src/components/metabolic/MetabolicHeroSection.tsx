@@ -140,7 +140,7 @@ const MetabolicHeroSection = () => {
             transition={{ delay: 0.5 }}
             className="inline-block px-4 py-1.5 mb-6 text-sm font-medium bg-emerald-100 text-emerald-700 rounded-full"
           >
-            איזון מטבולי
+            איזון מטבולי ועיכול
           </motion.span>
 
           <motion.h1
@@ -149,9 +149,7 @@ const MetabolicHeroSection = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight"
           >
-            מעבר ל"תזונה ותנועה":
-            <br />
-            <span className="text-emerald-600">ויסות מערכת העצבים המטבולית</span>
+            <span className="text-emerald-600">איזון מטבולי ומערכת העיכול</span>
           </motion.h1>
 
           <motion.p
@@ -160,8 +158,7 @@ const MetabolicHeroSection = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed max-w-3xl mx-auto"
           >
-            שינוי תזונתי הוא הבסיס, אבל לפעמים הגוף צריך עזרה "מבפנים" כדי להגיב אליו.
-            נוירופונקטורה מסייעת לאיזון הציר ההורמונלי ולהורדת רמות דלקת וסטרס המעכבות ריפוי.
+            מערכת העיכול ומערכת המטבוליזם מנוהלות ע"י אותו ציר עצבי. נוירופונקטורה מסייעת לאיזון הציר ההורמונלי, הרגעת המעי (Gut-Brain Axis) והורדת רמות דלקת מערכתיות.
           </motion.p>
 
           <motion.div

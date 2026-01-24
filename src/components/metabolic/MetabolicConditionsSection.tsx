@@ -1,27 +1,43 @@
 import { motion } from "framer-motion";
-import { Droplets, Pill, Heart, Battery } from "lucide-react";
+import { Droplets, Pill, Heart, Battery, Stethoscope, Flame } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const conditions = [
   {
     icon: Droplets,
     title: "סוכרת סוג 2 וטרום-סוכרת",
+    description: "",
     color: "emerald",
   },
   {
     icon: Pill,
     title: "כבד שומני ופרופיל שומנים גבוה",
+    description: "",
     color: "green",
   },
   {
     icon: Heart,
     title: "יתר לחץ דם",
+    description: "",
     color: "teal",
   },
   {
     icon: Battery,
     title: "תסמונת מטבולית ועייפות כרונית",
+    description: "",
     color: "cyan",
+  },
+  {
+    icon: Stethoscope,
+    title: "מעי רגיז (IBS) ורגישות בבטן",
+    description: "ויסות רגישות היתר של מערכת העצבים במעיים (Visceral Hypersensitivity).",
+    color: "emerald",
+  },
+  {
+    icon: Flame,
+    title: "מחלות מעי דלקתיות (IBD)",
+    description: "הפעלת המסלול האנטי-דלקתי של עצב הואגוס להפחתת התקפים ותמיכה ברמיסיה.",
+    color: "teal",
   },
 ];
 
@@ -73,7 +89,7 @@ const MetabolicConditionsSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {conditions.map((condition, index) => {
             const colors = colorMap[condition.color];
             return (
@@ -93,9 +109,14 @@ const MetabolicConditionsSection = () => {
                     >
                       <condition.icon className={`w-7 h-7 ${colors.iconColor}`} />
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground leading-snug">
+                    <h3 className="text-lg font-semibold text-foreground leading-snug mb-2">
                       {condition.title}
                     </h3>
+                    {condition.description && (
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {condition.description}
+                      </p>
+                    )}
                   </CardContent>
                 </Card>
               </motion.div>

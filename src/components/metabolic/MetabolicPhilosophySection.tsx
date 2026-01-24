@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { AlertCircle, Brain, RefreshCw } from "lucide-react";
+import { Brain, RefreshCw, HelpCircle } from "lucide-react";
 
 const MetabolicPhilosophySection = () => {
   return (
@@ -20,7 +20,7 @@ const MetabolicPhilosophySection = () => {
               transition={{ delay: 0.2, type: "spring" }}
               className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 mb-6"
             >
-              <AlertCircle className="w-8 h-8 text-emerald-600" />
+              <HelpCircle className="w-8 h-8 text-emerald-600" />
             </motion.div>
             
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">

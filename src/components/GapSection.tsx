@@ -9,7 +9,7 @@ const GapSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="max-w-2xl mx-auto text-center space-y-8"
+          className="max-w-[800px] mx-auto text-center space-y-8"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             כשהמערכת יצאה מאיזון – הגוף והנפש משלמים את המחיר
