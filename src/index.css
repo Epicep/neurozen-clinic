@@ -103,4 +103,38 @@
   .node-dot {
     @apply w-2.5 h-2.5 rounded-full bg-primary animate-pulse;
   }
+
+  /* Subtle neural mesh background pattern */
+  .neural-mesh-bg {
+    position: relative;
+    background-color: hsl(var(--background));
+  }
+
+  .neural-mesh-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, hsl(var(--primary) / 0.03) 1px, transparent 1px),
+      radial-gradient(circle at 80% 70%, hsl(var(--primary) / 0.03) 1px, transparent 1px),
+      radial-gradient(circle at 40% 80%, hsl(var(--navy) / 0.02) 1px, transparent 1px),
+      radial-gradient(circle at 60% 20%, hsl(var(--navy) / 0.02) 1px, transparent 1px),
+      linear-gradient(45deg, transparent 48%, hsl(var(--border) / 0.3) 49%, hsl(var(--border) / 0.3) 51%, transparent 52%),
+      linear-gradient(-45deg, transparent 48%, hsl(var(--border) / 0.3) 49%, hsl(var(--border) / 0.3) 51%, transparent 52%);
+    background-size: 
+      60px 60px,
+      60px 60px,
+      80px 80px,
+      80px 80px,
+      40px 40px,
+      40px 40px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .neural-mesh-bg > * {
+    position: relative;
+    z-index: 1;
+  }
 }
