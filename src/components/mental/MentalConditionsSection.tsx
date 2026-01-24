@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Brain, Heart, Battery, Moon } from "lucide-react";
+import { Brain, Heart, Battery, Moon, Sparkles } from "lucide-react";
 
 const MentalConditionsSection = () => {
   const conditions = [
@@ -12,6 +12,11 @@ const MentalConditionsSection = () => {
       icon: Brain,
       title: "פוסט-טראומה (PTSD)",
       description: "עיבוד טראומה דרך ויסות עצבי ולא רק שיחה",
+    },
+    {
+      icon: Sparkles,
+      title: "דיכאון והעדר מוטיבציה",
+      description: "טיפול ביולוגי להעלאת אנרגיה, ויסות מצב הרוח והחזרת החיוניות (Vitality) דרך איזון דופמין וסרוטונין.",
     },
     {
       icon: Battery,
