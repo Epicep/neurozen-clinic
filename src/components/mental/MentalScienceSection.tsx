@@ -71,23 +71,6 @@ const MentalScienceSection = () => {
                   <p className="text-muted-foreground leading-relaxed">
                     {card.description}
                   </p>
-
-                  {/* Decorative element */}
-                  <div className="mt-6 pt-6 border-t border-border/50">
-                    <div className="flex items-center gap-2">
-                      <div className="flex gap-1">
-                        {[...Array(3)].map((_, i) => (
-                          <motion.div
-                            key={i}
-                            className={`w-2 h-2 rounded-full ${card.iconBg}`}
-                            animate={{ opacity: [0.3, 1, 0.3] }}
-                            transition={{ duration: 1.5, delay: i * 0.2, repeat: Infinity }}
-                          />
-                        ))}
-                      </div>
-                      <span className="text-xs text-muted-foreground">מנגנון פעולה קליני</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </motion.div>
