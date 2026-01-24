@@ -15,7 +15,7 @@ const conditions = [
   },
   {
     icon: Heart,
-    title: "יתר לחץ דם (על רקע סטרס)",
+    title: "יתר לחץ דם",
     color: "teal",
   },
   {
