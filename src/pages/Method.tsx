@@ -3,8 +3,8 @@ import Footer from "@/components/Footer";
 import LeadCaptureSection from "@/components/LeadCaptureSection";
 import MethodHeroSection from "@/components/method/MethodHeroSection";
 import MethodDefinitionSection from "@/components/method/MethodDefinitionSection";
-import MethodComparisonSection from "@/components/method/MethodComparisonSection";
-import MethodTechnologySection from "@/components/method/MethodTechnologySection";
+import MethodTrinitySection from "@/components/method/MethodTrinitySection";
+import MethodAuthoritySection from "@/components/method/MethodAuthoritySection";
 import MethodOriginSection from "@/components/method/MethodOriginSection";
 import MethodCTASection from "@/components/method/MethodCTASection";
 
@@ -15,8 +15,8 @@ const Method = () => {
       <main className="pt-20">
         <MethodHeroSection />
         <MethodDefinitionSection />
-        <MethodComparisonSection />
-        <MethodTechnologySection />
+        <MethodTrinitySection />
+        <MethodAuthoritySection />
         <MethodOriginSection />
         <MethodCTASection />
         <LeadCaptureSection />

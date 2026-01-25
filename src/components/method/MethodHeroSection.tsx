@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Zap, Brain } from "lucide-react";
+import { Zap, Brain, Target } from "lucide-react";
 
 const MethodHeroSection = () => {
   return (
@@ -87,7 +87,7 @@ const MethodHeroSection = () => {
           >
             נוירופונקטורה:
             <br />
-            <span className="text-primary">הגשר בין רפואה עתיקה למדעי המוח</span>
+            <span className="text-primary">שיטת הדיקור השלמה היחידה המבוססת על מדעי המוח</span>
           </motion.h1>
 
           <motion.p
@@ -96,8 +96,8 @@ const MethodHeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto"
           >
-            זוהי לא "רפואה אלטרנטיבית" במובן המיסטי. זוהי שיטה קלינית מבוססת ראיות,
-            המשלבת דיקור מדויק עם ידע מתקדם בנוירו-אנטומיה וחשמל רפואי.
+            שילוב פורץ דרך של נוירו-פיזיולוגיה, מחקרים קליניים וטכנולוגיה חשמלית מתקדמת,
+            המאפשר טיפול מדויק, מדיד וניתן לשחזור (Reproducible).
           </motion.p>
         </div>
       </div>

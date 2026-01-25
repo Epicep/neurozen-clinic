@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Award, GraduationCap, Globe } from "lucide-react";
+import { GraduationCap, Globe, Building } from "lucide-react";
 
 const MethodOriginSection = () => {
   return (
@@ -26,23 +26,15 @@ const MethodOriginSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-card rounded-3xl p-8 md:p-12 shadow-card border border-border/50"
+            className="bg-card rounded-3xl p-8 md:p-12 shadow-card border border-border/50 text-center"
           >
             <p className="text-lg md:text-xl text-foreground leading-relaxed mb-8">
-              השיטה פותחה על ידי{" "}
+              השיטה פותחה ע"י{" "}
               <strong className="text-navy">ד"ר מייקל קורדינו (Dr. Michael Corradino)</strong>,
-              חוקר וקלינאי בעל שם עולמי בתחום הנוירו-אקופונקטורה.
+              חוקר וקלינאי בעל שם עולמי, ומיושמת כיום במרכזים רפואיים מובילים בארה"ב ובעולם.
             </p>
 
-            <div className="bg-accent/50 rounded-2xl p-6 mb-8">
-              <p className="text-lg text-foreground leading-relaxed">
-                <strong className="text-primary">עילאי פארן</strong>, מנהל הקליניקה,
-                הוסמך ישירות על ידו ופועל על פי הפרוטוקולים הקליניים המחמירים של
-                האיגוד הבינלאומי לנוירופונקטורה.
-              </p>
-            </div>
-
-            {/* Credentials badges */}
+            {/* Global presence badges */}
             <div className="flex flex-wrap gap-4 justify-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -51,8 +43,8 @@ const MethodOriginSection = () => {
                 transition={{ delay: 0.3 }}
                 className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-border/50"
               >
-                <Award className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-foreground">הסמכה בינלאומית</span>
+                <Globe className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium text-foreground">שיטה בינלאומית</span>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -61,8 +53,8 @@ const MethodOriginSection = () => {
                 transition={{ delay: 0.4 }}
                 className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-border/50"
               >
-                <Globe className="w-4 h-4 text-navy" />
-                <span className="text-sm font-medium text-foreground">פרוטוקולים קליניים</span>
+                <Building className="w-4 h-4 text-navy" />
+                <span className="text-sm font-medium text-foreground">מרכזים רפואיים מובילים</span>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -72,7 +64,7 @@ const MethodOriginSection = () => {
                 className="flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-border/50"
               >
                 <GraduationCap className="w-4 h-4 text-amber-600" />
-                <span className="text-sm font-medium text-foreground">הכשרה ישירה</span>
+                <span className="text-sm font-medium text-foreground">מחקר קליני</span>
               </motion.div>
             </div>
           </motion.div>
