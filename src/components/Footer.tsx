@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
+import { MessageCircle, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
@@ -59,11 +59,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-secondary-foreground/70">
                 <Phone className="w-4 h-4 text-primary" />
-                <span>054-1234567</span>
-              </li>
-              <li className="flex items-center gap-3 text-secondary-foreground/70">
-                <Mail className="w-4 h-4 text-primary" />
-                <span>info@neurozen.co.il</span>
+                <span>054-808-2487</span>
               </li>
               <li className="flex items-center gap-3 text-secondary-foreground/70">
                 <MapPin className="w-4 h-4 text-primary" />

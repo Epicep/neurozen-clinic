@@ -18,10 +18,10 @@ const MethodCTASection = () => {
           className="max-w-3xl mx-auto text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            מוכנים לטיפול שמבין את המדע של הגוף שלכם?
+            כשמדובר במערכת העצבים שלך, אין מקום לניחושים.
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            צרו קשר לבדיקת התאמה אישית וגלו כיצד נוירופונקטורה יכולה לעזור לכם
+            בדקו התאמה לטיפול אצל המומחה היחיד בארץ
           </p>
           <Button
             onClick={scrollToContact}
@@ -29,7 +29,7 @@ const MethodCTASection = () => {
             size="xl"
             className="gap-3"
           >
-            בדיקת התאמה לטיפול
+            בדיקת התאמה לטיפול אצל המומחה היחיד בארץ
             <ArrowLeft className="w-5 h-5" />
           </Button>
         </motion.div>

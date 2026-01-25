@@ -28,11 +28,11 @@ const LeadCaptureSection = () => {
               מעדיפים לא לחכות?
             </p>
             <a 
-              href="tel:054-1234567" 
+              href="tel:054-808-2487" 
               className="block text-4xl md:text-5xl font-bold text-foreground mb-6 hover:text-primary transition-colors"
               dir="ltr"
             >
-              054-1234567
+              054-808-2487
             </a>
             <Button
               variant="outline"
@@ -41,7 +41,7 @@ const LeadCaptureSection = () => {
               asChild
             >
               <a 
-                href="https://wa.me/972541234567" 
+                href="https://wa.me/972548082487" 
                 target="_blank" 
                 rel="noopener noreferrer"
               >
