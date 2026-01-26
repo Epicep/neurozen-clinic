@@ -3,14 +3,11 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 const Header = () => {
   const navItems = [{
-    label: "אודות",
-    href: "#about"
-  }, {
     label: "על השיטה",
     href: "/method"
   }, {
     label: "תחומי טיפול",
-    href: "#services"
+    href: "/#clinical-domains"
   }, {
     label: "צור קשר",
     href: "#contact"
