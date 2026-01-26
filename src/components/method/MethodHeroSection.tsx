@@ -85,9 +85,9 @@ const MethodHeroSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight"
           >
-            נוירופונקטורה:
+            נוירופונקטורה
             <br />
-            <span className="text-primary">שיטת הדיקור השלמה היחידה המבוססת על מדעי המוח</span>
+            <span className="text-primary">(Neuropuncture)</span>
           </motion.h1>
 
           <motion.p
@@ -96,8 +96,8 @@ const MethodHeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto"
           >
-            שילוב פורץ דרך של נוירו-פיזיולוגיה, מחקרים קליניים וטכנולוגיה חשמלית מתקדמת,
-            המאפשר טיפול מדויק, מדיד וניתן לשחזור (Reproducible).
+            מערכת הדיקור השלמה היחידה המבוססת על מדעי המוח, המלמדת את המטפל כיצד לווסת מחדש 
+            את מערכת העצבים של המטופל בחזרה לתפקוד בריא ומאוזן בעזרת דיקור חשמלי.
           </motion.p>
         </div>
       </div>
