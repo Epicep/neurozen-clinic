@@ -1,12 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const MethodCTASection = () => {
-  const scrollToContact = () => {
-    document.getElementById("lead-capture")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section className="py-24 neural-mesh-bg">
       <div className="container mx-auto px-6">
@@ -21,13 +17,15 @@ const MethodCTASection = () => {
             טיפול שמדבר בשפה של הגוף שלך.
           </h2>
           <Button
-            onClick={scrollToContact}
             variant="hero"
             size="xl"
             className="gap-3"
+            asChild
           >
-            בדיקת התאמה לטיפול
-            <ArrowLeft className="w-5 h-5" />
+            <a href="https://wa.me/972548082487" target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="w-5 h-5" />
+              בדיקת התאמה לטיפול
+            </a>
           </Button>
         </motion.div>
       </div>

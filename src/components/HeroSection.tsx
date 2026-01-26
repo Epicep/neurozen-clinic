@@ -36,9 +36,11 @@ const HeroSection = () => {
 
             {/* Buttons */}
             <div className="flex flex-wrap gap-4">
-              <Button variant="hero" size="xl" className="group">
-                <MessageCircle className="w-5 h-5" />
-                <span>בדיקת התאמה לטיפול בוואטסאפ</span>
+              <Button variant="hero" size="xl" className="group" asChild>
+                <a href="https://wa.me/972548082487" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="w-5 h-5" />
+                  <span>בדיקת התאמה לטיפול בוואטסאפ</span>
+                </a>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
                 <Link to="/method">
