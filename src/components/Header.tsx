@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import clinicLogo from "@/assets/clinic-logo.png";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -32,12 +33,7 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-xl">N</span>
-          </div>
-          <span className="text-2xl font-bold text-foreground">
-            Neuro•<span className="text-primary">Zen</span>
-          </span>
+          <img src={clinicLogo} alt="Neuro•Zen Clinic" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
