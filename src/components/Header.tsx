@@ -34,6 +34,9 @@ const Header = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
           <img src={clinicLogo} alt="Neuro•Zen Clinic" className="h-12 w-auto" />
+          <span className="text-2xl font-bold text-foreground">
+            Neuro•<span className="text-primary">Zen</span>
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
