@@ -19,11 +19,11 @@ const Footer = () => {
                 <span className="text-primary-foreground font-bold text-xl">N</span>
               </div>
               <span className="text-2xl font-bold">
-                Neuro<span className="text-primary">Zen</span>
+                Neuro•<span className="text-primary">Zen</span>
               </span>
             </div>
             <p className="text-secondary-foreground/70 text-sm leading-relaxed">
-              עילאי פארן, מנהל נוירופונקטורה ישראל.
+              <strong>עילאי פארן</strong>, מנהל נוירופונקטורה ישראל.
             </p>
           </motion.div>
 
@@ -80,7 +80,7 @@ const Footer = () => {
           </div>
           
           <p className="text-secondary-foreground/60 text-sm text-center">
-            © {new Date().getFullYear()} NeuroZen. כל הזכויות שמורות.
+            © {new Date().getFullYear()} Neuro•Zen. כל הזכויות שמורות.
           </p>
         </div>
       </div>

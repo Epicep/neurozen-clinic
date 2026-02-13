@@ -12,15 +12,15 @@ const EmotionalSection = () => {
           className="max-w-4xl mx-auto"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-8 leading-tight">
-            להחזיר את החיות למערכת: למה טיפול שיחתי הוא לפעמים רק חצי מהפתרון?
+            כשהמילים לא מספיקות: ויסות המערכת מהשורש
           </h2>
 
           <div className="bg-card rounded-2xl p-8 md:p-10 shadow-card border border-border/50">
             <p className="text-lg text-muted-foreground leading-[1.9] text-right">
-              בין אם אתם מרגישים דרוכים מדי – עם חרדה שלא מרפה, דופק מהיר ומחשבות שלא נחות, ובין אם אתם מרגישים כבויים מדי – במצב של דיכאון עמיד, תחושת ריקנות או כבדות פיזית ששום מילה לא מצליחה להזיז – הסיבה היא לרוב ביולוגית.
+              בין אם אתם מרגישים <strong className="text-foreground">דרוכים מדי</strong> – עם חרדה שלא מרפה וחוסר שקט, ובין אם אתם מרגישים <strong className="text-foreground">כבויים מדי</strong> – במצב של דיכאון עמיד, תחושת ריקנות או דכדוך כבד – הסיבה היא לרוב <strong className="text-foreground">ביולוגית</strong>.
             </p>
             <p className="text-lg text-muted-foreground leading-[1.9] text-right mt-6">
-              מערכת העצבים שלכם עשויה להינעל באחד משני מצבים: 'עוררות יתר' (הישרדות) או 'קפיאה' (ניתוק). במצבים אלו, ובמיוחד בדיכאון עמיד לטיפול, המוח פשוט מפסיק להגיב לגירויים רגילים. ב-Neuro•Zen אנחנו לא מבקשים מכם 'לחשוב חיובי' או להסביר את התחושה. אנחנו פונים ישירות לתשתית הביולוגית. דרך גישת ה-Bottom-Up, אנחנו מניעים את המערכת מהשורש הפיזיולוגי שלה, פותחים את החסימות הנוירולוגיות ומאפשרים לנפש להתחיל לנשום שוב.
+              מערכת העצבים שלכם עשויה להינעל במצב של <strong className="text-foreground">'עוררות יתר' (הישרדות)</strong> או <strong className="text-foreground">'קפיאה' (ניתוק)</strong>. במצבים אלו, המוח מתקשה להגיב לטיפולים המבוססים על שיח בלבד (<strong className="text-foreground">Top-Down</strong>). ב-Neuro•Zen אנו פונים ישירות אל ה<strong className="text-foreground">תשתית הביולוגית</strong> בגישת ה-<strong className="text-foreground">Bottom-Up</strong>: אנו מניעים את המערכת מהשורש הפיזיולוגי שלה, פותחים חסימות נוירולוגיות ומאפשרים לנפש להתחיל לנשום שוב.
             </p>
           </div>
         </motion.div>
