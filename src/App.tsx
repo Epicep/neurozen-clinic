@@ -9,6 +9,7 @@ import Neurological from "./pages/Neurological";
 import ChronicPain from "./pages/ChronicPain";
 import Metabolic from "./pages/Metabolic";
 import Method from "./pages/Method";
+import Welcome from "./pages/Welcome";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/chronic-pain" element={<ChronicPain />} />
           <Route path="/metabolic" element={<Metabolic />} />
           <Route path="/method" element={<Method />} />
+          <Route path="/welcome" element={<Welcome />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
