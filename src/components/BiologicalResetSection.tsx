@@ -6,8 +6,11 @@ const tools = [
     icon: Zap,
     title: "Stellate Ganglion Modulation",
     acronym: "SGM",
-    description:
-      "ויסות הצבר העצבי הסימפתטי ליציאה ממצב הישרדות ('כפתור אתחול' ביולוגי).",
+    description: (
+      <>
+        ויסות הצבר העצבי הסימפתטי המשמש כ'מרכז הפיקוד' של מערכת ההישרדות. זהו <strong>'כפתור האתחול' הביולוגי</strong> המאפשר למערכת העצבים לצאת ממצב דריכות כרוני וחזרה לאיזון (Homeostasis) ללא הליכים פולשניים.
+      </>
+    ),
     gradient: "from-primary/20 to-primary/5",
     iconBg: "bg-primary/15",
   },
@@ -15,8 +18,11 @@ const tools = [
     icon: Activity,
     title: "Transcutaneous Vagus Nerve Stimulation",
     acronym: "tVNS",
-    description:
-      "גירוי עדין של עצב הוואגוס להורדת רמות קורטיזול (הורמון הסטרס) ושיפור הוויסות העצמי.",
+    description: (
+      <>
+        גירוי עדין של עצב הוואגוס המשמש כ<strong>'בלם הטבעי'</strong> של הגוף. הפעלתו משדרת למוח אותות של ביטחון, מורידה מיידית את רמות הקורטיזול (הורמון הסטרס) ומשפרת את יכולת הוויסות העצמי.
+      </>
+    ),
     gradient: "from-teal/20 to-teal/5",
     iconBg: "bg-teal/15",
   },

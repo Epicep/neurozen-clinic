@@ -20,7 +20,10 @@ const NeuropunctureSection = () => {
 
           <div className="bg-card rounded-2xl p-8 md:p-10 shadow-card border border-border/50">
             <p className="text-lg text-muted-foreground leading-[1.9] text-right">
-              השיטה מלמדת כיצד להתמקד בקולטנים (receptors) ספציפיים לצורך נוירומודולציה של שחרור נוירוכימיקלים, לווסת מחדש רפלקסים לקויים במערכת העצבים האוטונומית, הוויסרלית והספינלית ו'חתימות מוחיות' (Cerebral signatures), ולהתמקד באזורים ספציפיים במוח ובמערכת העצבים המרכזית לצורך שיקום נוירולוגי (Neuro-rehabilitation).
+              השיטה, שפותחה על ידי <strong className="text-foreground">ד"ר מייקל קורדינו (Dr. Michael Corradino)</strong>, מאפשרת להתמקד בקולטנים (<strong className="text-foreground">receptors</strong>) ספציפיים לצורך נוירומודולציה של שחרור נוירוכימיקלים, לווסת מחדש רפלקסים לקויים במערכת העצבים האוטונומית, הוויסרלית והספינלית ו'חתימות מוחיות' (<strong className="text-foreground">Cerebral signatures</strong>), ולהתמקד באזורים ספציפיים במוח ובמערכת העצבים המרכזית לצורך שיקום נוירולוגי (<strong className="text-foreground">Neuro-rehabilitation</strong>).
+            </p>
+            <p className="text-base text-muted-foreground/80 leading-relaxed text-right mt-6 pt-6 border-t border-border/50">
+              המרשמים הטיפוליים נמצאים בתהליך רישום פטנט, מבוססים על עדויות מדעיות, נתמכים במחקר וניתנים לשחזור קליני.
             </p>
           </div>
         </motion.div>
