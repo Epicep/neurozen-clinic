@@ -12,7 +12,7 @@ const specialties = [
   },
   {
     icon: Battery,
-    title: "דיכאון עמיד ודכדוך",
+    title: "דיכאון ודכדוך",
   },
   {
     icon: Moon,
