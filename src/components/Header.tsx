@@ -27,8 +27,8 @@ const Header = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50"
-    >
+      className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
@@ -42,12 +42,12 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <button
-            onClick={handleContactClick}
-            className="text-foreground/70 hover:text-foreground transition-colors font-medium"
-          >
-            יצירת קשר
-          </button>
+          
+
+
+
+
+
         </nav>
 
         {/* CTA Button - Phone Call */}
@@ -58,25 +58,25 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          exit={{ opacity: 0, height: 0 }}
-          className="md:hidden bg-background border-t border-border/50"
-        >
+      {mobileMenuOpen &&
+      <motion.div
+        initial={{ opacity: 0, height: 0 }}
+        animate={{ opacity: 1, height: "auto" }}
+        exit={{ opacity: 0, height: 0 }}
+        className="md:hidden bg-background border-t border-border/50">
+
           <div className="container mx-auto px-6 py-4 space-y-4">
             <button
-              onClick={handleContactClick}
-              className="block text-foreground/70 hover:text-foreground transition-colors font-medium py-2 w-full text-right"
-            >
+            onClick={handleContactClick}
+            className="block text-foreground/70 hover:text-foreground transition-colors font-medium py-2 w-full text-right">
+
               יצירת קשר
             </button>
 
@@ -85,9 +85,9 @@ const Header = () => {
             </Button>
           </div>
         </motion.div>
-      )}
-    </motion.header>
-  );
+      }
+    </motion.header>);
+
 };
 
 export default Header;
