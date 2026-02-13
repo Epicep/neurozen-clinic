@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary text-secondary-foreground py-16">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-3 gap-12">
           {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -23,28 +23,8 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-secondary-foreground/70 text-sm leading-relaxed">
-              המרכז לנוירופונקטורה בישראל. מחזירים את מערכת העצבים לאיזון.
+              עילאי פארן, מנהל נוירופונקטורה ישראל.
             </p>
-          </motion.div>
-
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="space-y-4"
-          >
-            <h4 className="font-semibold text-lg">קישורים מהירים</h4>
-            <ul className="space-y-2">
-              {["אודות", "על השיטה", "תחומי טיפול", "צור קשר"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-secondary-foreground/70 hover:text-primary transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
           </motion.div>
 
           {/* Contact */}
@@ -52,18 +32,18 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.1 }}
             className="space-y-4"
           >
             <h4 className="font-semibold text-lg">יצירת קשר</h4>
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-secondary-foreground/70">
                 <Phone className="w-4 h-4 text-primary" />
-                <span>054-808-2487</span>
+                <span dir="ltr">054-808-2487</span>
               </li>
               <li className="flex items-center gap-3 text-secondary-foreground/70">
                 <MapPin className="w-4 h-4 text-primary" />
-                <span>תל אביב, ישראל</span>
+                <span>שאול המלך 39, תל אביב</span>
               </li>
             </ul>
           </motion.div>
@@ -73,23 +53,24 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.2 }}
             className="space-y-4"
           >
             <h4 className="font-semibold text-lg">התחילו עכשיו</h4>
             <p className="text-secondary-foreground/70 text-sm">
               בדקו אם הטיפול מתאים לכם בשיחה קצרה ללא התחייבות.
             </p>
-            <Button variant="hero" size="lg" className="w-full">
-              <MessageCircle className="w-5 h-5" />
-              <span>שלחו הודעה בוואטסאפ</span>
+            <Button variant="hero" size="lg" className="w-full" asChild>
+              <a href="https://wa.me/972548082487" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-5 h-5" />
+                <span>שלחו הודעה בוואטסאפ</span>
+              </a>
             </Button>
           </motion.div>
         </div>
 
         {/* Bottom Bar with Disclaimer */}
         <div className="mt-12 pt-8 border-t border-secondary-foreground/20 space-y-4">
-          {/* Medical Disclaimer */}
           <div className="bg-secondary-foreground/5 rounded-lg p-4 max-w-4xl mx-auto">
             <p className="text-secondary-foreground/80 text-sm leading-relaxed text-center">
               <strong>הבהרה רפואית:</strong> המידע המוצג באתר זה הינו למטרות מידע כללי בלבד ואינו מהווה ייעוץ רפואי, 
