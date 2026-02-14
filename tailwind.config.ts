@@ -59,6 +59,8 @@ export default {
           light: "hsl(var(--navy-light))",
         },
         lavender: "hsl(var(--lavender))",
+        "warm-gold": "hsl(var(--warm-gold))",
+        "warm-sand": "hsl(var(--warm-sand))",
       },
       borderRadius: {
         lg: "var(--radius)",
