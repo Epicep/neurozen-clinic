@@ -15,7 +15,7 @@ const EmotionalSection = () => {
             כשהמילים לא מספיקות: ויסות המערכת מהשורש
           </h2>
 
-          <p className="text-lg text-muted-foreground leading-relaxed text-center mb-10 max-w-3xl mx-auto">ההתמחות העיקרית של המרכז היא טיפול בחרדה, דיכאון ופוסט-טראומה (PTSD). הגישה הייחודית שלנו לא מחפשת 'לדבר' על הבעיה, אלא לפתור את השורש הביולוגי שלה דרך מערכת העצבים.
+          <p className="text-lg text-muted-foreground leading-relaxed text-center mb-10 max-w-3xl mx-auto">ההתמחות העיקרית של המרכז היא בטיפול בחרדה, דיכאון ופוסט-טראומה (PTSD). הגישה הייחודית שלנו לא מחפשת 'לדבר' על הבעיה, אלא לפתור את השורש הביולוגי שלה דרך מערכת העצבים.
             <strong className="text-foreground">ההתמחות העיקרית</strong> של המרכז היא בטיפול ב<strong className="text-foreground">חרדה, דיכאון ופוסט-טראומה (PTSD)</strong>. הגישה הייחודית שלנו לא מחפשת 'לדבר' על הבעיה, אלא לפתור את השורש הביולוגי שלה דרך מערכת העצבים.
           </p>
 
