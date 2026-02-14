@@ -38,7 +38,7 @@ const NeuroPillButton = ({ pill, delay }: { pill: typeof neuroPills[0]; delay: n
       onMouseLeave={() => setOpen(false)}
       onTouchStart={() => setOpen((v) => !v)}
     >
-      <button className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/90 backdrop-blur-sm border border-primary/25 text-[13px] font-medium text-foreground cursor-pointer hover:bg-white hover:border-primary/50 hover:shadow-md transition-all duration-300 shadow-sm">
+      <button className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/60 backdrop-blur-md border border-primary/20 text-[13px] font-medium text-foreground cursor-pointer hover:bg-white/80 hover:border-primary/40 hover:shadow-lg transition-all duration-300 shadow-sm">
         <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0"></span>
         <span>{pill.label}</span>
       </button>
@@ -77,7 +77,7 @@ const HeroSection = () => {
             className="space-y-8"
           >
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-right">
+             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-right tracking-[0.15em]">
                 Neuro•Zen
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground/90 leading-relaxed">
@@ -108,8 +108,8 @@ const HeroSection = () => {
             className="relative flex items-center justify-center order-first lg:order-last"
           >
             <div className="relative w-full max-w-xl mx-auto">
-              <div className="absolute inset-0 rounded-full blur-3xl opacity-30" style={{
-                background: 'radial-gradient(circle, hsl(175 50% 80%) 0%, transparent 70%)'
+              <div className="absolute inset-0 rounded-full blur-3xl opacity-40" style={{
+                background: 'radial-gradient(circle, hsl(168 65% 75% / 0.5) 0%, hsl(168 50% 85% / 0.2) 50%, transparent 75%)'
               }} />
               <div className="relative" style={{
                 maskImage: 'radial-gradient(ellipse 80% 75% at 50% 50%, black 30%, transparent 70%)',

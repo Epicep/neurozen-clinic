@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const EmotionalSection = () => {
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-[150px] bg-muted/30">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -15,7 +15,7 @@ const EmotionalSection = () => {
             כשהמילים לא מספיקות: ויסות המערכת מהשורש
           </h2>
 
-          <div className="bg-card rounded-2xl p-8 md:p-10 shadow-card border border-border/50">
+          <div className="bg-card rounded-2xl p-8 md:p-10 border-0 shadow-[0_4px_40px_-12px_hsl(220_60%_20%/0.08)]">
             <p className="text-lg text-muted-foreground leading-[1.9] text-right">
               בין אם אתם מרגישים <strong className="text-foreground">דרוכים מדי</strong> – עם חרדה שלא מרפה וחוסר שקט, ובין אם אתם מרגישים <strong className="text-foreground">כבויים מדי</strong> – במצב של דיכאון עמיד, תחושת ריקנות או דכדוך כבד – הסיבה היא לרוב <strong className="text-foreground">ביולוגית</strong>.
             </p>

@@ -30,7 +30,7 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-[150px] bg-background">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

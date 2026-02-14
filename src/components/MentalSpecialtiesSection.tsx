@@ -37,7 +37,7 @@ const specialties = [
 
 const MentalSpecialtiesSection = () => {
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-[150px] bg-muted/30">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,10 +59,10 @@ const MentalSpecialtiesSection = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <Card className="h-full border-border/50 bg-card hover:shadow-lg hover:border-primary/30 transition-all duration-300 group">
+              <Card className="h-full border-0 bg-card shadow-[0_4px_40px_-12px_hsl(220_60%_20%/0.08)] hover:shadow-[0_12px_50px_-12px_hsl(220_60%_20%/0.14)] hover:-translate-y-1.5 transition-all duration-300 group">
                 <CardContent className="p-6 flex flex-col h-full">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                    <item.icon className="w-6 h-6 text-primary" />
+                    <item.icon className="w-6 h-6 text-primary group-hover:text-accent-foreground transition-colors" />
                   </div>
 
                   <h3 className="text-xl font-bold text-foreground mb-4">

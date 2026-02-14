@@ -109,7 +109,7 @@ const Science = () => {
               key={index}
               {...fadeUp}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="bg-card rounded-2xl border border-border/60 p-8 md:p-10 shadow-sm"
+              className="bg-card rounded-2xl border-0 p-8 md:p-10 shadow-[0_4px_40px_-12px_hsl(220_60%_20%/0.08)] hover:shadow-[0_12px_50px_-12px_hsl(220_60%_20%/0.14)] hover:-translate-y-1 transition-all duration-300"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
