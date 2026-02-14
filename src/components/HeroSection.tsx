@@ -6,23 +6,23 @@ import brainImage from "@/assets/brain-hero.png";
 
 const neuroPills = [
   {
-    label: "נוירומודולציה לקולטנים עצביים",
-    description: "גירוי חשמלי מדויק המכוון לקולטנים ספציפיים במערכת העצבים כדי לעורר שחרור של נוירוכימיקלים (כמו דופמין וסרוטונין) לשיפור התפקוד וההרגשה.",
+    label: "נוירומודולציה",
+    description: "Neuromodulation - התמקדות בקולטנים (receptors) ספציפיים לצורך ויסות שחרור נוירוכימיקלים לשיפור התפקוד וההרגשה.",
   },
   {
-    label: "חתימות מוחיות (Cerebral signatures)",
-    description: "זיהוי דפוסים עצביים ייחודיים במוח הקשורים לתפקודים כמו שינה, תנועה ותחושת כאב. הטיפול פועל לשינוי וכיול מחדש של ה'חתימות' הללו.",
+    label: "חתימות מוחיות",
+    description: "Cerebral Signatures - כיול מחדש של דפוסים עצביים באזורים ספציפיים במוח האחראים על חתימות שינה, תנועה ותחושת כאב.",
   },
   {
-    label: "שיקום נוירולוגי (Neuro-rehabilitation)",
-    description: "תהליך של תיקון וחיווט מחדש של מערכת העצבים המרכזית וההיקפית. חיוני לשיקום אחרי שבץ, טיפול בכאב נוירופתי ומצבים נוירולוגיים כרוניים.",
+    label: "שיקום נוירולוגי",
+    description: "Neuro-rehabilitation - טיפול במערכת העצבים המרכזית וההיקפית לצורך חיווט מחדש במצבים כגון כאב נוירופתי ושיקום אחרי שבץ.",
   },
 ];
 
 const pillPositions = [
-  "absolute top-[10%] left-1/2 -translate-x-1/2 z-10",
-  "absolute top-[45%] -left-4 z-10",
-  "absolute bottom-[20%] right-[5%] z-10",
+  "absolute top-[8%] left-1/2 -translate-x-1/2 z-10",
+  "absolute top-[45%] -left-2 z-10",
+  "absolute bottom-[18%] right-[3%] z-10",
 ];
 
 const NeuroPillButton = ({ pill, delay }: { pill: typeof neuroPills[0]; delay: number }) => {
@@ -38,9 +38,9 @@ const NeuroPillButton = ({ pill, delay }: { pill: typeof neuroPills[0]; delay: n
       onMouseLeave={() => setOpen(false)}
       onTouchStart={() => setOpen((v) => !v)}
     >
-      <button className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-md border border-primary/30 text-sm font-medium text-foreground cursor-pointer hover:bg-white hover:border-primary/50 hover:shadow-lg transition-all duration-300">
+      <button className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/90 backdrop-blur-sm border border-primary/25 text-[13px] font-medium text-foreground cursor-pointer hover:bg-white hover:border-primary/50 hover:shadow-md transition-all duration-300 shadow-sm">
+        <span className="w-2 h-2 rounded-full bg-primary animate-pulse shrink-0"></span>
         <span>{pill.label}</span>
-        <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse shrink-0"></span>
       </button>
 
       <AnimatePresence>
@@ -98,20 +98,6 @@ const HeroSection = () => {
               </Button>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex items-center gap-4 pt-4"
-            >
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-accent overflow-hidden border-2 border-primary/20 flex items-center justify-center">
-                <span className="text-2xl">👨‍⚕️</span>
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">בניהולו של</p>
-                <p className="font-semibold text-foreground">עילאי פארן, מומחה לנוירופונקטורה</p>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Brain Visual - Left side (RTL) */}
