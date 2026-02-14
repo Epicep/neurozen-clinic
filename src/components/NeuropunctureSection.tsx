@@ -9,14 +9,14 @@ const NeuropunctureSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-center"
-        >
+          className="max-w-4xl mx-auto text-center">
+
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
             נוירופונקטורה | Neuropuncture
           </h2>
-          <h3 className="text-xl md:text-2xl font-semibold text-primary mb-8">
-            ההיגיון הביולוגי של מערכת העצבים
-          </h3>
+          
+
+
 
           <div className="bg-card rounded-2xl p-8 md:p-10 shadow-card border border-border/50">
             <p className="text-lg text-muted-foreground leading-[1.9] text-right">
@@ -28,8 +28,8 @@ const NeuropunctureSection = () => {
           </div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default NeuropunctureSection;
