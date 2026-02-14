@@ -30,7 +30,7 @@ const tools = [
 
 const BiologicalResetSection = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="py-[150px] bg-background">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -55,8 +55,8 @@ const BiologicalResetSection = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
             >
-              <div className={`rounded-2xl bg-gradient-to-br ${tool.gradient} p-1`}>
-                <div className="bg-card rounded-xl p-8 border border-border/50 hover:shadow-xl transition-shadow">
+              <div className="rounded-2xl">
+                <div className="bg-card rounded-xl p-8 border-0 shadow-[0_4px_40px_-12px_hsl(220_60%_20%/0.08)] hover:shadow-[0_12px_50px_-12px_hsl(220_60%_20%/0.14)] hover:-translate-y-1.5 transition-all duration-300">
                   <div className={`w-14 h-14 rounded-xl ${tool.iconBg} flex items-center justify-center mb-6`}>
                     <tool.icon className="w-7 h-7 text-primary" />
                   </div>

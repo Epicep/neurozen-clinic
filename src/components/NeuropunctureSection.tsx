@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const NeuropunctureSection = () => {
   return (
-    <section className="py-24 bg-background neural-mesh-bg">
+    <section className="py-[150px] bg-background neural-mesh-bg">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -20,7 +20,7 @@ const NeuropunctureSection = () => {
 
 
 
-          <div className="bg-card rounded-2xl p-8 md:p-10 shadow-card border border-border/50">
+          <div className="bg-card rounded-2xl p-8 md:p-10 border-0 shadow-[0_4px_40px_-12px_hsl(220_60%_20%/0.08)]">
             <p className="text-lg text-muted-foreground leading-[1.9] text-right">
               השיטה, שפותחה על ידי <strong className="text-foreground">ד"ר מייקל קורדינו (Dr. Michael Corradino)</strong>, מאפשרת להתמקד בקולטנים (<strong className="text-foreground">receptors</strong>) ספציפיים לצורך נוירומודולציה של שחרור נוירוכימיקלים, לווסת מחדש רפלקסים לקויים במערכת העצבים האוטונומית, הוויסרלית והספינלית ו'חתימות מוחיות' (<strong className="text-foreground">Cerebral signatures</strong>), ולהתמקד באזורים ספציפיים במוח ובמערכת העצבים המרכזית לצורך שיקום נוירולוגי (<strong className="text-foreground">Neuro-rehabilitation</strong>).
             </p>

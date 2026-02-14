@@ -25,7 +25,7 @@ const pillars = [
 
 const MolecularPillarsSection = () => {
   return (
-    <section className="py-24 bg-accent/30">
+    <section className="py-[150px] bg-accent/30">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,9 +51,9 @@ const MolecularPillarsSection = () => {
               transition={{ delay: index * 0.15 }}
               className="group"
             >
-              <div className="h-full bg-card rounded-2xl p-8 border border-border/50 shadow-soft hover:shadow-card transition-all duration-300">
+              <div className="h-full bg-card rounded-2xl p-8 border-0 shadow-[0_4px_40px_-12px_hsl(220_60%_20%/0.08)] hover:shadow-[0_12px_50px_-12px_hsl(220_60%_20%/0.14)] hover:-translate-y-1.5 transition-all duration-300">
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <pillar.icon className="w-7 h-7 text-primary" />
+                  <pillar.icon className="w-7 h-7 text-primary group-hover:text-accent-foreground transition-colors" />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-4 leading-snug">
                   {pillar.title}
