@@ -38,11 +38,10 @@ const Welcome = () => {
             שלב א': הצהרת בריאות
           </h2>
           <Card className="border-border/50">
-            <CardContent className="p-6">
-              <div className="bg-muted rounded-lg h-[500px] flex items-center justify-center text-muted-foreground">
-                {/* Google Form iframe placeholder */}
-                <p className="text-sm">טופס הצהרת בריאות ייטען כאן</p>
-              </div>
+            <CardContent className="p-6 flex justify-center">
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdAtbemuaXhcax2P7I-ZDaFevWVO2uDyW1gVNKfIq6xoyKOYg/viewform?embedded=true" width={640} height={5002} frameBorder="0" marginHeight={0} marginWidth={0}>
+                בטעינה…
+              </iframe>
             </CardContent>
           </Card>
         </motion.div>
@@ -57,11 +56,10 @@ const Welcome = () => {
             שלב ב': הערכה קלינית (PHQ-9, GAD-7, PCL-5)
           </h2>
           <Card className="border-border/50">
-            <CardContent className="p-6">
-              <div className="bg-muted rounded-lg h-[500px] flex items-center justify-center text-muted-foreground">
-                {/* Google Form iframe placeholder */}
-                <p className="text-sm">שאלון הערכה קלינית ייטען כאן</p>
-              </div>
+            <CardContent className="p-6 flex justify-center">
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeL4RgQie2CxwDpf9fveqLmrDtLVvpm0gVG4dLmlAHJ3cDP-g/viewform?embedded=true" width={640} height={2866} frameBorder="0" marginHeight={0} marginWidth={0}>
+                בטעינה…
+              </iframe>
             </CardContent>
           </Card>
         </motion.div>
