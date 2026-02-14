@@ -9,13 +9,13 @@ const EmotionalSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
-        >
+          className="max-w-4xl mx-auto">
+
           <h2 className="text-3xl md:text-4xl font-bold text-foreground text-center mb-6 leading-tight">
             כשהמילים לא מספיקות: ויסות המערכת מהשורש
           </h2>
 
-          <p className="text-lg text-muted-foreground leading-relaxed text-center mb-10 max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground leading-relaxed text-center mb-10 max-w-3xl mx-auto">ההתמחות העיקרית של המרכז היא טיפול בחרדה, דיכאון ופוסט-טראומה (PTSD). הגישה הייחודית שלנו לא מחפשת 'לדבר' על הבעיה, אלא לפתור את השורש הביולוגי שלה דרך מערכת העצבים.
             <strong className="text-foreground">ההתמחות העיקרית</strong> של המרכז היא בטיפול ב<strong className="text-foreground">חרדה, דיכאון ופוסט-טראומה (PTSD)</strong>. הגישה הייחודית שלנו לא מחפשת 'לדבר' על הבעיה, אלא לפתור את השורש הביולוגי שלה דרך מערכת העצבים.
           </p>
 
@@ -29,8 +29,8 @@ const EmotionalSection = () => {
           </div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default EmotionalSection;
