@@ -72,7 +72,7 @@ const Welcome = () => {
         >
           <Card className="border-primary/20 bg-accent/20">
             <CardContent className="p-8 space-y-4">
-              <h3 className="text-lg font-semibold text-foreground mb-4">פרטים לקראת הפגישה</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-4">פרטי הגעה</h3>
               <div className="space-y-3 text-muted-foreground">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
