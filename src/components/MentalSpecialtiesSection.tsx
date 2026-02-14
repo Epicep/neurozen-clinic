@@ -37,7 +37,7 @@ const specialties = [
 
 const MentalSpecialtiesSection = () => {
   return (
-    <section className="py-[150px] bg-muted/30">
+    <section className="py-[120px] bg-muted/30">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -13,7 +13,7 @@ import {
 
 const LeadCaptureSection = () => {
   return (
-    <section id="lead-capture" className="py-[150px] bg-muted/30 neural-mesh-bg">
+    <section id="lead-capture" className="py-[120px] bg-muted/30 neural-mesh-bg">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Direct Contact */}

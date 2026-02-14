@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const SolutionSection = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-lavender/50 to-background overflow-hidden">
+    <section className="py-[120px] bg-gradient-to-b from-lavender/50 to-background overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Text Content */}

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const NeuropunctureSection = () => {
   return (
-    <section className="py-[150px] bg-background neural-mesh-bg">
+    <section className="py-[120px] bg-background neural-mesh-bg">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

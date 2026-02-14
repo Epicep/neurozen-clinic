@@ -18,8 +18,8 @@ const AuthorityBar = () => {
           className="flex flex-wrap items-center justify-center gap-8 md:gap-16"
         >
           {items.map((item, i) => (
-            <div key={i} className="flex items-center gap-3 text-muted-foreground">
-              <item.icon className="w-5 h-5 text-primary" />
+            <div key={i} className="flex items-center gap-3 text-muted-foreground group cursor-default">
+              <item.icon className="w-5 h-5 text-muted-foreground/50 group-hover:text-primary transition-colors duration-300" />
               <span className="text-sm font-medium">{item.label}</span>
             </div>
           ))}
