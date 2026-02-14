@@ -57,7 +57,7 @@ const Welcome = () => {
           </h2>
           <Card className="border-border/50">
             <CardContent className="p-6 flex justify-center">
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeL4RgQie2CxwDpf9fveqLmrDtLVvpm0gVG4dLmlAHJ3cDP-g/viewform?embedded=true" width={640} height={2866} frameBorder="0" marginHeight={0} marginWidth={0}>
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeL4RgQie2CxwDpf9fveqLmrDtLVvpm0gVG4dLmlAHJ3cDP-g/viewform?embedded=true" width={640} height={1800} frameBorder="0" marginHeight={0} marginWidth={0}>
                 בטעינה…
               </iframe>
             </CardContent>
@@ -72,20 +72,24 @@ const Welcome = () => {
         >
           <Card className="border-primary/20 bg-accent/20">
             <CardContent className="p-8 space-y-4">
-              <h3 className="text-lg font-semibold text-foreground mb-4">פרטי הגעה</h3>
-              <div className="space-y-3 text-muted-foreground">
+              <h3 className="text-xl font-semibold text-foreground mb-5">פרטי הגעה</h3>
+              <div className="space-y-4 text-muted-foreground text-lg">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <MapPin className="w-6 h-6 text-primary mt-0.5 shrink-0" />
                   <span>שאול המלך 39, תל אביב</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Building className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <Building className="w-6 h-6 text-primary mt-0.5 shrink-0" />
                   <span>בית הדר דפנה, בניין B, קומה 5, חדר 505</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Shirt className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <Shirt className="w-6 h-6 text-primary mt-0.5 shrink-0" />
                   <span>מומלץ להגיע בבגדים נוחים. אני מחכה לפגוש אותך.</span>
                 </div>
+                <p className="pt-2">
+                  אם יש שינויים או שאלות נוספות, תמיד ניתן ליצור קשר{' '}
+                  <a href="https://wa.me/972501234567" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">בוואטסאפ</a>.
+                </p>
               </div>
             </CardContent>
           </Card>
