@@ -1,26 +1,37 @@
 import { motion } from "framer-motion";
-import { Heart, Brain, Battery, Moon, Flame } from "lucide-react";
+import { Activity, Heart, Zap, ArrowLeft } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const specialties = [
   {
+    icon: Activity,
+    title: "שיקום נוירולוגי ומערכתי",
+    link: "/neurological",
+    conditions: [
+      { name: "פרקינסון", description: "תמיכה בתפקוד המוטורי ושיפור איכות החיים." },
+      { name: "טרשת נפוצה (M.S)", description: "ויסות מערכת החיסון והאטה של תהליכים דלקתיים." },
+      { name: "פוסט-שבץ", description: "עידוד נוירופלסטיות ושיקום תפקודי." },
+    ],
+  },
+  {
     icon: Heart,
-    title: "חרדה גבוהה ועוררות יתר",
+    title: "איזון מטבולי והורמונלי",
+    link: "/metabolic",
+    conditions: [
+      { name: "סוכרת (Type 2)", description: "שיפור הרגישות לאינסולין וויסות רמות הסוכר." },
+      { name: "יתר לחץ דם", description: "הרגעת המערכת הסימפתטית ואיזון מהשורש העצבי." },
+    ],
   },
   {
-    icon: Brain,
-    title: "פוסט-טראומה (PTSD)",
-  },
-  {
-    icon: Battery,
-    title: "דיכאון עמיד ודכדוך",
-  },
-  {
-    icon: Moon,
-    title: "הפרעות שינה (אינסומניה)",
-  },
-  {
-    icon: Flame,
-    title: "שחיקה ומתח כרוני",
+    icon: Zap,
+    title: "טיפול בכאב ובמצבים כרוניים",
+    link: "/chronic-pain",
+    conditions: [
+      { name: "פיברומיאלגיה", description: "הפחתת רגישות-יתר של מערכת העצבים המרכזית." },
+      { name: "כאב נוירופתי", description: "הרגעת דלקות עצביות ושיקום תקשורת עצבית." },
+    ],
   },
 ];
 
@@ -39,20 +50,45 @@ const MentalSpecialtiesSection = () => {
           </h2>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {specialties.map((item, index) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.08 }}
-              className="flex items-center gap-3 bg-card rounded-full px-6 py-4 border border-border/50 shadow-soft hover:shadow-card hover:border-primary/30 transition-all duration-300"
+              transition={{ delay: index * 0.1 }}
             >
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                <item.icon className="w-5 h-5 text-primary" />
-              </div>
-              <span className="font-semibold text-foreground whitespace-nowrap">{item.title}</span>
+              <Card className="h-full border-border/50 bg-card hover:shadow-lg hover:border-primary/30 transition-all duration-300 group">
+                <CardContent className="p-6 flex flex-col h-full">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <item.icon className="w-6 h-6 text-primary" />
+                  </div>
+
+                  <h3 className="text-xl font-bold text-foreground mb-4">
+                    {item.title}
+                  </h3>
+
+                  <ul className="space-y-3 flex-grow mb-6">
+                    {item.conditions.map((condition) => (
+                      <li key={condition.name} className="flex items-start gap-2 text-sm text-muted-foreground leading-relaxed">
+                        <span className="text-primary mt-1 shrink-0">•</span>
+                        <span>
+                          <strong className="text-foreground">{condition.name}:</strong>{" "}
+                          {condition.description}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link to={item.link}>
+                    <Button variant="outline" size="sm" className="w-full group-hover:border-primary/50 transition-colors">
+                      <span>למידע נוסף</span>
+                      <ArrowLeft className="w-4 h-4 mr-1" />
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>
