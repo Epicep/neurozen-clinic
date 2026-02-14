@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const NeuropunctureSection = () => {
   return (
@@ -25,6 +27,11 @@ const NeuropunctureSection = () => {
             <p className="text-base text-muted-foreground/80 leading-relaxed text-right mt-6 pt-6 border-t border-border/50">
               המרשמים הטיפוליים נמצאים בתהליך רישום פטנט, מבוססים על עדויות מדעיות, נתמכים במחקר וניתנים לשחזור קליני.
             </p>
+            <div className="mt-8 flex justify-end">
+              <Button asChild variant="heroOutline" size="lg">
+                <Link to="/science">המדע שמאחורי</Link>
+              </Button>
+            </div>
           </div>
         </motion.div>
       </div>
