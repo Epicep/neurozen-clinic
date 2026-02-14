@@ -1,7 +1,66 @@
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle } from "lucide-react";
+import { useState } from "react";
 import brainImage from "@/assets/brain-hero.png";
+
+const neuroPills = [
+  {
+    label: "נוירומודולציה לקולטנים עצביים",
+    description: "גירוי חשמלי מדויק המכוון לקולטנים ספציפיים במערכת העצבים כדי לעורר שחרור של נוירוכימיקלים (כמו דופמין וסרוטונין) לשיפור התפקוד וההרגשה.",
+  },
+  {
+    label: "חתימות מוחיות (Cerebral signatures)",
+    description: "זיהוי דפוסים עצביים ייחודיים במוח הקשורים לתפקודים כמו שינה, תנועה ותחושת כאב. הטיפול פועל לשינוי וכיול מחדש של ה'חתימות' הללו.",
+  },
+  {
+    label: "שיקום נוירולוגי (Neuro-rehabilitation)",
+    description: "תהליך של תיקון וחיווט מחדש של מערכת העצבים המרכזית וההיקפית. חיוני לשיקום אחרי שבץ, טיפול בכאב נוירופתי ומצבים נוירולוגיים כרוניים.",
+  },
+];
+
+const pillPositions = [
+  "absolute top-[10%] left-1/2 -translate-x-1/2 z-10",
+  "absolute top-[45%] -left-4 z-10",
+  "absolute bottom-[20%] right-[5%] z-10",
+];
+
+const NeuroPillButton = ({ pill, delay }: { pill: typeof neuroPills[0]; delay: number }) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, delay }}
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      onTouchStart={() => setOpen((v) => !v)}
+    >
+      <button className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-md border border-primary/30 text-sm font-medium text-foreground cursor-pointer hover:bg-white hover:border-primary/50 hover:shadow-lg transition-all duration-300">
+        <span>{pill.label}</span>
+        <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse shrink-0"></span>
+      </button>
+
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: 8, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 8, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-full mt-2 right-0 w-72 p-4 rounded-xl bg-white shadow-[0_8px_30px_-8px_hsl(220_60%_20%/0.12)] border border-primary/20 z-50 text-right"
+          >
+            <p className="text-sm text-muted-foreground leading-relaxed font-heebo">
+              {pill.description}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};
 
 const HeroSection = () => {
   return (
@@ -79,35 +138,11 @@ const HeroSection = () => {
                 />
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
-                className="absolute top-[10%] left-1/2 -translate-x-1/2 floating-badge z-10"
-              >
-                <span className="text-foreground text-sm">נוירומודולציה</span>
-                <span className="node-dot"></span>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 1 }}
-                className="absolute top-[45%] -left-4 floating-badge z-10"
-              >
-                <span className="text-foreground text-sm">ויסות עצבי</span>
-                <span className="node-dot"></span>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 1.2 }}
-                className="absolute bottom-[20%] right-[5%] floating-badge z-10"
-              >
-                <span className="text-foreground text-sm">שיקום תפקודי</span>
-                <span className="node-dot"></span>
-              </motion.div>
+              {neuroPills.map((pill, i) => (
+                <div key={i} className={pillPositions[i]}>
+                  <NeuroPillButton pill={pill} delay={0.8 + i * 0.2} />
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>
