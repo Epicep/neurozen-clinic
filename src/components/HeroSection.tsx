@@ -65,7 +65,7 @@ const NeuroPillButton = ({ pill, delay }: { pill: typeof neuroPills[0]; delay: n
 const HeroSection = () => {
   return (
     <section className="min-h-screen pt-24 pb-16 relative" style={{
-      background: 'linear-gradient(180deg, hsl(180 20% 98%) 0%, hsl(175 30% 95%) 30%, hsl(180 20% 98%) 70%, hsl(0 0% 100%) 100%)'
+      background: 'linear-gradient(180deg, hsl(45 20% 97%) 0%, hsl(170 20% 95%) 30%, hsl(45 15% 97%) 70%, hsl(45 15% 99%) 100%)'
     }}>
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
@@ -109,7 +109,7 @@ const HeroSection = () => {
           >
             <div className="relative w-full max-w-xl mx-auto">
               <div className="absolute inset-0 rounded-full blur-3xl opacity-40" style={{
-                background: 'radial-gradient(circle, hsl(168 65% 75% / 0.5) 0%, hsl(168 50% 85% / 0.2) 50%, transparent 75%)'
+                background: 'radial-gradient(circle, hsl(168 50% 72% / 0.35) 0%, hsl(40 40% 80% / 0.15) 40%, transparent 70%)'
               }} />
               <div className="relative" style={{
                 maskImage: 'radial-gradient(ellipse 80% 75% at 50% 50%, black 30%, transparent 70%)',
