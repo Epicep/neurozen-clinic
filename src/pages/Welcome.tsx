@@ -21,7 +21,7 @@ const steps = [
     description: "נא למלא את שני הטפסים הבאים. המידע חיוני לבניית התוכנית הטיפולית (אין צורך בחשבון גוגל):",
     buttons: [
       { label: "הצהרת בריאות", href: "https://forms.gle/KcHn8kXa7udriYjBA", icon: FileHeart },
-      { label: "טופס הערכה קלינית (מדדי חרדה ודיכאון)", href: "https://forms.gle/a9ie67rSpjMnzzkQ9", icon: FileText, subtitle: "טופס זה מאפשר לנו להעריך בצורה מדויקת את רמות החרדה והדיכאון, כדי להתאים עבורך את המרשם הטיפולי האפקטיבי ביותר." },
+      { label: "טופס הערכה קלינית", href: "https://forms.gle/a9ie67rSpjMnzzkQ9", icon: FileText, subtitle: "טופס זה מאפשר לנו להעריך בצורה מדויקת את רמות החרדה והדיכאון, כדי להתאים עבורך את המרשם הטיפולי האפקטיבי ביותר." },
     ],
   },
   {
