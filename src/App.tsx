@@ -12,6 +12,7 @@ import Metabolic from "./pages/Metabolic";
 import Method from "./pages/Method";
 import Science from "./pages/Science";
 import Welcome from "./pages/Welcome";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/method" element={<Method />} />
           <Route path="/science" element={<Science />} />
           <Route path="/welcome" element={<Welcome />} />
+          <Route path="/about" element={<About />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

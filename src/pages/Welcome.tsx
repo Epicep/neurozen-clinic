@@ -39,8 +39,8 @@ const Welcome = () => {
           </h2>
           <Card className="border-border/50">
             <CardContent className="p-6 flex justify-center">
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdAtbemuaXhcax2P7I-ZDaFevWVO2uDyW1gVNKfIq6xoyKOYg/viewform?embedded=true" width={640} height={5002} frameBorder="0" marginHeight={0} marginWidth={0}>
-                בטעינה…
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScHidhvuULeFuR_xRT9idOr_wvmemLage95grQ9p6wFNLyt3A/viewform?embedded=true" width="100%" height={4828} frameBorder="0" style={{ border: 0 }}>
+                Loading…
               </iframe>
             </CardContent>
           </Card>
@@ -57,8 +57,8 @@ const Welcome = () => {
           </h2>
           <Card className="border-border/50">
             <CardContent className="p-6 flex justify-center">
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeL4RgQie2CxwDpf9fveqLmrDtLVvpm0gVG4dLmlAHJ3cDP-g/viewform?embedded=true" width={640} height={1800} frameBorder="0" marginHeight={0} marginWidth={0}>
-                בטעינה…
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeK2JSWp5k0mIZJrOWPwNDf4-lLSaAHI8F07Z__PMl0BiKh9g/viewform?embedded=true" width="100%" height={7133} frameBorder="0" style={{ border: 0 }}>
+                Loading…
               </iframe>
             </CardContent>
           </Card>
@@ -88,7 +88,7 @@ const Welcome = () => {
                 </div>
                 <p className="pt-2">
                   אם יש שינויים או שאלות נוספות, תמיד ניתן ליצור קשר{' '}
-                  <a href="https://wa.me/972501234567" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">בוואטסאפ</a>.
+                  <a href="https://wa.me/972548082487" target="_blank" rel="noopener noreferrer" className="text-primary font-medium hover:underline">בוואטסאפ</a>.
                 </p>
               </div>
             </CardContent>
