@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { CreditCard, ClipboardList, CalendarDays, MapPin, Building, Shirt, Navigation, MessageCircle, FileText, FileHeart } from "lucide-react";
+import { CreditCard, ClipboardList, CalendarDays, MapPin, Building, Shirt, Navigation, MessageCircle, FileText, FileHeart, ArrowRight, Instagram } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -20,7 +21,7 @@ const steps = [
     description: "נא למלא את שני הטפסים הבאים. המידע חיוני לבניית התוכנית הטיפולית (אין צורך בחשבון גוגל):",
     buttons: [
       { label: "הצהרת בריאות", href: "https://forms.gle/KcHn8kXa7udriYjBA", icon: FileHeart },
-      { label: "שאלון רפואי מורחב", href: "https://forms.gle/a9ie67rSpjMnzzkQ9", icon: FileText },
+      { label: "טופס הערכה קלינית (מדדי חרדה ודיכאון)", href: "https://forms.gle/a9ie67rSpjMnzzkQ9", icon: FileText, subtitle: "טופס זה מאפשר לנו להעריך בצורה מדויקת את רמות החרדה והדיכאון, כדי להתאים עבורך את המרשם הטיפולי האפקטיבי ביותר." },
     ],
   },
   {
@@ -39,7 +40,12 @@ const Welcome = () => {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <div className="bg-accent/30 py-16 px-6">
-        <div className="container mx-auto max-w-2xl text-center">
+        <div className="container mx-auto max-w-2xl">
+          <Link to="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm mb-8">
+            <ArrowRight className="w-4 h-4" />
+            חזרה לדף הבית
+          </Link>
+          <div className="text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -55,6 +61,7 @@ const Welcome = () => {
           >
             כדי למקסם את זמן המפגש שלנו, אנא השלימו את 3 השלבים הפשוטים הבאים:
           </motion.p>
+          </div>
         </div>
       </div>
 
@@ -78,14 +85,19 @@ const Welcome = () => {
                   <h2 className="text-xl font-semibold text-foreground">{step.title}</h2>
                 </div>
                 <p className="text-muted-foreground mb-6 leading-relaxed">{step.description}</p>
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col gap-3">
                   {step.buttons.map((btn) => (
-                    <Button key={btn.label} variant="hero" size="lg" className="w-full sm:w-auto" asChild>
-                      <a href={btn.href} target="_blank" rel="noopener noreferrer">
-                        {btn.icon && <btn.icon className="w-5 h-5" />}
-                        {btn.label}
-                      </a>
-                    </Button>
+                    <div key={btn.label}>
+                      {(btn as any).subtitle && (
+                        <p className="text-muted-foreground text-sm mb-2 leading-relaxed">{(btn as any).subtitle}</p>
+                      )}
+                      <Button variant="hero" size="lg" className="w-full sm:w-auto" asChild>
+                        <a href={btn.href} target="_blank" rel="noopener noreferrer">
+                          {btn.icon && <btn.icon className="w-5 h-5" />}
+                          {btn.label}
+                        </a>
+                      </Button>
+                    </div>
                   ))}
                 </div>
               </CardContent>
@@ -138,6 +150,24 @@ const Welcome = () => {
               </p>
             </CardContent>
           </Card>
+        </motion.div>
+
+        {/* Instagram */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center py-4"
+        >
+          <a
+            href="https://www.instagram.com/neurozen_neuropuncture/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
+          >
+            <Instagram className="w-5 h-5" />
+            עקבו אחרינו באינסטגרם לעדכונים ותכנים נוספים
+          </a>
         </motion.div>
       </div>
     </div>
