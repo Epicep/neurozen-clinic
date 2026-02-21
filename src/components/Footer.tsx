@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MessageCircle, Phone, MapPin } from "lucide-react";
+import { MessageCircle, Phone, MapPin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
@@ -44,6 +44,12 @@ const Footer = () => {
               <li className="flex items-center gap-3 text-secondary-foreground/70">
                 <MapPin className="w-4 h-4 text-primary" />
                 <span>שאול המלך 39, תל אביב</span>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/neurozen_neuropuncture/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-secondary-foreground/70 hover:text-primary transition-colors">
+                  <Instagram className="w-4 h-4 text-primary" />
+                  <span>neurozen_neuropuncture</span>
+                </a>
               </li>
             </ul>
           </motion.div>

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram } from "lucide-react";
 import clinicLogo from "@/assets/clinic-logo.png";
 
 const Header = () => {
@@ -42,9 +42,29 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
           <Link to="/science" className="text-foreground/70 hover:text-foreground transition-colors font-medium">
-            המדע שמאחורי
+            המדע מאחורי השיטה
           </Link>
-
+          <button
+            onClick={() => {
+              if (location.pathname !== "/") {
+                navigate("/");
+                setTimeout(() => {
+                  document.getElementById("specialties")?.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+              } else {
+                document.getElementById("specialties")?.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="text-foreground/70 hover:text-foreground transition-colors font-medium"
+          >
+            מעבר לטיפול בנפש
+          </button>
+          <Link to="/about" className="text-foreground/70 hover:text-foreground transition-colors font-medium">
+            אודות
+          </Link>
+          <a href="https://www.instagram.com/neurozen_neuropuncture/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-foreground transition-colors">
+            <Instagram className="w-5 h-5" />
+          </a>
         </nav>
 
         {/* CTA Button - Phone Call */}
@@ -75,15 +95,36 @@ const Header = () => {
               onClick={() => setMobileMenuOpen(false)}
               className="block text-foreground/70 hover:text-foreground transition-colors font-medium py-2 w-full text-right"
             >
-              המדע שמאחורי
+              המדע מאחורי השיטה
             </Link>
             <button
-              onClick={handleContactClick}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (location.pathname !== "/") {
+                  navigate("/");
+                  setTimeout(() => {
+                    document.getElementById("specialties")?.scrollIntoView({ behavior: "smooth" });
+                  }, 100);
+                } else {
+                  document.getElementById("specialties")?.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
               className="block text-foreground/70 hover:text-foreground transition-colors font-medium py-2 w-full text-right"
             >
-              יצירת קשר
+              מעבר לטיפול בנפש
             </button>
-
+            <Link
+              to="/about"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-foreground/70 hover:text-foreground transition-colors font-medium py-2 w-full text-right"
+            >
+              אודות
+            </Link>
+            <div className="flex items-center justify-end gap-3">
+              <a href="https://www.instagram.com/neurozen_neuropuncture/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-foreground transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+            </div>
             <Button variant="heroOutline" size="default" asChild className="w-full">
               <a href="tel:0548082487">תיאום פגישה</a>
             </Button>
