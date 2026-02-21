@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, MessageCircle } from "lucide-react";
+import { Phone, MessageCircle, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,6 +13,25 @@ import {
 } from "@/components/ui/select";
 
 const LeadCaptureSection = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
+      });
+      setSubmitted(true);
+    } catch {
+      setSubmitted(true);
+    }
+  };
+
   return (
     <section id="lead-capture" className="py-[120px] bg-muted/30 neural-mesh-bg">
       <div className="container mx-auto px-6">
@@ -60,58 +80,88 @@ const LeadCaptureSection = () => {
             className="order-1 lg:order-2"
           >
             <div className="bg-card rounded-2xl p-8 shadow-lg border border-border">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-                הצעד הראשון הוא תמיד הכי קשה.
-              </h2>
-              <p className="text-muted-foreground mb-8">
-                השאירו פרטים ונחזור אליכם לשיחת ייעוץ ללא התחייבות.
-              </p>
-
-              <form className="space-y-5">
-                <div className="space-y-2">
-                  <Label htmlFor="name">שם מלא</Label>
-                  <Input 
-                    id="name" 
-                    placeholder="הזינו את שמכם המלא" 
-                    className="text-right"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="phone">טלפון נייד</Label>
-                  <Input 
-                    id="phone" 
-                    type="tel" 
-                    placeholder="050-0000000" 
-                    className="text-right"
-                    dir="ltr"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="time">מתי נוח שנתקשר?</Label>
-                  <Select>
-                    <SelectTrigger id="time" className="text-right">
-                      <SelectValue placeholder="בחרו זמן מועדף" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="morning">בוקר</SelectItem>
-                      <SelectItem value="afternoon">צהריים</SelectItem>
-                      <SelectItem value="evening">ערב</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <Button 
-                  type="submit" 
-                  variant="hero" 
-                  size="lg" 
-                  className="w-full gap-2"
+              {submitted ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="text-center py-12 space-y-4"
                 >
-                  חזרו אליי עם פרטים
-                  <Phone className="w-4 h-4" />
-                </Button>
-              </form>
+                  <CheckCircle className="w-16 h-16 text-primary mx-auto" />
+                  <h3 className="text-2xl font-bold text-foreground">
+                    תודה רבה, פנייתך התקבלה.
+                  </h3>
+                  <p className="text-muted-foreground text-lg">
+                    נחזור אליך בהקדם.
+                  </p>
+                </motion.div>
+              ) : (
+                <>
+                  <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+                    הצעד הראשון הוא תמיד הכי קשה.
+                  </h2>
+                  <p className="text-muted-foreground mb-8">
+                    השאירו פרטים ונחזור אליכם לשיחת ייעוץ ללא התחייבות.
+                  </p>
+
+                  <form
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    onSubmit={handleSubmit}
+                    className="space-y-5"
+                  >
+                    <input type="hidden" name="form-name" value="contact" />
+
+                    <div className="space-y-2">
+                      <Label htmlFor="full-name">שם מלא</Label>
+                      <Input 
+                        id="full-name"
+                        name="full-name"
+                        placeholder="הזינו את שמכם המלא" 
+                        className="text-right"
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">טלפון נייד</Label>
+                      <Input 
+                        id="phone"
+                        name="phone"
+                        type="tel" 
+                        placeholder="050-0000000" 
+                        className="text-right"
+                        dir="ltr"
+                        required
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="preferred-time">מתי נוח שנתקשר?</Label>
+                      <Select name="preferred-time">
+                        <SelectTrigger id="preferred-time" className="text-right">
+                          <SelectValue placeholder="בחרו זמן מועדף" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="morning">בוקר</SelectItem>
+                          <SelectItem value="afternoon">צהריים</SelectItem>
+                          <SelectItem value="evening">ערב</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    <Button 
+                      type="submit" 
+                      variant="hero" 
+                      size="lg" 
+                      className="w-full gap-2"
+                    >
+                      חזרו אליי עם פרטים
+                      <Phone className="w-4 h-4" />
+                    </Button>
+                  </form>
+                </>
+              )}
             </div>
           </motion.div>
         </div>
