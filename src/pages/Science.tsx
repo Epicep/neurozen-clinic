@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Brain, Zap, Activity, Stethoscope, BookOpen, ExternalLink } from "lucide-react";
+import ScienceInfographic from "@/components/science/ScienceInfographic";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -22,7 +23,6 @@ const sections = [
     links: [
       { label: "The Role of Endogenous Opioids in Acupuncture (PubMed)", url: "https://pubmed.ncbi.nlm.nih.gov/14990755/" },
     ],
-    visual: "Neural Synapse Diagram",
   },
   {
     icon: Brain,
@@ -41,14 +41,13 @@ const sections = [
     title: "ויסות עצב הוואגוס והמערכת האוטונומית",
     text: (
       <>
-        השימוש בטכניקות כמו <strong>SGM</strong> ו-<strong>tVNS</strong> מאפשר גירוי מדויק של עצב הוואגוס – ה'בלם' המרכזי של מערכת הסטרס. מחקרים מראים שגירוי זה מוריד רמות קורטיזול ומחזיר את הגוף לאיזון (Homeostasis).
+        הטיפול מאפשר גירוי מדויק של עצב הוואגוס – ה'בלם' המרכזי של מערכת הסטרס. מחקרים מראים שגירוי זה מוריד רמות קורטיזול ומחזיר את הגוף לאיזון (Homeostasis).
       </>
     ),
     links: [
       { label: "Vagus Nerve Stimulation and Autonomic Regulation (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8613407/" },
       { label: "Autonomic Effects of Acupuncture (PubMed)", url: "https://pubmed.ncbi.nlm.nih.gov/9646895/" },
     ],
-    visual: "Vagus Nerve Pathway Diagram",
   },
   {
     icon: Stethoscope,
@@ -101,7 +100,7 @@ const Science = () => {
         </div>
       </section>
 
-      {/* Sections */}
+      {/* Text Sections */}
       <section className="py-16">
         <div className="container mx-auto px-6 max-w-4xl space-y-16">
           {sections.map((section, index) => (
@@ -124,12 +123,6 @@ const Science = () => {
                 {section.text}
               </p>
 
-              {section.visual && (
-                <div className="w-full h-48 rounded-xl bg-muted/50 border border-border/40 flex items-center justify-center mb-6">
-                  <span className="text-muted-foreground/60 text-sm">[{section.visual}]</span>
-                </div>
-              )}
-
               <div className="flex flex-wrap gap-3">
                 {section.links.map((link, i) => (
                   <a
@@ -148,6 +141,9 @@ const Science = () => {
           ))}
         </div>
       </section>
+
+      {/* Infographic + Research Library */}
+      <ScienceInfographic />
 
       <Footer />
     </div>
