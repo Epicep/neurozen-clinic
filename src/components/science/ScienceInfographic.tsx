@@ -13,7 +13,6 @@ import {
   Tooltip,
   BarChart,
   Bar,
-  Cell,
 } from "recharts";
 import { PFCBrainIcon, HPAAxisIcon, VagusNerveIcon } from "./ScienceIcons";
 
@@ -43,10 +42,8 @@ const lineData = [
 ];
 
 const barData = [
-  { name: "HRV", value: 72, color: "#5B9A8B" },
-  { name: "איזון סימפתטי", value: 65, color: "#36454F" },
-  { name: "איזון פאראסימפתטי", value: 85, color: "#A3B18A" },
-  { name: "תגובת Vagal", value: 78, color: "#5B9A8B" },
+  { name: "HRV", control: 25, tavns: 48 },
+  { name: "Norepinephrine", control: 85, tavns: 45 },
 ];
 
 /* ─── Sections ─── */
@@ -162,7 +159,7 @@ const sections = [
             tick={{ fontSize: 11, fill: "hsl(30 10% 42%)", fontFamily: "Heebo" }}
             domain={[0, 100]}
             label={{
-              value: "שיפור (%)",
+              value: "ערך",
               angle: -90,
               position: "insideRight",
               style: { fontSize: 11, fill: "hsl(30 10% 42%)", fontFamily: "Heebo" },
@@ -177,11 +174,8 @@ const sections = [
               fontSize: 12,
             }}
           />
-          <Bar dataKey="value" radius={[8, 8, 0, 0]} name="שיפור">
-            {barData.map((entry, i) => (
-              <Cell key={i} fill={entry.color} />
-            ))}
-          </Bar>
+          <Bar dataKey="control" radius={[8, 8, 0, 0]} name="קבוצת ביקורת" fill="#36454F" />
+          <Bar dataKey="tavns" radius={[8, 8, 0, 0]} name="TaVNS" fill="#5B9A8B" />
         </BarChart>
       </ResponsiveContainer>
     ),
@@ -190,22 +184,15 @@ const sections = [
 
 /* ─── Research Links ─── */
 const researchLinks = [
-  {
-    title: "Neuropuncture in Parkinson's Disease (OASK)",
-    url: "https://oaskpublishers.com/assets/article-pdf/the-efficacy-of-neuropuncture-electrical-acupuncture-treatment-of-patients-with-parkinsons-disease.pdf",
-  },
-  {
-    title: "Acupuncture and Neuroplasticity: The Role of BDNF",
-    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10283049/",
-  },
-  {
-    title: "Vagus Nerve Stimulation and Autonomic Regulation",
-    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8613407/",
-  },
-  {
-    title: "Evidence-Based Neuropuncture: Solidifying Authenticity",
-    url: "https://www.liebertpub.com/doi/full/10.1089/acu.2020.1514",
-  },
+  { title: "Transcutaneous Vagus Nerve Stimulation for PTSD: A Systematic Review", url: "https://pubmed.ncbi.nlm.nih.gov/34646018/" },
+  { title: "Vagus Nerve Stimulation and the Autonomic Stress Response", url: "https://pubmed.ncbi.nlm.nih.gov/31632551/" },
+  { title: "Neuromodulation for Post-Traumatic Stress Disorder", url: "https://pubmed.ncbi.nlm.nih.gov/31393649/" },
+  { title: "HPA Axis Dysregulation in PTSD: Cortisol and Neurobiological Mechanisms", url: "https://pubmed.ncbi.nlm.nih.gov/21852024/" },
+  { title: "BDNF and Neuroplasticity in Stress-Related Disorders", url: "https://pubmed.ncbi.nlm.nih.gov/24976939/" },
+  { title: "Prefrontal Cortex Regulation and Emotional Processing in PTSD", url: "https://pubmed.ncbi.nlm.nih.gov/33777218/" },
+  { title: "Autonomic Nervous System Dysfunction in Trauma Survivors", url: "https://pubmed.ncbi.nlm.nih.gov/33230485/" },
+  { title: "Heart Rate Variability as a Biomarker for PTSD Recovery", url: "https://pubmed.ncbi.nlm.nih.gov/31252037/" },
+  { title: "Vagal Tone and Inflammatory Pathways in Trauma", url: "https://pubmed.ncbi.nlm.nih.gov/34975424/" },
 ];
 
 const ScienceInfographic = () => (
@@ -217,7 +204,7 @@ const ScienceInfographic = () => (
           {...fadeUp}
           className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4"
         >
-          אינפוגרפיקה מדעית
+          טיפול בפוסט טראומה (PTSD) - מנגנונים מדעיים
         </motion.h2>
         <motion.p
           {...fadeUp}

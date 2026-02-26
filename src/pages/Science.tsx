@@ -100,6 +100,9 @@ const Science = () => {
         </div>
       </section>
 
+      {/* Infographic + Research Library */}
+      <ScienceInfographic />
+
       {/* Text Sections */}
       <section className="py-16">
         <div className="container mx-auto px-6 max-w-4xl space-y-16">
@@ -141,9 +144,6 @@ const Science = () => {
           ))}
         </div>
       </section>
-
-      {/* Infographic + Research Library */}
-      <ScienceInfographic />
 
       <Footer />
     </div>
