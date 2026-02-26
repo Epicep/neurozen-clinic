@@ -25,25 +25,24 @@ const fadeUp = {
 
 /* ─── Chart Data ─── */
 const radarData = [
-  { metric: "ריכוז", before: 35, after: 78 },
-  { metric: "זיכרון עבודה", before: 40, after: 72 },
-  { metric: "קבלת החלטות", before: 30, after: 70 },
-  { metric: "ויסות רגשי", before: 25, after: 75 },
-  { metric: "גמישות קוגניטיבית", before: 38, after: 80 },
+  { metric: "ריכוז", before: 30, after: 80 },
+  { metric: "זיכרון עבודה", before: 40, after: 75 },
+  { metric: "קבלת החלטות", before: 20, after: 70 },
+  { metric: "ויסות רגשי", before: 40, after: 80 },
+  { metric: "גמישות קוגניטיבית", before: 20, after: 85 },
 ];
 
 const lineData = [
   { week: "שבוע 0", cortisol: 22, baseline: 22 },
-  { week: "שבוע 2", cortisol: 19, baseline: 22 },
-  { week: "שבוע 4", cortisol: 15, baseline: 22 },
-  { week: "שבוע 6", cortisol: 12, baseline: 22 },
-  { week: "שבוע 8", cortisol: 10, baseline: 22 },
-  { week: "שבוע 10", cortisol: 8, baseline: 22 },
+  { week: "שבוע 1", cortisol: 18, baseline: 21.5 },
+  { week: "שבוע 2", cortisol: 15, baseline: 21 },
+  { week: "שבוע 3", cortisol: 13, baseline: 20.8 },
+  { week: "שבוע 4", cortisol: 11.5, baseline: 20.5 },
 ];
 
 const barData = [
-  { name: "HRV", control: 25, tavns: 48 },
-  { name: "Norepinephrine", control: 85, tavns: 45 },
+  { name: "HRV", control: 25, treatment: 48 },
+  { name: "Norepinephrine", control: 85, treatment: 45 },
 ];
 
 /* ─── Sections ─── */
@@ -146,7 +145,7 @@ const sections = [
     Icon: VagusNerveIcon,
     title: "גירוי עצב הוואגוס ואיזון המערכת האוטונומית",
     description:
-      "גירוי עצב הוואגוס (tVNS) משפעל את הענף הפאראסימפתטי ומחזיר את המערכת האוטונומית לאיזון. הנתונים מדגימים שיפור ב-HRV ובתגובה הוואגאלית.",
+      "גירוי עצב הוואגוס (Vagus Nerve Stimulation) משפעל את הענף הפאראסימפתטי ומחזיר את המערכת האוטונומית לאיזון. הנתונים מדגימים שיפור ב-HRV ובתגובה הוואגאלית.",
     chart: (
       <ResponsiveContainer width="100%" height={280}>
         <BarChart data={barData} barCategoryGap="20%">
@@ -175,7 +174,7 @@ const sections = [
             }}
           />
           <Bar dataKey="control" radius={[8, 8, 0, 0]} name="קבוצת ביקורת" fill="#36454F" />
-          <Bar dataKey="tavns" radius={[8, 8, 0, 0]} name="TaVNS" fill="#5B9A8B" />
+          <Bar dataKey="treatment" radius={[8, 8, 0, 0]} name="גירוי עצב הוואגוס" fill="#5B9A8B" />
         </BarChart>
       </ResponsiveContainer>
     ),
