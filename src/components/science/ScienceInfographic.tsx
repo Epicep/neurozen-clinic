@@ -37,7 +37,7 @@ const lineData = [
   { week: "שבוע 1", cortisol: 18, baseline: 21.5 },
   { week: "שבוע 2", cortisol: 15, baseline: 21 },
   { week: "שבוע 3", cortisol: 13, baseline: 20.8 },
-  { week: "שבוע 4", cortisol: 11.5, baseline: 20.5 },
+  { week: "שבוע 4", cortisol: 11.8, baseline: 20.5 },
 ];
 
 const barData = [
@@ -53,12 +53,12 @@ const sections = [
     description:
       "הנוירופונקטורה מפעילה מנגנוני ויסות בקורטקס הקדם-מצחי – מרכז קבלת ההחלטות, הריכוז והוויסות הרגשי במוח. גירוי ממוקד מוביל לשיפור מדיד בתפקודים קוגניטיביים גבוהים.",
     chart: (
-      <ResponsiveContainer width="100%" height={280}>
-        <RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarData}>
+      <ResponsiveContainer width="100%" height={320}>
+        <RadarChart cx="50%" cy="50%" outerRadius="65%" data={radarData}>
           <PolarGrid stroke="hsl(40 15% 88%)" />
           <PolarAngleAxis
             dataKey="metric"
-            tick={{ fontSize: 11, fill: "hsl(30 10% 42%)", fontFamily: "Heebo" }}
+            tick={{ fontSize: 12, fill: "hsl(30 10% 42%)", fontFamily: "Heebo", dy: 4 }}
           />
           <Radar
             name="לפני טיפול"
@@ -104,6 +104,7 @@ const sections = [
           />
           <YAxis
             tick={{ fontSize: 11, fill: "hsl(30 10% 42%)", fontFamily: "Heebo" }}
+            domain={[10, 25]}
             label={{
               value: "קורטיזול (μg/dL)",
               angle: -90,
@@ -183,15 +184,15 @@ const sections = [
 
 /* ─── Research Links ─── */
 const researchLinks = [
-  { title: "Transcutaneous Vagus Nerve Stimulation for PTSD: A Systematic Review", url: "https://pubmed.ncbi.nlm.nih.gov/34646018/" },
-  { title: "Vagus Nerve Stimulation and the Autonomic Stress Response", url: "https://pubmed.ncbi.nlm.nih.gov/31632551/" },
-  { title: "Neuromodulation for Post-Traumatic Stress Disorder", url: "https://pubmed.ncbi.nlm.nih.gov/31393649/" },
-  { title: "HPA Axis Dysregulation in PTSD: Cortisol and Neurobiological Mechanisms", url: "https://pubmed.ncbi.nlm.nih.gov/21852024/" },
-  { title: "BDNF and Neuroplasticity in Stress-Related Disorders", url: "https://pubmed.ncbi.nlm.nih.gov/24976939/" },
-  { title: "Prefrontal Cortex Regulation and Emotional Processing in PTSD", url: "https://pubmed.ncbi.nlm.nih.gov/33777218/" },
-  { title: "Autonomic Nervous System Dysfunction in Trauma Survivors", url: "https://pubmed.ncbi.nlm.nih.gov/33230485/" },
-  { title: "Heart Rate Variability as a Biomarker for PTSD Recovery", url: "https://pubmed.ncbi.nlm.nih.gov/31252037/" },
-  { title: "Vagal Tone and Inflammatory Pathways in Trauma", url: "https://pubmed.ncbi.nlm.nih.gov/34975424/" },
+  { title: "גירוי עצב הוואגוס טרנסקוטני לטיפול ב-PTSD: סקירה שיטתית", url: "https://pubmed.ncbi.nlm.nih.gov/34646018/" },
+  { title: "גירוי עצב הוואגוס ותגובת הסטרס האוטונומית", url: "https://pubmed.ncbi.nlm.nih.gov/31632551/" },
+  { title: "נוירומודולציה לטיפול בהפרעת דחק פוסט-טראומטית", url: "https://pubmed.ncbi.nlm.nih.gov/31393649/" },
+  { title: "ויסות ציר ה-HPA ב-PTSD: קורטיזול ומנגנונים נוירוביולוגיים", url: "https://pubmed.ncbi.nlm.nih.gov/21852024/" },
+  { title: "BDNF ונוירופלסטיות בהפרעות הקשורות לסטרס", url: "https://pubmed.ncbi.nlm.nih.gov/24976939/" },
+  { title: "ויסות הקורטקס הקדם-מצחי ועיבוד רגשי ב-PTSD", url: "https://pubmed.ncbi.nlm.nih.gov/33777218/" },
+  { title: "תפקוד לקוי של המערכת האוטונומית בניצולי טראומה", url: "https://pubmed.ncbi.nlm.nih.gov/33230485/" },
+  { title: "HRV כסמן ביולוגי להחלמה מ-PTSD", url: "https://pubmed.ncbi.nlm.nih.gov/31252037/" },
+  { title: "טונוס וואגאלי ומסלולים דלקתיים בטראומה", url: "https://pubmed.ncbi.nlm.nih.gov/34975424/" },
 ];
 
 const ScienceInfographic = () => (
@@ -244,48 +245,32 @@ const ScienceInfographic = () => (
     {/* ── Research Library ── */}
     <section className="py-16 bg-muted/40">
       <div className="container mx-auto px-6 max-w-4xl">
-        <motion.h2
+        <motion.h3
           {...fadeUp}
-          className="text-3xl md:text-4xl font-bold text-foreground text-center mb-10"
+          className="text-2xl md:text-3xl font-bold text-foreground text-center mb-8"
         >
-          ספריית מחקרים וסימוכין
-        </motion.h2>
+          סימוכין ומחקרים נוספים
+        </motion.h3>
 
-        <div className="grid gap-4">
+        <ul className="space-y-3 max-w-3xl mx-auto">
           {researchLinks.map((link, i) => (
-            <motion.a
+            <motion.li
               key={i}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
               {...fadeUp}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="flex items-center gap-4 rounded-xl border border-border/60 bg-card px-6 py-5 shadow-soft hover:shadow-card hover:border-primary/30 hover:-translate-y-0.5 transition-all duration-200"
+              transition={{ duration: 0.3, delay: i * 0.04 }}
             >
-              <span className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-primary"
-                >
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg>
-              </span>
-              <span className="text-foreground font-medium text-sm md:text-base">
-                {link.title}
-              </span>
-            </motion.a>
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 py-2 text-muted-foreground hover:text-primary transition-colors duration-200"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary shrink-0 transition-colors" />
+                <span className="text-sm md:text-base">{link.title}</span>
+              </a>
+            </motion.li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   </>
