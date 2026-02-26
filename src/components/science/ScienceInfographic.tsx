@@ -71,8 +71,8 @@ const sections = [
           <Radar
             name="אחרי טיפול"
             dataKey="after"
-            stroke="#5B9A8B"
-            fill="#5B9A8B"
+            stroke="#A3B18A"
+            fill="#A3B18A"
             fillOpacity={0.25}
             strokeWidth={2}
           />
@@ -133,9 +133,9 @@ const sections = [
           <Line
             type="monotone"
             dataKey="cortisol"
-            stroke="#5B9A8B"
+            stroke="#A3B18A"
             strokeWidth={2.5}
-            dot={{ r: 4, fill: "#5B9A8B", stroke: "#fff", strokeWidth: 2 }}
+            dot={{ r: 4, fill: "#A3B18A", stroke: "#fff", strokeWidth: 2 }}
             name="קורטיזול"
           />
         </LineChart>
@@ -175,7 +175,7 @@ const sections = [
             }}
           />
           <Bar dataKey="control" radius={[8, 8, 0, 0]} name="קבוצת ביקורת" fill="#36454F" />
-          <Bar dataKey="treatment" radius={[8, 8, 0, 0]} name="גירוי עצב הוואגוס" fill="#5B9A8B" />
+          <Bar dataKey="treatment" radius={[8, 8, 0, 0]} name="גירוי עצב הוואגוס" fill="#A3B18A" />
         </BarChart>
       </ResponsiveContainer>
     ),
