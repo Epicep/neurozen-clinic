@@ -100,7 +100,6 @@ const Science = () => {
         </div>
       </section>
 
-      {/* Infographic + Research Library */}
       <ScienceInfographic />
 
       {/* Text Sections */}
