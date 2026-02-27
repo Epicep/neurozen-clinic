@@ -182,116 +182,48 @@ const sections = [
   },
 ];
 
-/* ─── Research Links ─── */
-const researchCategories = [
-  {
-    category: "יעילות קלינית וסקירות",
-    links: [
-      { title: "גירוי עצב הוואגוס לטיפול ב-PTSD: סקירה שיטתית", url: "https://pubmed.ncbi.nlm.nih.gov/34646018/" },
-      { title: "ויסות ציר ה-HPA ב-PTSD: קורטיזול ומנגנונים נוירוביולוגיים", url: "https://pubmed.ncbi.nlm.nih.gov/21852024/" },
-      { title: "טונוס וואגאלי ומסלולים דלקתיים בטראומה", url: "https://pubmed.ncbi.nlm.nih.gov/34975424/" },
-    ],
-  },
-  {
-    category: "מנגנונים מוחיים",
-    links: [
-      { title: "HRV כסמן ביולוגי להחלמה מ-PTSD", url: "https://pubmed.ncbi.nlm.nih.gov/31252037/" },
-      { title: "תפקוד לקוי של המערכת האוטונומית בניצולי טראומה", url: "https://pubmed.ncbi.nlm.nih.gov/33230485/" },
-      { title: "BDNF ונוירופלסטיות בהפרעות הקשורות לסטרס", url: "https://pubmed.ncbi.nlm.nih.gov/24976939/" },
-    ],
-  },
-  {
-    category: "ויסות הורמונלי ועצב הוואגוס",
-    links: [
-      { title: "גירוי עצב הוואגוס ותגובת הסטרס האוטונומית", url: "https://pubmed.ncbi.nlm.nih.gov/31632551/" },
-      { title: "נוירומודולציה לטיפול בהפרעת דחק פוסט-טראומטית", url: "https://pubmed.ncbi.nlm.nih.gov/31393649/" },
-      { title: "ויסות הקורטקס הקדם-מצחי ועיבוד רגשי ב-PTSD", url: "https://pubmed.ncbi.nlm.nih.gov/33777218/" },
-    ],
-  },
-];
-
 const ScienceInfographic = () => (
-  <>
-    {/* ── Infographic Charts ── */}
-    <section className="py-20">
-      <div className="container mx-auto px-6 max-w-5xl">
-        <motion.h2
-          {...fadeUp}
-          className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4"
-        >
-          טיפול בפוסט טראומה (PTSD) - מנגנונים מדעיים
-        </motion.h2>
-        <motion.p
-          {...fadeUp}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-muted-foreground text-center max-w-2xl mx-auto mb-14 text-lg"
-        >
-          נתונים ותובנות מבוססי מחקר על שלושת המנגנונים המרכזיים
-        </motion.p>
+  <section className="py-20">
+    <div className="container mx-auto px-6 max-w-5xl">
+      <motion.h2
+        {...fadeUp}
+        className="text-3xl md:text-4xl font-bold text-foreground text-center mb-4"
+      >
+        טיפול בפוסט טראומה (PTSD) - מנגנונים מדעיים
+      </motion.h2>
+      <motion.p
+        {...fadeUp}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="text-muted-foreground text-center max-w-2xl mx-auto mb-14 text-lg"
+      >
+        נתונים ותובנות מבוססי מחקר על שלושת המנגנונים המרכזיים
+      </motion.p>
 
-        <div className="space-y-14">
-          {sections.map((s, i) => (
-            <motion.div
-              key={i}
-              {...fadeUp}
-              transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="rounded-2xl border border-border/60 bg-card p-6 md:p-10 shadow-card"
-            >
-              <div className="flex flex-col md:flex-row gap-8 items-start">
-                {/* Icon + text */}
-                <div className="md:w-1/2 space-y-4">
-                  <s.Icon className="w-20 h-20" />
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground">
-                    {s.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {s.description}
-                  </p>
-                </div>
-                {/* Chart */}
-                <div className="md:w-1/2 w-full">{s.chart}</div>
+      <div className="space-y-14">
+        {sections.map((s, i) => (
+          <motion.div
+            key={i}
+            {...fadeUp}
+            transition={{ duration: 0.6, delay: i * 0.12 }}
+            className="rounded-2xl border border-border/60 bg-card p-6 md:p-10 shadow-card"
+          >
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="md:w-1/2 space-y-4">
+                <s.Icon className="w-20 h-20" />
+                <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                  {s.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {s.description}
+                </p>
               </div>
-            </motion.div>
-          ))}
-        </div>
+              <div className="md:w-1/2 w-full">{s.chart}</div>
+            </div>
+          </motion.div>
+        ))}
       </div>
-    </section>
-
-    {/* ── Research Library ── */}
-    <section className="py-16 bg-muted/40">
-      <div className="container mx-auto px-6 max-w-4xl">
-        <motion.h3
-          {...fadeUp}
-          className="text-2xl md:text-3xl font-bold text-foreground text-center mb-8"
-        >
-          סימוכין ומחקרים נוספים
-        </motion.h3>
-
-        <div className="max-w-3xl mx-auto space-y-8">
-          {researchCategories.map((cat, ci) => (
-            <motion.div key={ci} {...fadeUp} transition={{ duration: 0.4, delay: ci * 0.1 }}>
-              <h4 className="text-sm font-semibold text-foreground/70 mb-3 tracking-wide">{cat.category}</h4>
-              <ul className="space-y-2">
-                {cat.links.map((link, i) => (
-                  <li key={i}>
-                    <a
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center gap-3 py-1.5 text-muted-foreground hover:text-primary transition-colors duration-200"
-                    >
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary shrink-0 transition-colors" />
-                      <span className="text-sm md:text-base">{link.title}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  </>
+    </div>
+  </section>
 );
 
 export default ScienceInfographic;
