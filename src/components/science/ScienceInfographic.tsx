@@ -183,16 +183,31 @@ const sections = [
 ];
 
 /* ─── Research Links ─── */
-const researchLinks = [
-  { title: "גירוי עצב הוואגוס טרנסקוטני לטיפול ב-PTSD: סקירה שיטתית", url: "https://pubmed.ncbi.nlm.nih.gov/34646018/" },
-  { title: "גירוי עצב הוואגוס ותגובת הסטרס האוטונומית", url: "https://pubmed.ncbi.nlm.nih.gov/31632551/" },
-  { title: "נוירומודולציה לטיפול בהפרעת דחק פוסט-טראומטית", url: "https://pubmed.ncbi.nlm.nih.gov/31393649/" },
-  { title: "ויסות ציר ה-HPA ב-PTSD: קורטיזול ומנגנונים נוירוביולוגיים", url: "https://pubmed.ncbi.nlm.nih.gov/21852024/" },
-  { title: "BDNF ונוירופלסטיות בהפרעות הקשורות לסטרס", url: "https://pubmed.ncbi.nlm.nih.gov/24976939/" },
-  { title: "ויסות הקורטקס הקדם-מצחי ועיבוד רגשי ב-PTSD", url: "https://pubmed.ncbi.nlm.nih.gov/33777218/" },
-  { title: "תפקוד לקוי של המערכת האוטונומית בניצולי טראומה", url: "https://pubmed.ncbi.nlm.nih.gov/33230485/" },
-  { title: "HRV כסמן ביולוגי להחלמה מ-PTSD", url: "https://pubmed.ncbi.nlm.nih.gov/31252037/" },
-  { title: "טונוס וואגאלי ומסלולים דלקתיים בטראומה", url: "https://pubmed.ncbi.nlm.nih.gov/34975424/" },
+const researchCategories = [
+  {
+    category: "יעילות קלינית וסקירות",
+    links: [
+      { title: "גירוי עצב הוואגוס לטיפול ב-PTSD: סקירה שיטתית", url: "https://pubmed.ncbi.nlm.nih.gov/34646018/" },
+      { title: "ויסות ציר ה-HPA ב-PTSD: קורטיזול ומנגנונים נוירוביולוגיים", url: "https://pubmed.ncbi.nlm.nih.gov/21852024/" },
+      { title: "טונוס וואגאלי ומסלולים דלקתיים בטראומה", url: "https://pubmed.ncbi.nlm.nih.gov/34975424/" },
+    ],
+  },
+  {
+    category: "מנגנונים מוחיים",
+    links: [
+      { title: "HRV כסמן ביולוגי להחלמה מ-PTSD", url: "https://pubmed.ncbi.nlm.nih.gov/31252037/" },
+      { title: "תפקוד לקוי של המערכת האוטונומית בניצולי טראומה", url: "https://pubmed.ncbi.nlm.nih.gov/33230485/" },
+      { title: "BDNF ונוירופלסטיות בהפרעות הקשורות לסטרס", url: "https://pubmed.ncbi.nlm.nih.gov/24976939/" },
+    ],
+  },
+  {
+    category: "ויסות הורמונלי ועצב הוואגוס",
+    links: [
+      { title: "גירוי עצב הוואגוס ותגובת הסטרס האוטונומית", url: "https://pubmed.ncbi.nlm.nih.gov/31632551/" },
+      { title: "נוירומודולציה לטיפול בהפרעת דחק פוסט-טראומטית", url: "https://pubmed.ncbi.nlm.nih.gov/31393649/" },
+      { title: "ויסות הקורטקס הקדם-מצחי ועיבוד רגשי ב-PTSD", url: "https://pubmed.ncbi.nlm.nih.gov/33777218/" },
+    ],
+  },
 ];
 
 const ScienceInfographic = () => (
@@ -252,25 +267,28 @@ const ScienceInfographic = () => (
           סימוכין ומחקרים נוספים
         </motion.h3>
 
-        <ul className="space-y-3 max-w-3xl mx-auto">
-          {researchLinks.map((link, i) => (
-            <motion.li
-              key={i}
-              {...fadeUp}
-              transition={{ duration: 0.3, delay: i * 0.04 }}
-            >
-              <a
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-3 py-2 text-muted-foreground hover:text-primary transition-colors duration-200"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary shrink-0 transition-colors" />
-                <span className="text-sm md:text-base">{link.title}</span>
-              </a>
-            </motion.li>
+        <div className="max-w-3xl mx-auto space-y-8">
+          {researchCategories.map((cat, ci) => (
+            <motion.div key={ci} {...fadeUp} transition={{ duration: 0.4, delay: ci * 0.1 }}>
+              <h4 className="text-sm font-semibold text-foreground/70 mb-3 tracking-wide">{cat.category}</h4>
+              <ul className="space-y-2">
+                {cat.links.map((link, i) => (
+                  <li key={i}>
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-3 py-1.5 text-muted-foreground hover:text-primary transition-colors duration-200"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary/40 group-hover:bg-primary shrink-0 transition-colors" />
+                      <span className="text-sm md:text-base">{link.title}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   </>
