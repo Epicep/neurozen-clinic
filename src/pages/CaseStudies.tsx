@@ -3,10 +3,33 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { FileText } from "lucide-react";
 
-const outcomes = [
-{ label: "שיפור בחרדה", scale: "GAD-7", from: 12, to: 2, percent: 83.3 },
-{ label: "שיפור בפוסט-טראומה", scale: "PCL-5", from: 31, to: 6, percent: 80.6 },
-{ label: "שיפור בדיכאון", scale: "PHQ-9", from: 19, to: 6, percent: 68.4 }];
+const outcomes1 = [
+  { label: "שיפור בחרדה", scale: "GAD-7", from: 12, to: 2, percent: 83.3 },
+  { label: "שיפור בפוסט-טראומה", scale: "PCL-5", from: 31, to: 6, percent: 80.6 },
+  { label: "שיפור בדיכאון", scale: "PHQ-9", from: 19, to: 6, percent: 68.4 },
+];
+
+const outcomes2 = [
+  { label: "שיפור בחרדה", scale: "GAD-7", from: 19, to: 5, percent: 73.7 },
+  { label: "שיפור בדיכאון", scale: "PHQ-9", from: 26, to: 8, percent: 69.2 },
+  { label: "שיפור בפוסט-טראומה", scale: "PCL-5", from: 61, to: 28, percent: 54.1 },
+  { label: "שיפור במדד השינה", scale: "SLEEP", from: 24, to: 10, percent: 58.3 },
+];
+
+const recoveryCards = [
+  {
+    title: "השינוי התפקודי: לקום מהמיטה",
+    quote: "עזר לי לקום מהמיטה ולעשות דברים, לחזור לישון ולעלות על דרך בריאה ונכונה יותר.",
+  },
+  {
+    title: "השינוי בוויסות הרגשי: תקשורת",
+    quote: "דיווח על שיפור משמעותי בעצבנות המתפרצת. הטבה ביחסים הזוגיים ובתקשורת בבית.",
+  },
+  {
+    title: "השינוי הקוגניטיבי: גמישות מחשבתית",
+    quote: "עזר לי לשנות את החשיבה שלי, ולמצוא שקט ברגעים לא שקטים.",
+  },
+];
 
 
 
