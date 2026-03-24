@@ -63,6 +63,9 @@ const Footer = () => {
             className="space-y-4"
           >
             <h4 className="font-semibold text-lg">התחילו עכשיו</h4>
+            <a href="/cases" className="block text-secondary-foreground/70 hover:text-primary transition-colors text-sm">
+              מקרים קליניים
+            </a>
             <p className="text-secondary-foreground/70 text-sm">
               בדקו אם הטיפול מתאים לכם בשיחה קצרה ללא התחייבות.
             </p>
