@@ -182,11 +182,79 @@ const CaseStudies = () => {
             </div>
           </motion.div>
 
-          {/* Placeholder Card #2 */}
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="mt-10 rounded-2xl border-2 border-dashed border-border bg-muted/20 flex flex-col items-center justify-center py-14 text-center">
-            
-            <p className="text-muted-foreground font-semibold">מקרה מס׳ 2</p>
-            <p className="text-sm text-muted-foreground/60 mt-1">בקרוב...</p>
+          {/* Case Study #2 */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-16 rounded-2xl border border-border/60 bg-card overflow-hidden shadow-soft">
+
+            {/* Profile */}
+            <div className="p-6 md:p-10 border-b border-border/40">
+              <p className="font-semibold tracking-wide text-primary uppercase mb-4 text-center text-2xl">מקרה מס׳ 2</p>
+              <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 text-right">גבר, בן 30, סטודנט לתואר שני ומשרת מילואים.</h2>
+              <p className="leading-relaxed mb-1 text-base text-secondary">
+                תלונה עיקרית: פוסט-טראומה (PTSD), חרדה ודיכאון המלווים בקושי תפקודי עמוק ('קושי לקום מהמיטה'), הפרעות שינה חמורות ועצבנות מתפרצת שפגעה במערכות היחסים.
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-base">
+                <span className="font-medium text-foreground">התערבות:</span> סדרת טיפולי נוירופונקטורה מותאמת לוויסות המערכת הלימבית.
+              </p>
+            </div>
+
+            {/* Outcomes */}
+            <div className="p-6 md:p-10 border-b border-border/40">
+              <p className="font-semibold tracking-wide uppercase mb-6 text-5xl text-center text-foreground">השינוי במדדים הקליניים</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                {outcomes2.map((o, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 + i * 0.12 }}
+                    className="text-center">
+                    <span className="block text-4xl md:text-5xl font-extrabold text-foreground leading-none">
+                      {o.percent}%
+                    </span>
+                    <span className="block text-sm font-medium text-foreground mt-2">{o.label}</span>
+                    <span className="block text-xs text-muted-foreground mt-0.5">
+                      {o.scale}: מ-{o.from} ל-{o.to}
+                    </span>
+                    <div className="mt-3 mx-auto w-full max-w-[120px] h-1.5 rounded-full bg-muted overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: `${o.percent}%` }}
+                        transition={{ delay: 0.7 + i * 0.12, duration: 0.8, ease: "easeOut" }}
+                        className="h-full rounded-full bg-primary/60" />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Recovery Process */}
+            <div className="p-6 md:p-10 border-b border-border/40">
+              <p className="font-semibold tracking-wide mb-6 text-xl text-center text-foreground">התהליך במילותיו: חזרה לחיים, שקט וויסות</p>
+              <div className="space-y-4">
+                {recoveryCards.map((card, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.6 + i * 0.15 }}
+                    className="rounded-xl border border-border/40 bg-accent/20 p-5 text-right">
+                    <p className="font-bold text-foreground mb-2">{card.title}</p>
+                    <p className="text-muted-foreground italic leading-relaxed">"{card.quote}"</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Final Quote */}
+            <div className="p-6 md:p-10 bg-accent/30">
+              <blockquote className="text-base text-foreground font-medium leading-relaxed text-center italic md:text-2xl">
+                "הטיפול עזר לי לחזור להתנהל כמו בן אדם."
+              </blockquote>
+            </div>
           </motion.div>
         </section>
       </main>
