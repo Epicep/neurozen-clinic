@@ -29,6 +29,11 @@ const EmotionalSection = () => {
               מערכת העצבים שלכם עשויה להינעל במצב של <strong className="text-foreground">'עוררות יתר' (הישרדות)</strong> או <strong className="text-foreground">'קפיאה' (ניתוק)</strong>. במצבים אלו, המוח מתקשה להגיב לטיפולים המבוססים על שיח בלבד (<strong className="text-foreground">Top-Down</strong>). ב-Neuro•Zen אנו פונים ישירות אל ה<strong className="text-foreground">תשתית הביולוגית</strong> בגישת ה-<strong className="text-foreground">Bottom-Up</strong>: אנו מניעים את המערכת מהשורש הפיזיולוגי שלה, פותחים חסימות נוירולוגיות ומאפשרים לנפש להתחיל לנשום שוב.
             </p>
           </div>
+          <div className="mt-8 flex justify-center">
+            <Button asChild variant="outline" size="lg" className="border-primary text-foreground hover:bg-primary/10">
+              <Link to="/cases">לראות תוצאות אמיתיות: סיפורי מקרה</Link>
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>);

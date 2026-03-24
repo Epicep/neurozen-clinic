@@ -25,6 +25,7 @@ const Index = () => {
         <MentalSpecialtiesSection />
         <FAQSection />
         <LeadCaptureSection />
+        <PreFooterCTA />
       </main>
       <Footer />
     </div>

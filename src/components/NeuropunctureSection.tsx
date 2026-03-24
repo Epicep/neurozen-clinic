@@ -27,9 +27,12 @@ const NeuropunctureSection = () => {
             <p className="text-base text-muted-foreground/80 leading-relaxed text-right mt-6 pt-6 border-t border-border/50">
               המרשמים הטיפוליים נמצאים בתהליך רישום פטנט, מבוססים על עדויות מדעיות, נתמכים במחקר וניתנים לשחזור קליני.
             </p>
-            <div className="mt-8 flex justify-end">
+            <div className="mt-8 flex flex-wrap justify-end gap-4">
               <Button asChild variant="heroOutline" size="lg">
                 <Link to="/science">המדע שמאחורי</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-primary text-foreground hover:bg-primary/10">
+                <Link to="/cases">כיצד השינוי נראה בפועל? לתיאורי המקרה</Link>
               </Button>
             </div>
           </div>
