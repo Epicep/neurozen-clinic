@@ -83,7 +83,7 @@ const CaseStudies = () => {
             <div className="p-6 md:p-10 border-b border-border/40">
               <p className="font-semibold tracking-wide uppercase mb-6 text-5xl text-center text-[#3e3832]">השינוי במדדים הקליניים</p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                {outcomes.map((o, i) =>
+                {outcomes1.map((o, i) =>
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 15 }}
