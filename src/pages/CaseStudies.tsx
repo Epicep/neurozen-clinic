@@ -56,7 +56,7 @@ const CaseStudies = () => {
                 <span className="font-medium text-foreground">תלונה עיקרית:</span> חרדה ודיכאון SOS (לפני טיפול תרופתי). דפיקות לב ונימולים אקוטיים.
               </p>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                <span className="font-medium text-foreground"></span> סדרת טיפולי נוירופונקטורה מותאמת לוויסות המערכת הלימבית.
+                <span className="font-medium text-foreground">התערבות:</span> סדרת טיפולי נוירופונקטורה מותאמת לוויסות המערכת הלימבית.
               </p>
             </div>
 
