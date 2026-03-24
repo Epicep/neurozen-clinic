@@ -9,10 +9,6 @@ const outcomes = [
 { label: "שיפור בדיכאון", scale: "PHQ-9", from: 19, to: 6, percent: 68.4 }];
 
 
-const stages = [
-"הרגעת המערכת והפחתת סימפטומים פיזיים",
-"בניית חוסן והתמודדות עם אירועי דחק (כמו מלחמה) בווליום נמוך",
-"נחיתת מערכת העצבים למצב מנוחה ואינטגרציה מלאה לחיים"];
 
 
 const CaseStudies = () => {
@@ -93,28 +89,12 @@ const CaseStudies = () => {
               </div>
             </div>
 
-            {/* Process - Vertical Flow */}
+            {/* Testimonial detail */}
             <div className="p-6 md:p-10 border-b border-border/40 text-black">
-              <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase mb-6">
-</p>
-              <div className="space-y-0">
-                {stages.map((stage, i) => <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 15 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 + i * 0.1 }}
-                  className="flex items-start gap-4">
-                  
-                    <div className="flex flex-col items-center shrink-0">
-                      <div className="w-7 h-7 rounded-full bg-primary/15 flex items-center justify-center text-xs font-bold text-primary">
-                        {String.fromCharCode(0x5d0 + i)}׳
-                      </div>
-                      {i < stages.length - 1 && <div className="w-px h-8 bg-border/60" />}
-                    </div>
-                    <p className="text-sm text-foreground leading-relaxed pb-4 pt-1">{stage}</p>
-                  </motion.div>
-                )}
-              </div>
+              <p className="text-base text-foreground leading-relaxed whitespace-pre-line text-right">
+                "התחלתי את הטיפול בגל של חרדה שנמשך כבר לפחות 3 שנים. הגעתי אחרי חודש קשה של חרדה ודיכאון. תוך טיפול או 2 הרגשתי כמו ניצוץ לא ברור של משהו חיובי ושמתי לב שלא היה התקף או סממן של חרדה. אחרי הטיפול הרביעי התחילה המלחמה דבר שהעלה לי את סף החרדה אבל כבר פה הרגשתי שאני מתנהלת אחרת, החרדה מורגשת בווליום נמוך, תסמינים קלים יותר והתאוששות וחזרה לשגרה מהירים יותר. שמתי לב שהבנתי, הבנתי שהמח שלי חזר לעצמו אחרי שנים. משהו השתנה ונרגע. כמו נחת בחזרה למקומו. לאחר מכן אפשר לומר שגם הסביבה כבר הבחינה בשינוי . 
+                {"\n"}שמתי לב שאני יוצרת קשר עם אנשים קצת יותר ויותר בנחמדות.  אם החרדה עולה היא ממש יורדת מהר ברמת הדקות הראש מבין שאין סכנה וחזרה לשגרה. חזרתי לישון הפסקתי לחשוב בלי הפסקה והתחלתי לראות דברים בצורה יותר \"נורמטיבית\", אני מצליחה להתרכז יותר ולהיות נעימה לסביבה."
+              </p>
             </div>
 
             {/* Quote */}
