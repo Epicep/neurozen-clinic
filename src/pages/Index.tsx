@@ -9,6 +9,7 @@ import MentalSpecialtiesSection from "@/components/MentalSpecialtiesSection";
 import FAQSection from "@/components/FAQSection";
 import LeadCaptureSection from "@/components/LeadCaptureSection";
 import Footer from "@/components/Footer";
+import PreFooterCTA from "@/components/PreFooterCTA";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
         <MentalSpecialtiesSection />
         <FAQSection />
         <LeadCaptureSection />
+        <PreFooterCTA />
       </main>
       <Footer />
     </div>

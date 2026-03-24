@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const EmotionalSection = () => {
   return (
@@ -26,6 +28,11 @@ const EmotionalSection = () => {
             <p className="text-lg text-muted-foreground leading-[1.9] text-right mt-6">
               מערכת העצבים שלכם עשויה להינעל במצב של <strong className="text-foreground">'עוררות יתר' (הישרדות)</strong> או <strong className="text-foreground">'קפיאה' (ניתוק)</strong>. במצבים אלו, המוח מתקשה להגיב לטיפולים המבוססים על שיח בלבד (<strong className="text-foreground">Top-Down</strong>). ב-Neuro•Zen אנו פונים ישירות אל ה<strong className="text-foreground">תשתית הביולוגית</strong> בגישת ה-<strong className="text-foreground">Bottom-Up</strong>: אנו מניעים את המערכת מהשורש הפיזיולוגי שלה, פותחים חסימות נוירולוגיות ומאפשרים לנפש להתחיל לנשום שוב.
             </p>
+          </div>
+          <div className="mt-8 flex justify-center">
+            <Button asChild variant="outline" size="lg" className="border-primary text-foreground hover:bg-primary/10">
+              <Link to="/cases">לראות תוצאות אמיתיות: סיפורי מקרה</Link>
+            </Button>
           </div>
         </motion.div>
       </div>
