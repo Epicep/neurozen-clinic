@@ -107,8 +107,8 @@ const CaseStudies = () => {
             {/* Subjective Experience Cards */}
             <div className="p-6 md:p-10 border-b border-border/40">
               <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase mb-2">התהליך הסובייקטיבי</p>
-              <h3 className="text-lg md:text-xl font-bold text-foreground mb-6">הפשרת מערכת העצבים</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <h3 className="text-lg md:text-xl font-bold text-foreground mb-8">הפשרת מערכת העצבים</h3>
+              <div className="flex flex-col gap-8 max-w-xl mx-auto">
                 {experienceCards.map((card, i) => {
                   const Icon = card.icon;
                   return (
@@ -117,13 +117,15 @@ const CaseStudies = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5 + i * 0.12 }}
-                      className="rounded-xl border border-border/50 bg-accent/20 p-5 flex flex-col gap-3"
+                      className="rounded-xl border border-border/40 bg-[#F9F9F9] p-7 md:p-8 flex items-start gap-4 shadow-sm"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-primary/15 flex items-center justify-center shrink-0">
-                        <Icon className="w-4 h-4 text-primary" />
+                      <div className="w-9 h-9 rounded-lg bg-primary/15 flex items-center justify-center shrink-0 mt-0.5">
+                        <Icon className="w-5 h-5 text-primary" />
                       </div>
-                      <p className="text-sm font-semibold text-foreground leading-snug">{card.title}</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed italic">"{card.quote}"</p>
+                      <div className="flex flex-col gap-2">
+                        <p className="text-sm md:text-base font-semibold text-foreground leading-snug">{card.title}</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed italic">"{card.quote}"</p>
+                      </div>
                     </motion.div>
                   );
                 })}
