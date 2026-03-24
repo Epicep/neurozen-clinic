@@ -62,6 +62,9 @@ const Header = () => {
           <Link to="/about" className="text-foreground/70 hover:text-foreground transition-colors font-medium">
             אודות
           </Link>
+          <Link to="/cases" className="text-foreground/70 hover:text-foreground transition-colors font-medium">
+            מקרים קליניים
+          </Link>
           <a href="https://www.instagram.com/neurozen_neuropuncture/" target="_blank" rel="noopener noreferrer" className="text-foreground/70 hover:text-foreground transition-colors">
             <Instagram className="w-5 h-5" />
           </a>
