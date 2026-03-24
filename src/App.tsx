@@ -13,6 +13,7 @@ import Method from "./pages/Method";
 import Science from "./pages/Science";
 import Welcome from "./pages/Welcome";
 import About from "./pages/About";
+import CaseStudies from "./pages/CaseStudies";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
