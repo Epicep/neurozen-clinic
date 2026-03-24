@@ -50,13 +50,13 @@ const CaseStudies = () => {
             
             {/* Profile */}
             <div className="p-6 md:p-10 border-b border-border/40">
-              <p className="text-xs font-semibold tracking-wide text-primary uppercase mb-4">מקרה מס׳ 1</p>
-              <h2 className="text-lg md:text-xl font-bold text-foreground mb-3">אישה, בת 36. עצמאית.</h2>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-1">תלונה עיקרית: חרדה ודיכאון (מדווחת על מצב קשה ולפני טיפול תרופתי). דפיקות לב ונימולים אקוטיים בגפיים.
-                <span className="font-medium text-foreground">תלונה עיקרית:</span> חרדה ודיכאון SOS (לפני טיפול תרופתי). דפיקות לב ונימולים אקוטיים.
+              <p className="font-semibold tracking-wide text-primary uppercase mb-4 text-center text-2xl">מקרה מס׳ 1</p>
+              <h2 className="text-lg md:text-xl font-bold text-foreground mb-3 text-right">אישה, בת 36. </h2>
+              <p className="leading-relaxed mb-1 text-base text-secondary">תלונה עיקרית: חרדה ודיכאון (מדווחת על מצב קשה ולפני טיפול תרופתי). דפיקות לב ונימולים בגפיים. 
+                <span className="font-medium text-foreground"></span> חרדה ודיכאון SOS (לפני טיפול תרופתי). דפיקות לב ונימולים אקוטיים.
               </p>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                <span className="font-medium text-foreground">התערבות:</span> סדרת טיפולי נוירופונקטורה מותאמת לוויסות המערכת הלימבית.
+              <p className="text-muted-foreground leading-relaxed text-base">
+                <span className="font-medium text-foreground"></span> סדרת טיפולי נוירופונקטורה מותאמת לוויסות המערכת הלימבית.
               </p>
             </div>
 
@@ -94,11 +94,11 @@ const CaseStudies = () => {
             </div>
 
             {/* Process - Vertical Flow */}
-            <div className="p-6 md:p-10 border-b border-border/40">
-              <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase mb-6">תהליך הטיפול</p>
+            <div className="p-6 md:p-10 border-b border-border/40 text-black">
+              <p className="text-xs font-semibold tracking-wide text-muted-foreground uppercase mb-6">
+</p>
               <div className="space-y-0">
-                {stages.map((stage, i) =>
-                <motion.div
+                {stages.map((stage, i) => <motion.div
                   key={i}
                   initial={{ opacity: 0, x: 15 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -119,18 +119,68 @@ const CaseStudies = () => {
 
             {/* Quote */}
             <div className="p-6 md:p-10 bg-accent/30">
-              <blockquote className="text-base md:text-lg text-foreground font-medium leading-relaxed text-center italic">"הגעתי שניה לפני כדורים, וזה היה טיפול מציל חיים עבורי. למרות ההפסקה בתהליך בגלל המלחמה, הטיפול שינה אותי ב-180 מעלות. הראש פשוט מבין שאין סכנה וחוזר לשגרה במהירות."
+              <blockquote className="text-base text-foreground font-medium leading-relaxed text-center italic md:text-2xl"> זה היה טיפול s.o.s.  שניה לפני כדורים. 
+אחרי 8 טיפולים ממש מרגישה שהטיפול שינה אותי ב180 מעלות בוודאות.  באמת משנה חיים.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
               </blockquote>
             </div>
           </motion.div>
 
           {/* Placeholder Card #2 */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="mt-10 rounded-2xl border-2 border-dashed border-border bg-muted/20 flex flex-col items-center justify-center py-14 text-center">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="mt-10 rounded-2xl border-2 border-dashed border-border bg-muted/20 flex flex-col items-center justify-center py-14 text-center">
             
             <p className="text-muted-foreground font-semibold">מקרה מס׳ 2</p>
             <p className="text-sm text-muted-foreground/60 mt-1">בקרוב...</p>
@@ -138,8 +188,4 @@ const CaseStudies = () => {
         </section>
       </main>
       <Footer />
-    </div>);
-
-};
-
-export default CaseStudies;
+    </div>);};export default CaseStudies;
