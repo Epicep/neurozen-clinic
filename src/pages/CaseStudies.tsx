@@ -231,21 +231,13 @@ const CaseStudies = () => {
               </div>
             </div>
 
-            {/* Recovery Process */}
-            <div className="p-6 md:p-10 border-b border-border/40">
-              <p className="font-semibold tracking-wide mb-6 text-xl text-center text-foreground">התהליך במילותיו: חזרה לחיים, שקט וויסות</p>
-              <div className="space-y-4">
-                {recoveryCards.map((card, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.6 + i * 0.15 }}
-                    className="rounded-xl border border-border/40 bg-accent/20 p-5 text-right">
-                    <p className="font-bold text-foreground mb-2">{card.title}</p>
-                    <p className="text-muted-foreground italic leading-relaxed">"{card.quote}"</p>
-                  </motion.div>
-                ))}
+            {/* The Process - Consolidated Quote */}
+            <div className="p-8 md:p-14 border-b border-border/40">
+              <p className="font-semibold tracking-wide mb-8 text-xl text-center text-foreground">השינוי במילותיו: חזרה לחיים, שקט וויסות</p>
+              <div className="rounded-xl border border-border/40 bg-accent/20 p-8 md:p-12 text-right">
+                <p className="text-base md:text-lg text-foreground leading-loose whitespace-pre-line">
+                  "הדבר הראשון שהבחנתי בו היה שהצלחתי לישון יותר טוב, לאחר מכן לקום מהמיטה ולצאת ללימודים להתרכז יותר. והשינוי המשמעותי ביותר מבחינתי היה שההתפרצויות כעס וזעם נרגעו וזה לחלוטין הביא להטבה ביחסים הזוגיים ובתקשורת בבית."
+                </p>
               </div>
             </div>
 
