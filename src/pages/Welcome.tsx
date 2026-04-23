@@ -169,6 +169,12 @@ const Welcome = () => {
             עקבו אחרינו באינסטגרם לעדכונים ותכנים נוספים
           </a>
         </motion.div>
+
+        {/* Security Note */}
+        <p className="text-center text-xs text-muted-foreground/80 leading-relaxed max-w-xl mx-auto pb-4">
+          המידע שלך נשמר במערכת מאובטחת העומדת בתקני אבטחת מידע מחמירים
+          (Google Workspace Enterprise Security) ומוגן תחת סודיות רפואית.
+        </p>
       </div>
     </div>
   );

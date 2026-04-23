@@ -1,170 +1,54 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, MessageCircle, CheckCircle } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 
 const LeadCaptureSection = () => {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
-      });
-      setSubmitted(true);
-    } catch {
-      setSubmitted(true);
-    }
-  };
-
   return (
     <section id="lead-capture" className="py-[120px] bg-muted/30 neural-mesh-bg">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Side - Direct Contact */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center lg:text-right order-2 lg:order-1"
-          >
-            <p className="text-lg text-muted-foreground mb-4">
-              מעדיפים לא לחכות?
-            </p>
-            <a 
-              href="tel:054-808-2487" 
-              className="block text-4xl md:text-5xl font-bold text-foreground mb-6 hover:text-primary transition-colors"
-              dir="ltr"
-            >
-              054-808-2487
-            </a>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl mx-auto text-center space-y-8"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            הצעד הראשון הוא תמיד הכי קשה.
+          </h2>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            צרו קשר ישיר לשיחת ייעוץ ללא התחייבות. נשמח לבדוק יחד אם הטיפול מתאים לכם.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <Button
-              variant="outline"
+              variant="hero"
               size="lg"
-              className="gap-2 border-green-500 text-green-600 hover:bg-green-50 hover:text-green-700"
+              className="gap-2 w-full sm:w-auto"
               asChild
             >
-              <a 
-                href="https://wa.me/972548082487" 
-                target="_blank" 
+              <a
+                href="https://wa.me/972548082487"
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 <MessageCircle className="w-5 h-5" />
-                שלחו הודעה בוואטסאפ
+                צרו קשר בוואטסאפ
               </a>
             </Button>
-          </motion.div>
-
-          {/* Right Side - Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="order-1 lg:order-2"
-          >
-            <div className="bg-card rounded-2xl p-8 shadow-lg border border-border">
-              {submitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-12 space-y-4"
-                >
-                  <CheckCircle className="w-16 h-16 text-primary mx-auto" />
-                  <h3 className="text-2xl font-bold text-foreground">
-                    תודה רבה, פנייתך התקבלה.
-                  </h3>
-                  <p className="text-muted-foreground text-lg">
-                    נחזור אליך בהקדם.
-                  </p>
-                </motion.div>
-              ) : (
-                <>
-                  <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-                    הצעד הראשון הוא תמיד הכי קשה.
-                  </h2>
-                  <p className="text-muted-foreground mb-8">
-                    השאירו פרטים ונחזור אליכם לשיחת ייעוץ ללא התחייבות.
-                  </p>
-
-                  <form
-                    name="contact"
-                    method="POST"
-                    data-netlify="true"
-                    onSubmit={handleSubmit}
-                    className="space-y-5"
-                  >
-                    <input type="hidden" name="form-name" value="contact" />
-
-                    <div className="space-y-2">
-                      <Label htmlFor="full-name">שם מלא</Label>
-                      <Input 
-                        id="full-name"
-                        name="full-name"
-                        placeholder="הזינו את שמכם המלא" 
-                        className="text-right"
-                        required
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">טלפון נייד</Label>
-                      <Input 
-                        id="phone"
-                        name="phone"
-                        type="tel" 
-                        placeholder="050-0000000" 
-                        className="text-right"
-                        dir="ltr"
-                        required
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="preferred-time">מתי נוח שנתקשר?</Label>
-                      <Select name="preferred-time">
-                        <SelectTrigger id="preferred-time" className="text-right">
-                          <SelectValue placeholder="בחרו זמן מועדף" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="morning">בוקר</SelectItem>
-                          <SelectItem value="afternoon">צהריים</SelectItem>
-                          <SelectItem value="evening">ערב</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <Button 
-                      type="submit" 
-                      variant="hero" 
-                      size="lg" 
-                      className="w-full gap-2"
-                    >
-                      חזרו אליי עם פרטים
-                      <Phone className="w-4 h-4" />
-                    </Button>
-                  </form>
-                </>
-              )}
-            </div>
-          </motion.div>
-        </div>
+            <Button
+              variant="heroOutline"
+              size="lg"
+              className="gap-2 w-full sm:w-auto"
+              asChild
+            >
+              <a href="tel:054-808-2487" dir="ltr">
+                <Phone className="w-4 h-4" />
+                054-808-2487
+              </a>
+            </Button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
