@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { MessageCircle, Phone, MapPin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -90,6 +91,15 @@ const Footer = () => {
           
           <p className="text-secondary-foreground/60 text-sm text-center">
             © {new Date().getFullYear()} Neuro•Zen. כל הזכויות שמורות.
+          </p>
+
+          <p className="text-center">
+            <Link
+              to="/legal"
+              className="text-secondary-foreground/50 hover:text-primary transition-colors text-xs"
+            >
+              תקנון ופרטיות
+            </Link>
           </p>
         </div>
       </div>

@@ -14,7 +14,9 @@ import Science from "./pages/Science";
 import Welcome from "./pages/Welcome";
 import About from "./pages/About";
 import CaseStudies from "./pages/CaseStudies";
+import Legal from "./pages/Legal";
 import NotFound from "./pages/NotFound";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +27,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <FloatingWhatsApp />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/mental-health" element={<MentalHealth />} />
@@ -36,6 +39,7 @@ const App = () => (
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/about" element={<About />} />
           <Route path="/cases" element={<CaseStudies />} />
+          <Route path="/legal" element={<Legal />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
