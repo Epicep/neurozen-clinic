@@ -10,6 +10,7 @@ import FAQSection from "@/components/FAQSection";
 import LeadCaptureSection from "@/components/LeadCaptureSection";
 import Footer from "@/components/Footer";
 import PreFooterCTA from "@/components/PreFooterCTA";
+import MediaSection from "@/components/MediaSection";
 
 const Index = () => {
   return (
@@ -23,6 +24,7 @@ const Index = () => {
         <MolecularPillarsSection />
         <BiologicalResetSection />
         <MentalSpecialtiesSection />
+        <MediaSection />
         <FAQSection />
         <LeadCaptureSection />
         <PreFooterCTA />
