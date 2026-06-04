@@ -79,6 +79,7 @@ const HeroSection = () => {
             <div className="space-y-4">
              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-right tracking-[0.15em]">
                 Neuro•Zen
+                <span className="sr-only"> — המרכז לנוירופונקטורה בישראל</span>
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground/90 leading-relaxed">
                 המרכז לנוירופונקטורה בישראל
