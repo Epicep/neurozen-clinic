@@ -7,10 +7,16 @@ import MethodTraditionSection from "@/components/method/MethodTraditionSection";
 import MethodCommunicationSection from "@/components/method/MethodCommunicationSection";
 import MethodEvidenceSection from "@/components/method/MethodEvidenceSection";
 import MethodCTASection from "@/components/method/MethodCTASection";
+import SEO from "@/components/SEO";
 
 const Method = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="שיטת הנוירופונקטורה | Neuro•Zen"
+        description="Neuropuncture — שיטה רפואית של ד״ר מייקל קוראדינו המשלבת דיקור חשמלי מדעי, מדעי המוח ומרשמים קליניים מבוססי ראיות."
+        path="/method"
+      />
       <Header />
       <main className="pt-20">
         <MethodHeroSection />

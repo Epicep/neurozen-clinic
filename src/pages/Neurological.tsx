@@ -6,10 +6,16 @@ import NeurologicalPhilosophySection from "@/components/neurological/Neurologica
 import NeurologicalParkinsonSection from "@/components/neurological/NeurologicalParkinsonSection";
 import NeurologicalMSSection from "@/components/neurological/NeurologicalMSSection";
 import NeurologicalBenefitsSection from "@/components/neurological/NeurologicalBenefitsSection";
+import SEO from "@/components/SEO";
 
 const Neurological = () => {
   return (
     <div className="min-h-screen bg-background" dir="rtl">
+      <SEO
+        title="טיפול נוירולוגי בנוירופונקטורה | Neuro•Zen"
+        description="טיפול נוירולוגי באמצעות נוירופונקטורה: פרקינסון, טרשת נפוצה, נוירופתיה ושיקום מוחי בתל אביב במרכז Neuro•Zen."
+        path="/neurological"
+      />
       <Header />
       <main>
         <NeurologicalHeroSection />

@@ -11,10 +11,16 @@ import LeadCaptureSection from "@/components/LeadCaptureSection";
 import Footer from "@/components/Footer";
 import PreFooterCTA from "@/components/PreFooterCTA";
 import MediaSection from "@/components/MediaSection";
+import SEO from "@/components/SEO";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Neuro•Zen — נוירופונקטורה בישראל | עילאי פארן"
+        description="קליניקה לנוירופונקטורה ומדעי המוח בתל אביב. טיפול בחרדה, דיכאון, פוסט-טראומה וכאב כרוני באמצעות דיקור חשמלי מדעי וגירוי עצב הוואגוס."
+        path="/"
+      />
       <Header />
       <main>
         <HeroSection />

@@ -5,10 +5,16 @@ import ChronicPainProblemSection from "@/components/chronic-pain/ChronicPainProb
 import ChronicPainScienceSection from "@/components/chronic-pain/ChronicPainScienceSection";
 import ChronicPainConditionsSection from "@/components/chronic-pain/ChronicPainConditionsSection";
 import LeadCaptureSection from "@/components/LeadCaptureSection";
+import SEO from "@/components/SEO";
 
 const ChronicPain = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="טיפול בכאב כרוני בנוירופונקטורה | Neuro•Zen"
+        description="טיפול ביולוגי בכאב כרוני באמצעות דיקור חשמלי מדעי. מנגנון מודולציה עצבית להפחתת פיברומיאלגיה, מיגרנות וכאבי גב כרוניים בתל אביב."
+        path="/chronic-pain"
+      />
       <Header />
       <main>
         <ChronicPainHeroSection />
