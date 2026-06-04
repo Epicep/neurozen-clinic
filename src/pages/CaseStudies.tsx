@@ -38,6 +38,11 @@ const recoveryCards = [
 const CaseStudies = () => {
   return (
     <div className="min-h-screen bg-background font-heebo">
+      <SEO
+        title="מקרי טיפול ותוצאות קליניות | Neuro•Zen"
+        description="תוצאות מדידות של מטופלים במרכז Neuro•Zen: שיפור משמעותי בחרדה, דיכאון, פוסט-טראומה ושינה במדדי GAD-7, PHQ-9 ו-PCL-5."
+        path="/cases"
+      />
       <Header />
       <main className="pt-28 pb-20">
         {/* Page Header */}

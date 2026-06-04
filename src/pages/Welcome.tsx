@@ -3,6 +3,7 @@ import { CreditCard, ClipboardList, CalendarDays, MapPin, Building, Shirt, Navig
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import SEO from "@/components/SEO";
 
 const steps = [
   {
@@ -38,6 +39,11 @@ const steps = [
 const Welcome = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="טופס קליטה למטופלים | Neuro•Zen"
+        description="טופס Welcome לאבחון ובניית מרשם טיפולי מותאם אישית במרכז Neuro•Zen לנוירופונקטורה בתל אביב."
+        path="/welcome"
+      />
       {/* Header */}
       <div className="bg-accent/30 py-16 px-6">
         <div className="container mx-auto max-w-2xl">
