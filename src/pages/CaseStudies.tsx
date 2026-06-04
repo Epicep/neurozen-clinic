@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { FileText } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const outcomes1 = [
   { label: "שיפור בחרדה", scale: "GAD-7", from: 12, to: 2, percent: 83.3 },

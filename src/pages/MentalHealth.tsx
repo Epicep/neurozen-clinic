@@ -6,10 +6,16 @@ import MentalScienceSection from "@/components/mental/MentalScienceSection";
 import MentalNeurochemistrySection from "@/components/mental/MentalNeurochemistrySection";
 import MentalConditionsSection from "@/components/mental/MentalConditionsSection";
 import LeadCaptureSection from "@/components/LeadCaptureSection";
+import SEO from "@/components/SEO";
 
 const MentalHealth = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="טיפול בחרדה, דיכאון ו-PTSD | Neuro•Zen"
+        description="גישה ביולוגית Bottom-Up לטיפול בחרדה, דיכאון ופוסט-טראומה דרך מערכת העצבים. נוירופונקטורה ודיקור חשמלי מדעי בתל אביב."
+        path="/mental-health"
+      />
       <Header />
       <main>
         <MentalHeroSection />

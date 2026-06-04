@@ -2,10 +2,16 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 
 const Legal = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="פרטיות ותנאי שימוש | Neuro•Zen"
+        description="מדיניות פרטיות, אבטחת מידע ותנאי שימוש של קליניקת Neuro•Zen — נוירופונקטורה בתל אביב בניהול עילאי פארן."
+        path="/legal"
+      />
       <Header />
       <main className="pt-28 pb-20">
         <div className="container mx-auto max-w-3xl px-6">
