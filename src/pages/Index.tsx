@@ -11,6 +11,7 @@ import LeadCaptureSection from "@/components/LeadCaptureSection";
 import Footer from "@/components/Footer";
 import PreFooterCTA from "@/components/PreFooterCTA";
 import MediaSection from "@/components/MediaSection";
+import ThreePillarsSection from "@/components/ThreePillarsSection";
 import SEO from "@/components/SEO";
 
 const Index = () => {
@@ -25,6 +26,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <AuthorityBar />
+        <ThreePillarsSection />
         <EmotionalSection />
         <NeuropunctureSection />
         <MolecularPillarsSection />

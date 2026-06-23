@@ -64,30 +64,30 @@ const NeuroPillButton = ({ pill, delay }: { pill: typeof neuroPills[0]; delay: n
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen pt-24 pb-16 relative" style={{
+    <section className="min-h-screen pt-36 pb-32 relative" style={{
       background: 'linear-gradient(180deg, hsl(45 20% 97%) 0%, hsl(170 20% 95%) 30%, hsl(45 15% 97%) 70%, hsl(45 15% 99%) 100%)'
     }}>
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
           {/* Text Content - Right side (RTL) */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-8"
+            className="space-y-10"
           >
-            <div className="space-y-4">
-             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight text-right tracking-[0.15em]">
+            <div className="space-y-5">
+             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight text-right tracking-[0.12em]">
                 Neuro•Zen
                 <span className="sr-only"> — המרכז לנוירופונקטורה בישראל</span>
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground/90 leading-relaxed">
-                המרכז לנוירופונקטורה בישראל
+                המרכז לנוירופונקטורה בישראל- בהנהלת עילאי פארן
               </h2>
             </div>
 
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              נוירופונקטורה (Neuropuncture) היא שיטת הדיקור השלמה היחידה המבוססת על מדעי המוח, המלמדת את המטפל כיצד לווסת מחדש את מערכת העצבים של המטופל בחזרה לתפקוד בריא ומאוזן.
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
+              רפואת נוירופונקטורה ומדעי המוח לטיפול בחרדה, דיכאון וטראומה (PTSD). ללא שיחה וללא תרופות.
             </p>
 
             <div className="flex flex-wrap gap-4">
