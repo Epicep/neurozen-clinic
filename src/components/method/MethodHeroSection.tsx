@@ -97,7 +97,7 @@ const MethodHeroSection = () => {
             className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto"
           >
             מערכת הדיקור השלמה היחידה המבוססת על מדעי המוח, המלמדת את המטפל כיצד לווסת מחדש 
-            את מערכת העצבים של המטופל בחזרה לתפקוד בריא ומאוזן בעזרת דיקור חשמלי.
+            את מערכת העצבים של המטופל בחזרה לתפקוד בריא ומאוזן.
           </motion.p>
         </div>
       </div>
