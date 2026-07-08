@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const EmotionalSection = () => {
   return (
@@ -28,11 +26,10 @@ const EmotionalSection = () => {
             <p className="text-lg text-muted-foreground leading-[1.9] text-right mt-6">
               מערכת העצבים שלכם עשויה להינעל במצב של <strong className="text-foreground">'עוררות יתר' (הישרדות)</strong> או <strong className="text-foreground">'קפיאה' (ניתוק)</strong>. במצבים אלו, המוח מתקשה להגיב לטיפולים המבוססים על שיח בלבד (<strong className="text-foreground">Top-Down</strong>). ב-Neuro•Zen אנו פונים ישירות אל ה<strong className="text-foreground">תשתית הביולוגית</strong> בגישת ה-<strong className="text-foreground">Bottom-Up</strong>: אנו מניעים את המערכת מהשורש הפיזיולוגי שלה, פותחים חסימות נוירולוגיות ומאפשרים לנפש להתחיל לנשום שוב.
             </p>
-          </div>
-          <div className="mt-8 flex justify-center">
-            <Button asChild variant="outline" size="lg" className="border-primary text-foreground hover:bg-primary/10">
-              <Link to="/cases">לראות תוצאות אמיתיות: סיפורי מקרה</Link>
-            </Button>
+            <p className="text-lg text-muted-foreground leading-[1.9] text-right mt-6 border-r-2 border-primary/30 pr-4 bg-primary/5 p-4 rounded-l-lg">
+              <strong className="text-foreground block mb-1">היתרון הגדול ביותר: לא צריך לפתוח מחדש את פצעי העבר</strong>
+              אחד החסמים המשמעותיים ביותר בדרך לטיפול הוא הפחד מהצפה רגשית ומחזרה אל זיכרונות כואבים. מכיוון שהטיפול בנוירופונקטורה הוא פיזיולוגי, אנו עובדים ישירות עם מערכת העצבים מבלי שתצטרכו לשתף, לנתח או לעבד מחדש את אירועי העבר. המוח שלכם לומד להירגע ולהחזיר את עצמו להומיאוסטזיס - בצורה בטוחה, שקטה וללא מאמץ נפשי כואב.
+            </p>
           </div>
         </motion.div>
       </div>

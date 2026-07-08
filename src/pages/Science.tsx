@@ -2,8 +2,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Brain, Zap, Activity, Stethoscope, BookOpen, ExternalLink } from "lucide-react";
-import ScienceInfographic from "@/components/science/ScienceInfographic";
-import SEO from "@/components/SEO";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -24,13 +22,14 @@ const sections = [
     links: [
       { label: "The Role of Endogenous Opioids in Acupuncture (PubMed)", url: "https://pubmed.ncbi.nlm.nih.gov/14990755/" },
     ],
+    visual: "Neural Synapse Diagram",
   },
   {
     icon: Brain,
     title: "נוירו-פלסטיות: 'דשן למוח' (BDNF)",
     text: (
       <>
-        אחד הגילויים המרתקים הוא היכולת של דיקור חשמלי להעלות את רמות ה-<strong>BDNF</strong> (Brain-Derived Neurotrophic Factor). זהו חלבון קריטי התומך בהישרדות נוירונים ומעודד צמיחה של סינפסות חדשות. זהו המפתח ל<strong>'חיווט מחדש'</strong> של המוח – תהליך המאפשר לשינוי הטיפולי להפוך לקבוע.
+        אחד הגילויים המרתקים הוא היכולת של שיטת ה-Neuropuncture להעלות את רמות ה-<strong>BDNF</strong> (Brain-Derived Neurotrophic Factor). זהו חלבון קריטי התומך בהישרדות נוירונים ומעודד צמיחה של סינפסות חדשות. זהו המפתח ל<strong>'חיווט מחדש'</strong> של המוח – תהליך המאפשר לשינוי הטיפולי להפוך לקבוע.
       </>
     ),
     links: [
@@ -42,13 +41,14 @@ const sections = [
     title: "ויסות עצב הוואגוס והמערכת האוטונומית",
     text: (
       <>
-        הטיפול מאפשר גירוי מדויק של עצב הוואגוס – ה'בלם' המרכזי של מערכת הסטרס. מחקרים מראים שגירוי זה מוריד רמות קורטיזול ומחזיר את הגוף לאיזון (Homeostasis).
+        השימוש בטכניקות כמו <strong>SGM</strong> ו-<strong>tVNS</strong> מאפשר גירוי מדויק של עצב הוואגוס – ה'בלם' המרכזי של מערכת הסטרס. מחקרים מראים שגירוי זה מוריד רמות קורטיזול ומחזיר את הגוף לאיזון (Homeostasis).
       </>
     ),
     links: [
       { label: "Vagus Nerve Stimulation and Autonomic Regulation (PMC)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8613407/" },
       { label: "Autonomic Effects of Acupuncture (PubMed)", url: "https://pubmed.ncbi.nlm.nih.gov/9646895/" },
     ],
+    visual: "Vagus Nerve Pathway Diagram",
   },
   {
     icon: Stethoscope,
@@ -80,11 +80,6 @@ const sections = [
 const Science = () => {
   return (
     <div className="min-h-screen bg-background font-heebo" dir="rtl">
-      <SEO
-        title="המדע מאחורי הנוירופונקטורה | Neuro•Zen"
-        description="מנגנונים נוירו-ביולוגיים של הנוירופונקטורה: נוירופלסטיות, גירוי עצב הוואגוס, איזון אוטונומי ומחקרים קליניים תומכים."
-        path="/science"
-      />
       <Header />
 
       {/* Hero */}
@@ -101,14 +96,12 @@ const Science = () => {
             transition={{ duration: 0.5, delay: 0.15 }}
             className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
           >
-            בצומת שבין מדע לקליניקה, הנוירופונקטורה פועלת לפי מרשמים מדויקים המכוונים למערכת העצבים. להלן הצצה למנגנונים המרכזיים המגובים במחקרים קליניים:
+            הנוירופונקטורה אינה רק טכניקה; היא שפה מדעית המבוססת על אלפי מחקרים קליניים וביולוגיים. להלן המנגנונים המרכזיים שדרכם הטיפול פועל על מערכת העצבים:
           </motion.p>
         </div>
       </section>
 
-      <ScienceInfographic />
-
-      {/* Text Sections */}
+      {/* Sections */}
       <section className="py-16">
         <div className="container mx-auto px-6 max-w-4xl space-y-16">
           {sections.map((section, index) => (
@@ -130,6 +123,12 @@ const Science = () => {
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
                 {section.text}
               </p>
+
+              {section.visual && (
+                <div className="w-full h-48 rounded-xl bg-muted/50 border border-border/40 flex items-center justify-center mb-6">
+                  <span className="text-muted-foreground/60 text-sm">[{section.visual}]</span>
+                </div>
+              )}
 
               <div className="flex flex-wrap gap-3">
                 {section.links.map((link, i) => (

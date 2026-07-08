@@ -11,7 +11,7 @@ const ProcessSection = () => {
     {
       icon: Zap,
       title: "האיפוס (The Reset)",
-      description: "סדרת טיפולים לוויסות חשמלי של מערכת העצבים.",
+      description: "סדרת טיפולים לוויסות נוירולוגי של מערכת העצבים.",
     },
     {
       icon: Heart,
