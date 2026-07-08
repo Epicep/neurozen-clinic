@@ -1,32 +1,5 @@
 import { motion } from "framer-motion";
-import { Zap, Activity } from "lucide-react";
-
-const tools = [
-  {
-    icon: Zap,
-    title: "Stellate Ganglion Modulation",
-    acronym: "SGM",
-    description: (
-      <>
-        ויסות הצבר העצבי הסימפתטי המשמש כ'מרכז הפיקוד' של מערכת ההישרדות. זהו <strong>'כפתור האתחול' הביולוגי</strong> המאפשר למערכת העצבים לצאת ממצב דריכות כרוני וחזרה לאיזון (Homeostasis) ללא הליכים פולשניים.
-      </>
-    ),
-    gradient: "from-primary/20 to-primary/5",
-    iconBg: "bg-primary/15",
-  },
-  {
-    icon: Activity,
-    title: "Transcutaneous Vagus Nerve Stimulation",
-    acronym: "tVNS",
-    description: (
-      <>
-        גירוי עדין של עצב הוואגוס המשמש כ<strong>'בלם הטבעי'</strong> של הגוף. הפעלתו משדרת למוח אותות של ביטחון, מורידה מיידית את רמות הקורטיזול (הורמון הסטרס) ומשפרת את יכולת הוויסות העצמי.
-      </>
-    ),
-    gradient: "from-teal/20 to-teal/5",
-    iconBg: "bg-teal/15",
-  },
-];
+import { Activity } from "lucide-react";
 
 const BiologicalResetSection = () => {
   return (
@@ -39,38 +12,37 @@ const BiologicalResetSection = () => {
           className="text-center mb-12"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-            כלי האתחול הביולוגי
+            נוירומודולציה לא פולשנית
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            טכנולוגיות ויסות עצבי מתקדמות
+            נוירומודולציה לא פולשנית – ויסות מהשורש
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {tools.map((tool, index) => (
-            <motion.div
-              key={tool.acronym}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-            >
-              <div className="rounded-2xl">
-                <div className="bg-card rounded-xl p-8 border-0 shadow-[0_4px_40px_-12px_hsl(220_60%_20%/0.08)] hover:shadow-[0_12px_50px_-12px_hsl(220_60%_20%/0.14)] hover:-translate-y-1.5 transition-all duration-300">
-                  <div className={`w-14 h-14 rounded-xl ${tool.iconBg} flex items-center justify-center mb-6`}>
-                    <tool.icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <div className="flex items-baseline gap-3 mb-2">
-                    <span className="text-2xl font-bold text-primary">{tool.acronym}</span>
-                    <span className="text-sm text-muted-foreground" dir="ltr">{tool.title}</span>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed mt-4">
-                    {tool.description}
-                  </p>
-                </div>
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-card rounded-xl p-8 border border-border/40 shadow-soft"
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-14 h-14 rounded-xl bg-primary/15 flex items-center justify-center">
+                <Activity className="w-7 h-7 text-primary" />
               </div>
-            </motion.div>
-          ))}
+              <h3 className="text-xl font-bold">איך זה עובד?</h3>
+            </div>
+            
+            <p className="text-muted-foreground leading-relaxed text-lg mb-6 text-right">
+              השיטה שלנו מבוססת על נוירומודולציה – שימוש במנגנונים נוירוביולוגים ממוקדים כדי להשפיע על מערכת העצבים. זהו לא "גירוי" רגיל, אלא אינטראקציה מורכבת עם המוח. אנו משלבים טכניקות נוירומודולציה, הכוללות גירוי של עצב הוואגוס ועצבים נוספים, כדי להגביר את הטון הפאראסימפטטי (מערכת המנוחה והרגיעה). האותות הללו מאפשרים למערכת העצבים לבצע "אתחול" ולעבור ממצב של הישרדות למצב של שיקום והומאוסטזיס.
+            </p>
+
+            <div className="bg-accent/20 p-6 rounded-xl border border-border/40">
+              <p className="text-base text-foreground font-medium text-right">
+                <strong>היתרון הגדול ביותר:</strong> כשהמילים לא מספיקות, המערכת הפיזיולוגית יודעת את הדרך חזרה לאיזון. הטיפול מאפשר לכם להשתקם ללא צורך לשתף, לנתח או לעבד מחדש טראומות עבר. זהו טיפול בטוח, שקט וללא מאמץ נפשי או פיזי.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -78,16 +78,15 @@ const HeroSection = () => {
           >
             <div className="space-y-5">
              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight text-right tracking-[0.12em]">
-                Neuro•Zen
-                <span className="sr-only"> — המרכז לנוירופונקטורה בישראל</span>
+                המרכז לנוירופונקטורה
               </h1>
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground/90 leading-relaxed">
-                המרכז לנוירופונקטורה בישראל- בהנהלת עילאי פארן
+              <h2 className="text-xl md:text-2xl font-medium text-foreground/70 leading-relaxed">
+                בהנהלת עילאי פארן
               </h2>
             </div>
 
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
-              רפואת נוירופונקטורה ומדעי המוח לטיפול בחרדה, דיכאון וטראומה (PTSD). ללא שיחה וללא תרופות.
+              נוירופונקטורה, לטיפול בחרדה, דיכאון וטראומה (PTSD). ללא שיחה וללא תרופות.
             </p>
 
             <div className="flex flex-wrap gap-4">
