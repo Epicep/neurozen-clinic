@@ -35,8 +35,8 @@ const MechanismSection = () => {
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
             המנגנון הביולוגי
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
-            המנגנון – מדוע המוח נמצא בעוררות-יתר כרונית?
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 leading-tight">
+            המעגל הביולוגי של מצבי חרדה, דיכאון וטראומה
           </h2>
         </motion.div>
 
