@@ -24,7 +24,6 @@ const Index = () => {
       <main>
         <HeroSection />
         <AuthorityBar />
-        <ThreePillarsSection />
         <MechanismSection />
         <TargetedApproachSection />
         <BiologicalResetSection />
