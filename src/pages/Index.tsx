@@ -1,9 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AuthorityBar from "@/components/AuthorityBar";
-import EmotionalSection from "@/components/EmotionalSection";
-import NeuropunctureSection from "@/components/NeuropunctureSection";
-import MolecularPillarsSection from "@/components/MolecularPillarsSection";
 import BiologicalResetSection from "@/components/BiologicalResetSection";
 import MentalSpecialtiesSection from "@/components/MentalSpecialtiesSection";
 import FAQSection from "@/components/FAQSection";
@@ -12,6 +9,8 @@ import Footer from "@/components/Footer";
 import PreFooterCTA from "@/components/PreFooterCTA";
 import MediaSection from "@/components/MediaSection";
 import ThreePillarsSection from "@/components/ThreePillarsSection";
+import MechanismSection from "@/components/MechanismSection";
+import TargetedApproachSection from "@/components/TargetedApproachSection";
 import SEO from "@/components/SEO";
 
 const Index = () => {
@@ -27,9 +26,8 @@ const Index = () => {
         <HeroSection />
         <AuthorityBar />
         <ThreePillarsSection />
-        <EmotionalSection />
-        <NeuropunctureSection />
-        <MolecularPillarsSection />
+        <MechanismSection />
+        <TargetedApproachSection />
         <BiologicalResetSection />
         <MentalSpecialtiesSection />
         <MediaSection />
