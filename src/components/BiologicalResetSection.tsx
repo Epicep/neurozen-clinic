@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Activity } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const BiologicalResetSection = () => {
   return (
@@ -41,6 +43,12 @@ const BiologicalResetSection = () => {
               <p className="text-base text-foreground font-medium text-right">
                 <strong>היתרון הגדול ביותר:</strong> כשהמילים לא מספיקות, המערכת הפיזיולוגית יודעת את הדרך חזרה לאיזון. הטיפול מאפשר לכם להשתקם ללא צורך לשתף, לנתח או לעבד מחדש טראומות עבר. זהו טיפול בטוח, שקט וללא מאמץ נפשי או פיזי.
               </p>
+            </div>
+
+            <div className="mt-8 text-center">
+              <Button asChild size="xl" variant="outline" className="border-primary text-foreground hover:bg-primary/10">
+                <Link to="/cases">לצפייה במדדי השיפור מהקליניקה</Link>
+              </Button>
             </div>
           </motion.div>
         </div>
