@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
 const SITE_URL = "https://neurozen-clinic.com";
-const DEFAULT_OG_IMAGE = `${SITE_URL}/neurozen_logo_full_transparent.png`; // נתיב מעודכן ללוגו שלך
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 interface SEOProps {
   title: string;
