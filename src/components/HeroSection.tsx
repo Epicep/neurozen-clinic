@@ -47,7 +47,13 @@ const HeroSection = () => {
               <img
                 src={brainImage}
                 alt="3D Brain Visualization"
-                className="w-full drop-shadow-xl"
+                className="w-full"
+                style={{
+                  WebkitMaskImage:
+                    "radial-gradient(ellipse at center, black 45%, transparent 78%)",
+                  maskImage:
+                    "radial-gradient(ellipse at center, black 45%, transparent 78%)",
+                }}
               />
             </div>
           </motion.div>
