@@ -16,6 +16,9 @@ import About from "./pages/About";
 import CaseStudies from "./pages/CaseStudies";
 import Legal from "./pages/Legal";
 import NotFound from "./pages/NotFound";
+import Anxiety from "./pages/Anxiety";
+import Depression from "./pages/Depression";
+import PTSD from "./pages/PTSD";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 const queryClient = new QueryClient();
@@ -40,6 +43,9 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/cases" element={<CaseStudies />} />
           <Route path="/legal" element={<Legal />} />
+          <Route path="/anxiety" element={<Anxiety />} />
+          <Route path="/depression" element={<Depression />} />
+          <Route path="/ptsd" element={<PTSD />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
