@@ -26,10 +26,10 @@ const Index = () => {
       <main>
         <HeroSection />
         <AuthorityBar />
+        <ConditionQuickLinks />
         <MechanismSection />
         <TargetedApproachSection />
         <ConditionsSpecialtiesSection />
-        <ConditionQuickLinks />
         <BiologicalResetSection />
         <MentalSpecialtiesSection />
         <MediaSection />
