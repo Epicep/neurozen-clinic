@@ -11,6 +11,8 @@ import MediaSection from "@/components/MediaSection";
 import ThreePillarsSection from "@/components/ThreePillarsSection";
 import MechanismSection from "@/components/MechanismSection";
 import TargetedApproachSection from "@/components/TargetedApproachSection";
+import ConditionsSpecialtiesSection from "@/components/ConditionsSpecialtiesSection";
+import ConditionQuickLinks from "@/components/ConditionQuickLinks";
 import SEO from "@/components/SEO";
 const Index = () => {
   return (
@@ -26,6 +28,8 @@ const Index = () => {
         <AuthorityBar />
         <MechanismSection />
         <TargetedApproachSection />
+        <ConditionsSpecialtiesSection />
+        <ConditionQuickLinks />
         <BiologicalResetSection />
         <MentalSpecialtiesSection />
         <MediaSection />
