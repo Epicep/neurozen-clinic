@@ -41,7 +41,7 @@ export default function Anxiety() {
         {/* Core Problem */}
         <section className="py-20 bg-white border-b border-stone-200/40">
           <div className="max-w-3xl mx-auto px-6">
-            <span className="text-teal-600 font-semibold text-xs tracking-wider uppercase block mb-3">הבעיה המרכזית (The Core Problem)</span>
+            <span className="text-teal-600 font-semibold text-xs tracking-wider uppercase block mb-3">הבעיה המרכזית&nbsp;</span>
             <h2 className="text-3xl font-light text-stone-900 mb-8 leading-tight">
               המחיר הפיזי של מערכת עצבים שיצאה מאיזון
             </h2>
@@ -59,7 +59,7 @@ export default function Anxiety() {
         {/* Science */}
         <section className="py-20 bg-[#FAF9F5] border-b border-stone-200/40">
           <div className="max-w-4xl mx-auto px-6">
-            <span className="text-teal-600 font-semibold text-xs tracking-wider uppercase block mb-3 text-center">המדע שלנו (The Science)</span>
+            <span className="text-teal-600 font-semibold text-xs tracking-wider uppercase block mb-3 text-center">המדע שלנו&nbsp;</span>
             <h2 className="text-3xl font-light text-stone-900 text-center mb-12">נוירופונקטורה (Neuropuncture)</h2>
             <div className="grid md:grid-cols-2 gap-8 text-stone-600 text-base leading-relaxed mb-10">
               <div className="space-y-6 bg-white p-8 rounded-2xl border border-stone-200/40 shadow-sm">

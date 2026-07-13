@@ -24,7 +24,7 @@ export default function Depression() {
               נוירופונקטורה בתל אביב
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-stone-900 leading-[1.15] mb-6">
-              טיפול בדיכאון ללא תרופות וכימיקלים
+              טיפול בדיכאון ללא תרופות&nbsp;
             </h1>
             <p className="text-lg md:text-xl text-stone-600 font-light max-w-3xl mx-auto leading-relaxed">
               גלו אלטרנטיבה קלינית ומבוססת מדע שנועדה לעזור לכם לצאת מדיכאון ללא כדורים, באמצעות שפעול אקטיבי של מוליכים עצביים ונוירופלסטיות.
@@ -39,7 +39,7 @@ export default function Depression() {
 
         <section className="py-20 bg-white border-b border-stone-200/40">
           <div className="max-w-3xl mx-auto px-6">
-            <span className="text-teal-600 font-semibold text-xs tracking-wider uppercase block mb-3">הבעיה המרכזית (The Core Problem)</span>
+            <span className="text-teal-600 font-semibold text-xs tracking-wider uppercase block mb-3">הבעיה המרכזית&nbsp;</span>
             <h2 className="text-3xl font-light text-stone-900 mb-8 leading-tight">הפיזיולוגיה של הדיכאון: חציבה תחת ערפל כבד</h2>
             <div className="space-y-6 text-stone-600 leading-relaxed text-base md:text-lg">
               <p>
@@ -54,7 +54,7 @@ export default function Depression() {
 
         <section className="py-20 bg-[#FAF9F5] border-b border-stone-200/40">
           <div className="max-w-3xl mx-auto px-6">
-            <span className="text-teal-600 font-semibold text-xs tracking-wider uppercase block mb-3 text-center">המדע שלנו (The Science)</span>
+            <span className="text-teal-600 font-semibold text-xs tracking-wider uppercase block mb-3 text-center">המדע שלנו</span>
             <h2 className="text-3xl font-light text-stone-900 text-center mb-8">כיצד נוירופונקטורה מעוררת מחדש את המוח?</h2>
             <div className="bg-white p-8 rounded-2xl border border-stone-200/40 shadow-sm text-stone-600 leading-relaxed text-base md:text-lg">
               <p>
@@ -67,7 +67,7 @@ export default function Depression() {
         <section className="py-20 bg-white border-b border-stone-200/40">
           <div className="max-w-3xl mx-auto px-6">
             <div className="text-center mb-10">
-              <span className="text-teal-600 font-semibold text-xs tracking-wider uppercase block mb-3">הוכחה קלינית (Clinical Evidence)</span>
+              <span className="text-teal-600 font-semibold text-xs tracking-wider uppercase block mb-3">הוכחה קלינית&nbsp;</span>
               <h2 className="text-3xl font-light text-stone-900">תוצאות חסרות תקדים בשיקום מערכת העצבים</h2>
             </div>
             <div className="bg-teal-50/40 p-8 rounded-2xl border border-teal-100 text-stone-700 leading-relaxed text-base md:text-lg">

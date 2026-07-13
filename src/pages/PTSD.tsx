@@ -39,7 +39,7 @@ export default function PTSD() {
 
         <section className="py-20 bg-white border-b border-stone-200/40">
           <div className="max-w-3xl mx-auto px-6">
-            <span className="text-teal-600 font-semibold text-xs tracking-wider uppercase block mb-3">הבעיה המרכזית (The Core Problem)</span>
+            <span className="text-teal-600 font-semibold text-xs tracking-wider uppercase block mb-3">הבעיה המרכזית&nbsp;</span>
             <h2 className="text-3xl font-light text-stone-900 mb-8 leading-tight">החתימה הפיזית של הטראומה: כשהגוף מסרב לשחרר את העבר</h2>
             <div className="space-y-6 text-stone-600 leading-relaxed text-base md:text-lg">
               <p>
@@ -71,7 +71,7 @@ export default function PTSD() {
         <section className="py-20 bg-white border-b border-stone-200/40">
           <div className="max-w-3xl mx-auto px-6">
             <div className="text-center mb-10">
-              <span className="text-teal-600 font-semibold text-xs tracking-wider uppercase block mb-3">הוכחה קלינית (Clinical Evidence)</span>
+              <span className="text-teal-600 font-semibold text-xs tracking-wider uppercase block mb-3">הוכחה קלינית&nbsp;</span>
               <h2 className="text-3xl font-light text-stone-900">סיפורי הצלחה ושיקום</h2>
             </div>
             <div className="bg-teal-50/40 p-8 rounded-2xl border border-teal-100 text-stone-700 leading-relaxed text-base md:text-lg">
