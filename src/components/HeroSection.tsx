@@ -24,7 +24,7 @@ const HeroSection = () => {
 
             <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-xl whitespace-pre-line">
               נוירופונקטורה לטיפול בחרדה, דיכאון וטראומה (PTSD).&nbsp;
-              {"\n"}בניהול: עילאי פארן
+              {"\n"}בניהול: עילאי פארן.
             </p>
 
             <div className="pt-4">
