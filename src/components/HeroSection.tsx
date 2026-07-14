@@ -18,12 +18,13 @@ const HeroSection = () => {
           >
             <div className="space-y-4">
               <h1 className="text-5xl md:text-7xl font-bold text-foreground leading-tight tracking-tight">
-                המרכז לנוירופונקטורה
+                המרכז הישראלי לנוירופונקטורה
               </h1>
             </div>
 
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-xl">
-              נוירופונקטורה, לטיפול בחרדה, דיכאון וטראומה (PTSD). ללא שיחה וללא תרופות.
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-xl whitespace-pre-line">
+              נוירופונקטורה לטיפול בחרדה, דיכאון וטראומה (PTSD).&nbsp;
+              {"\n"}בניהול: עילאי פארן
             </p>
 
             <div className="pt-4">
