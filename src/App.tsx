@@ -15,6 +15,7 @@ import Welcome from "./pages/Welcome";
 import About from "./pages/About";
 import CaseStudies from "./pages/CaseStudies";
 import Legal from "./pages/Legal";
+import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 import Anxiety from "./pages/Anxiety";
 import Depression from "./pages/Depression";
@@ -43,6 +44,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/cases" element={<CaseStudies />} />
           <Route path="/legal" element={<Legal />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="/anxiety" element={<Anxiety />} />
           <Route path="/depression" element={<Depression />} />
           <Route path="/ptsd" element={<PTSD />} />
