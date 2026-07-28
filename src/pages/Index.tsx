@@ -4,6 +4,7 @@ import AuthorityBar from "@/components/AuthorityBar";
 import BiologicalResetSection from "@/components/BiologicalResetSection";
 import MentalSpecialtiesSection from "@/components/MentalSpecialtiesSection";
 import FAQSection from "@/components/FAQSection";
+import { homeFaqs } from "@/data/faqs";
 import LeadCaptureSection from "@/components/LeadCaptureSection";
 import Footer from "@/components/Footer";
 import PreFooterCTA from "@/components/PreFooterCTA";
@@ -21,6 +22,7 @@ const Index = () => {
         title="Neuro•Zen — נוירופונקטורה בישראל | עילאי פארן"
         description="קליניקה לנוירופונקטורה ומדעי המוח בתל אביב. טיפול בחרדה, דיכאון, פוסט-טראומה וכאב כרוני באמצעות דיקור חשמלי מדעי וגירוי עצב הוואגוס."
         path="/"
+        faqItems={homeFaqs}
       />
       <Header />
       <main>

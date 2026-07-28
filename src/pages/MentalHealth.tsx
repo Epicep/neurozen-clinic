@@ -15,6 +15,7 @@ const MentalHealth = () => {
         title="טיפול בחרדה, דיכאון ו-PTSD | Neuro•Zen"
         description="גישה ביולוגית Bottom-Up לטיפול בחרדה, דיכאון ופוסט-טראומה דרך מערכת העצבים. נוירופונקטורה ודיקור חשמלי מדעי בתל אביב."
         path="/mental-health"
+        pageType="MedicalWebPage"
       />
       <Header />
       <main>

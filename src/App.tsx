@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import MentalHealth from "./pages/MentalHealth";
@@ -48,9 +48,9 @@ const App = () => (
           <Route path="/anxiety" element={<Anxiety />} />
           <Route path="/depression" element={<Depression />} />
           <Route path="/ptsd" element={<PTSD />} />
-          <Route path="/treatments/anxiety" element={<Anxiety />} />
-          <Route path="/treatments/depression" element={<Depression />} />
-          <Route path="/treatments/ptsd" element={<PTSD />} />
+          <Route path="/treatments/anxiety" element={<Navigate to="/anxiety" replace />} />
+          <Route path="/treatments/depression" element={<Navigate to="/depression" replace />} />
+          <Route path="/treatments/ptsd" element={<Navigate to="/ptsd" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

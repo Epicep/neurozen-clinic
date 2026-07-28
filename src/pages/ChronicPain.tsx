@@ -14,6 +14,7 @@ const ChronicPain = () => {
         title="טיפול בכאב כרוני בנוירופונקטורה | Neuro•Zen"
         description="טיפול ביולוגי בכאב כרוני באמצעות דיקור חשמלי מדעי. מנגנון מודולציה עצבית להפחתת פיברומיאלגיה, מיגרנות וכאבי גב כרוניים בתל אביב."
         path="/chronic-pain"
+        pageType="MedicalWebPage"
       />
       <Header />
       <main>
