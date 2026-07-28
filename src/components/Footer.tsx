@@ -53,6 +53,12 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
+            <Link
+              to="/privacy"
+              className="inline-block text-secondary-foreground/50 hover:text-primary transition-colors text-xs mt-2"
+            >
+              מדיניות פרטיות
+            </Link>
           </motion.div>
 
           {/* CTA */}
