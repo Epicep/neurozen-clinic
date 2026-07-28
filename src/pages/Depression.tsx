@@ -15,6 +15,7 @@ export default function Depression() {
         title="טיפול בדיכאון ללא תרופות | Neuro•Zen"
         description="אלטרנטיבה קלינית מבוססת מדע לצאת מדיכאון ללא כדורים – שפעול מוליכים עצביים ונוירופלסטיות בעזרת נוירופונקטורה בתל אביב."
         path="/depression"
+        pageType="MedicalWebPage"
       />
       <Header />
       <main className="text-[#2C3E50] font-sans antialiased selection:bg-teal-100 pt-20">

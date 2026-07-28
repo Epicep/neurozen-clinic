@@ -15,6 +15,7 @@ const NotFound = () => {
         title="הדף לא נמצא | Neuro•Zen"
         description="הדף שחיפשת אינו קיים. חזרו לדף הבית של Neuro•Zen — נוירופונקטורה בישראל בניהול עילאי פארן."
         path="/404"
+        noIndex
       />
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold">404</h1>

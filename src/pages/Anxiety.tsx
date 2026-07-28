@@ -15,6 +15,7 @@ export default function Anxiety() {
         title="טיפול בחרדה ללא תרופות | Neuro•Zen"
         description="טיפול טבעי בחרדה מבוסס מדע קשיח בעזרת נוירופונקטורה. איפוס מערכת האזעקה הפנימית ללא תופעות לוואי. תל אביב."
         path="/anxiety"
+        pageType="MedicalWebPage"
       />
       <Header />
       <main className="text-[#2C3E50] font-sans antialiased selection:bg-teal-100 pt-20">

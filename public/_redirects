@@ -1,1 +1,4 @@
-/*    /index.html   200
+/treatments/anxiety     /anxiety       301
+/treatments/depression  /depression    301
+/treatments/ptsd        /ptsd          301
+/*                      /index.html     200

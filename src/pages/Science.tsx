@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Brain, Zap, Activity, Stethoscope, BookOpen, ExternalLink } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -80,6 +81,12 @@ const sections = [
 const Science = () => {
   return (
     <div className="min-h-screen bg-background font-heebo" dir="rtl">
+      <SEO
+        title="המדע והמחקר מאחורי נוירופונקטורה | Neuro•Zen"
+        description="סקירת מנגנונים ומקורות מחקריים בנושאי דיקור חשמלי, נוירופלסטיות, עצב הוואגוס, כאב ושיקום נוירולוגי."
+        path="/science"
+        pageType="CollectionPage"
+      />
       <Header />
 
       {/* Hero */}

@@ -10,6 +10,7 @@ const About = () => {
         title="אודות עילאי פארן — מטפל הנוירופונקטורה הראשי"
         description="עילאי פארן, מטפל מוסמך בשיטת הנוירופונקטורה של ד״ר מייקל קוראדינו. רקע, הכשרה ופילוסופיה טיפולית במרכז Neuro•Zen בתל אביב."
         path="/about"
+        pageType="AboutPage"
       />
       <Header />
       <main className="pt-24">

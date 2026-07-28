@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://neurozen-clinic.lovable.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://neurozen-clinic.lovable.app/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://neurozen-clinic.lovable.app/method</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://neurozen-clinic.lovable.app/science</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://neurozen-clinic.lovable.app/cases</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://neurozen-clinic.lovable.app/mental-health</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://neurozen-clinic.lovable.app/neurological</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://neurozen-clinic.lovable.app/chronic-pain</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://neurozen-clinic.lovable.app/metabolic</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://neurozen-clinic.lovable.app/legal</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://neurozen-clinic.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://neurozen-clinic.com/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://neurozen-clinic.com/method</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://neurozen-clinic.com/science</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://neurozen-clinic.com/cases</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://neurozen-clinic.com/mental-health</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://neurozen-clinic.com/anxiety</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://neurozen-clinic.com/depression</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://neurozen-clinic.com/ptsd</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://neurozen-clinic.com/neurological</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://neurozen-clinic.com/chronic-pain</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://neurozen-clinic.com/metabolic</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://neurozen-clinic.com/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://neurozen-clinic.com/legal</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

@@ -15,6 +15,7 @@ export default function PTSD() {
         title="טיפול בפוסט טראומה (PTSD) ללא תרופות | Neuro•Zen"
         description="שיטת נוירופונקטורה מתקדמת המשקמת את המוח ומחזירה את מערכת העצבים להומאוסטזיס – טיפול טבעי בפוסט טראומה ללא מילים וללא תרופות."
         path="/ptsd"
+        pageType="MedicalWebPage"
       />
       <Header />
       <main className="text-[#2C3E50] font-sans antialiased selection:bg-teal-100 pt-20">

@@ -66,4 +66,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://neurozen-clinic.lovable.app/sitemap.xml
+Sitemap: https://neurozen-clinic.com/sitemap.xml

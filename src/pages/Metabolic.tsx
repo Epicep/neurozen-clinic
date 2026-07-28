@@ -14,6 +14,7 @@ const Metabolic = () => {
         title="איזון מטבולי בנוירופונקטורה | Neuro•Zen"
         description="טיפול באיזון מטבולי, סוכרת, השמנה ותסמונת מטבולית באמצעות גירוי עצבי מדעי וגירוי עצב הוואגוס במרכז Neuro•Zen בתל אביב."
         path="/metabolic"
+        pageType="MedicalWebPage"
       />
       <Header />
       <main>
