@@ -6,12 +6,7 @@ import SEO from "@/components/SEO";
 const About = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEO
-        title="אודות עילאי פארן — מטפל הנוירופונקטורה הראשי"
-        description="עילאי פארן, מטפל מוסמך בשיטת הנוירופונקטורה של ד״ר מייקל קוראדינו. רקע, הכשרה ופילוסופיה טיפולית במרכז Neuro•Zen בתל אביב."
-        path="/about"
-        pageType="AboutPage"
-      />
+      <SEO path="/about" />
       <Header />
       <main className="pt-24">
         {/* Hero */}

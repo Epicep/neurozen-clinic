@@ -11,12 +11,7 @@ import SEO from "@/components/SEO";
 const Neurological = () => {
   return (
     <div className="min-h-screen bg-background" dir="rtl">
-      <SEO
-        title="טיפול נוירולוגי בנוירופונקטורה | Neuro•Zen"
-        description="טיפול נוירולוגי באמצעות נוירופונקטורה: פרקינסון, טרשת נפוצה, נוירופתיה ושיקום מוחי בתל אביב במרכז Neuro•Zen."
-        path="/neurological"
-        pageType="MedicalWebPage"
-      />
+      <SEO path="/neurological" />
       <Header />
       <main>
         <NeurologicalHeroSection />

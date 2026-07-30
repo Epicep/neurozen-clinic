@@ -55,11 +55,7 @@ const MetricsGrid = ({ items }: { items: { label: string; scale: string; from?: 
 const CaseStudies = () => {
   return (
     <div className="min-h-screen bg-background font-heebo">
-      <SEO
-        title="מקרי טיפול ותוצאות קליניות | המרכז לנוירופונקטורה"
-        description="תוצאות מדידות של מטופלים במרכז לנוירופונקטורה: שיפור משמעותי בחרדה, דיכאון, פוסט-טראומה ושינה."
-        path="/cases"
-      />
+      <SEO path="/cases" />
       <Header />
       <main className="pt-28 pb-20">
         <section className="container mx-auto px-6 mb-16 text-center">
