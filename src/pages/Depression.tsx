@@ -11,12 +11,7 @@ export default function Depression() {
 
   return (
     <div className="min-h-screen bg-background" dir="rtl">
-      <SEO
-        title="טיפול בדיכאון ללא תרופות | Neuro•Zen"
-        description="אלטרנטיבה קלינית מבוססת מדע לצאת מדיכאון ללא כדורים – שפעול מוליכים עצביים ונוירופלסטיות בעזרת נוירופונקטורה בתל אביב."
-        path="/depression"
-        pageType="MedicalWebPage"
-      />
+      <SEO path="/depression" />
       <Header />
       <main className="text-[#2C3E50] font-sans antialiased selection:bg-teal-100 pt-20">
         <section className="relative overflow-hidden py-20 md:py-32 border-b border-stone-200/60 bg-gradient-to-b from-[#FAF9F5] to-[#FDFCF7]">

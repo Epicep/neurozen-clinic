@@ -18,12 +18,7 @@ import SEO from "@/components/SEO";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEO
-        title="Neuro•Zen — נוירופונקטורה בישראל | עילאי פארן"
-        description="קליניקה לנוירופונקטורה ומדעי המוח בתל אביב. טיפול בחרדה, דיכאון, פוסט-טראומה וכאב כרוני באמצעות דיקור חשמלי מדעי וגירוי עצב הוואגוס."
-        path="/"
-        faqItems={homeFaqs}
-      />
+      <SEO path="/" faqItems={homeFaqs} />
       <Header />
       <main>
         <HeroSection />

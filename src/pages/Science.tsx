@@ -81,12 +81,7 @@ const sections = [
 const Science = () => {
   return (
     <div className="min-h-screen bg-background font-heebo" dir="rtl">
-      <SEO
-        title="המדע והמחקר מאחורי נוירופונקטורה | Neuro•Zen"
-        description="סקירת מנגנונים ומקורות מחקריים בנושאי דיקור חשמלי, נוירופלסטיות, עצב הוואגוס, כאב ושיקום נוירולוגי."
-        path="/science"
-        pageType="CollectionPage"
-      />
+      <SEO path="/science" />
       <Header />
 
       {/* Hero */}

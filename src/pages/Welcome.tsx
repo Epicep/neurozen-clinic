@@ -1,11 +1,26 @@
 import { motion } from "framer-motion";
-import { CreditCard, ClipboardList, CalendarDays, MapPin, Building, Shirt, Navigation, MessageCircle, FileText, FileHeart, ArrowRight, Instagram } from "lucide-react";
+import { CreditCard, ClipboardList, CalendarDays, MapPin, Building, Shirt, Navigation, MessageCircle, FileText, FileHeart, ArrowRight, Instagram, type LucideIcon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import SEO from "@/components/SEO";
 
-const steps = [
+interface StepButton {
+  label: string;
+  href: string;
+  icon?: LucideIcon;
+  subtitle?: string;
+}
+
+interface WelcomeStep {
+  number: number;
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  buttons: StepButton[];
+}
+
+const steps: WelcomeStep[] = [
   {
     number: 1,
     icon: CreditCard,
@@ -39,11 +54,7 @@ const steps = [
 const Welcome = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEO
-        title="טופס קליטה למטופלים | Neuro•Zen"
-        description="טופס Welcome לאבחון ובניית מרשם טיפולי מותאם אישית במרכז Neuro•Zen לנוירופונקטורה בתל אביב."
-        path="/welcome"
-      />
+      <SEO path="/welcome" />
       {/* Header */}
       <div className="bg-accent/30 py-16 px-6">
         <div className="container mx-auto max-w-2xl">
@@ -94,8 +105,8 @@ const Welcome = () => {
                 <div className="flex flex-col gap-3">
                   {step.buttons.map((btn) => (
                     <div key={btn.label}>
-                      {(btn as any).subtitle && (
-                        <p className="text-muted-foreground text-sm mb-2 leading-relaxed">{(btn as any).subtitle}</p>
+                      {btn.subtitle && (
+                        <p className="text-muted-foreground text-sm mb-2 leading-relaxed">{btn.subtitle}</p>
                       )}
                       <Button variant="hero" size="lg" className="w-full sm:w-auto" asChild>
                         <a href={btn.href} target="_blank" rel="noopener noreferrer">

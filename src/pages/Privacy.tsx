@@ -7,11 +7,7 @@ import SEO from "@/components/SEO";
 const Privacy = () => {
   return (
     <div className="min-h-screen bg-background" dir="rtl">
-      <SEO
-        title="מדיניות פרטיות | Neuro•Zen"
-        description="מדיניות פרטיות של המרכז הישראלי לנוירופונקטורה בניהול עילאי פארן, בהתאם לחוק הגנת הפרטיות התשמ״א-1981 ותקנות אבטחת מידע התשע״ז-2017."
-        path="/privacy"
-      />
+      <SEO path="/privacy" />
       <Header />
       <main className="pt-28 pb-20">
         <div className="container mx-auto max-w-3xl px-6">
