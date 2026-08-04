@@ -20,6 +20,7 @@ import NotFound from "./pages/NotFound";
 import Anxiety from "./pages/Anxiety";
 import Depression from "./pages/Depression";
 import PTSD from "./pages/PTSD";
+import ADHD from "./pages/ADHD";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 const queryClient = new QueryClient();
@@ -48,9 +49,11 @@ const App = () => (
           <Route path="/anxiety" element={<Anxiety />} />
           <Route path="/depression" element={<Depression />} />
           <Route path="/ptsd" element={<PTSD />} />
+          <Route path="/adhd" element={<ADHD />} />
           <Route path="/treatments/anxiety" element={<Navigate to="/anxiety" replace />} />
           <Route path="/treatments/depression" element={<Navigate to="/depression" replace />} />
           <Route path="/treatments/ptsd" element={<Navigate to="/ptsd" replace />} />
+          <Route path="/treatments/adhd" element={<Navigate to="/adhd" replace />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
