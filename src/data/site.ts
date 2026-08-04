@@ -41,6 +41,13 @@ export const pageMetadata = {
       "עילאי פארן, מטפל מוסמך בשיטת הנוירופונקטורה של ד״ר מייקל קוראדינו. רקע, הכשרה ופילוסופיה טיפולית במרכז Neuro•Zen בתל אביב.",
     pageType: "AboutPage",
   },
+  "/adhd": {
+    title: "טיפול ב־ADHD במבוגרים באמצעות נוירופונקטורה | Neuro•Zen",
+    description:
+      "טיפול נוירוביולוגי למבוגרים עם ADHD המתמקד ברשתות הקשב, הקורטקס הפרה־פרונטלי והגרעינים הבזליים. מידע על התהליך, שאלון ASRS ושיחת התאמה בתל אביב.",
+    pageType: "MedicalWebPage",
+    serviceName: "נוירופונקטורה למבוגרים עם ADHD",
+  },
   "/anxiety": {
     title: "טיפול בחרדה ללא תרופות | Neuro•Zen",
     description:
