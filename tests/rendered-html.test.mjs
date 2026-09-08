@@ -51,9 +51,9 @@ test('research references, expandable methods and cross-page section links resol
   const science = html.get('/science');
   assert.ok(!science.includes('העמוד בבנייה'));
   assert.ok(!science.includes('נמצא בהכנה'));
-  assert.equal((science.match(/class="research-details"/g)??[]).length,12);
+  assert.equal((science.match(/class="research-details"/g)??[]).length,13);
   const sources = new Set([...science.matchAll(/<a[^>]*href="(https:\/\/(?:pubmed\.ncbi\.nlm\.nih\.gov|pmc\.ncbi\.nlm\.nih\.gov|jamanetwork\.com|journals\.plos\.org)[^"]*)"/g)].map(match=>match[1]));
-  assert.equal(sources.size,9);
+  assert.equal(sources.size,10);
   for (const [route,body] of html) {
     for (const [,target,anchor] of body.matchAll(/<a[^>]*href="(\/[^"#]*)#([^"]+)"/g)) {
       assert.ok(html.get(target||route)?.includes(`id="${anchor}"`),`${route}: missing target ${target}#${anchor}`);

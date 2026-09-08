@@ -108,6 +108,7 @@ button, input { font: inherit; }
 .landing-price { max-width:390px; margin-right:auto; padding:38px; border:1px solid #cbd8d0; background:#f8faf8; }
 .landing-price>span { color:#6b7c74; font-size:.85rem; }
 .landing-price>strong { display:block; margin:10px 0 18px; color:var(--landing-green); font-size:5rem; line-height:1; font-weight:500; }
+.landing-price-title { margin: 28px 0 22px; color: var(--landing-green); font-size: clamp(1.55rem, 3vw, 2.35rem); line-height: 1.15; letter-spacing: -.035em; }
 .landing-price>strong small { margin-right:7px; font-size:1.3rem; }
 .landing-price>b { display:inline-flex; align-items:center; gap:6px; color:#4d625a; font-size:.85rem; font-weight:500; }
 .landing-price>b svg { color:#99703c; }
