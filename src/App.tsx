@@ -21,6 +21,7 @@ import Anxiety from "./pages/Anxiety";
 import Depression from "./pages/Depression";
 import PTSD from "./pages/PTSD";
 import ADHD from "./pages/ADHD";
+import LandingCalm from "./pages/LandingCalm";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 const queryClient = new QueryClient();
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/depression" element={<Depression />} />
           <Route path="/ptsd" element={<PTSD />} />
           <Route path="/adhd" element={<ADHD />} />
+          <Route path="/lp/calm" element={<LandingCalm />} />
           <Route path="/treatments/anxiety" element={<Navigate to="/anxiety" replace />} />
           <Route path="/treatments/depression" element={<Navigate to="/depression" replace />} />
           <Route path="/treatments/ptsd" element={<Navigate to="/ptsd" replace />} />
