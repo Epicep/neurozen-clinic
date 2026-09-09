@@ -11,7 +11,12 @@
 .case-experience { border-inline-start: 3px solid #789781; padding: 20px 24px; background: #eff5ef; margin: 24px 0; }
 .case-experience > span { font-size: .875rem; color: #45654e; }
 .case-experience p { font-size: 1.15rem; color: #193b35; margin: 12px 0; }
+.case-experience blockquote { font-size: 1.3rem; line-height: 1.85; color: #193b35; margin: 12px 0 0; font-weight: 500; }
 .case-experience small { font-size: .875rem; color: #53695b; }
+.clinic-cases.reviewed-copy .copy-cta { background: #163f35; color: #fff; }
+.clinic-cases.reviewed-copy .copy-cta h2, .clinic-cases.reviewed-copy .copy-cta p, .clinic-cases.reviewed-copy .copy-cta a { color: #fff; }
+.clinic-cases.reviewed-copy .copy-cta .copy-links a[href*="wa.me"] { background: #fff; color: #163f35; }
+.clinic-cases .copy-cta .copy-links a:focus-visible { outline: 3px solid #e4bd79; outline-offset: 5px; }
 .case-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0; }
 .case-metric { border: 1px solid #dce5df; padding: 18px; border-radius: 7px; }
 .case-metric dt { font-size: .9375rem; font-weight: 500; min-height: 3em; }

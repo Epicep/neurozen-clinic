@@ -18,7 +18,7 @@ export default function CasesPage() {
       <h1>מקרים מהקליניקה</h1>
       <div className="copy-intro"><p>לחזור לישון. לצאת מהמיטה. להרגיש פחות דרוכים, או למצוא שוב עניין בחיים. מאחורי כל מדד יש חוויה אישית — והיא במרכז הסיפורים שלפניכם.</p>
         <p>העמוד מציג תיאורים מתוך המעקב בקליניקה, לצד ציוני התחלה וסיום. הדגש הוא על מה שהשתנה בחיי היומיום, וגם על הקשיים שנותרו.</p>
-        <div className="case-privacy-note"><strong>הפרטיות קודמת לסיפור.</strong><p>הסיפורים והעדויות קוצרו ונוסחו מחדש לשמירה על הפרטיות. הושמטו שמות, ראשי תיבות, גיל מדויק ונסיבות אישיות מזהות. תמציות העדויות אינן ציטוטים מילה במילה.</p></div>
+        <div className="case-privacy-note"><strong>הפרטיות קודמת לסיפור.</strong><p>הציטוטים במרכאות מובאים מתוך דברי המטופלים. קטעים הושמטו לשמירה על הפרטיות ולמיקוד, ומסומנים ב־[…]. סיפורי הרקע מוצגים בתמצית, ללא שמות או פרטים מזהים.</p></div>
         <div className="copy-links"><Link href="/cases#stories">לסיפורי המטופלים</Link><Link href="/cases#reading">איך לקרוא את המדדים?</Link></div>
       </div>
     </div></section>
@@ -31,9 +31,10 @@ export default function CasesPage() {
     <section id="stories" className="case-stories"><div className="editorial-shell">
       <div className="case-section-title"><p className="section-kicker">חוויות מתוך הדרך</p><h2>השינוי בחיים, לצד השינוי במדדים</h2></div>
       {cases.map(item=><article id={item.id} key={item.id} className="clinic-case">
-        <header><p className="section-kicker">{item.topic}</p><h3>{item.title}</h3></header>
+        <header><p className="section-kicker">{item.topic} · {item.sessions} טיפולים</p><h3>{item.title}</h3></header>
+        {item.quote && <aside className="case-experience" aria-label="חוויה אישית של המטופל או המטופלת"><span>חוויה אישית של המטופל/ת</span><blockquote>״{item.quote}״</blockquote>{item.quoteNote && <small>{item.quoteNote}</small>}</aside>}
         <div className="case-story-grid"><div><h4>נקודת ההתחלה</h4><p>{item.story}</p>
-          <aside className="case-experience" aria-label="תמצית החוויה האישית"><span>מתוך החוויה האישית</span><p>{item.experience}</p><small>תמצית העדות בניסוח מעובד</small></aside>
+          {item.initialQuote && <aside className="case-experience case-initial-quote"><span>במילותיה, בתחילת הטיפול</span><blockquote>״{item.initialQuote}״</blockquote></aside>}
         </div><div className="case-results"><h4>השינוי שנמדד</h4>
           {item.metrics.length ? <dl className="case-metrics">{item.metrics.map(metric=>{
             const delta=metric.after-metric.before;
