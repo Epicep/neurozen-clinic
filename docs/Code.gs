@@ -1,4 +1,5 @@
 const LEADS_SHEET_NAME = 'לידים';
+const CRM_SPREADSHEET_ID = '14Ye-pJJF9njuUoaiCUSRRs8IHQmXHUmF-Kzg2QTo1qI';
 
 function doGet() {
   return jsonResponse_({ ok: true, service: 'NeuroZen CRM' });
@@ -22,7 +23,7 @@ function doPost(e) {
       return jsonResponse_({ ok: false, error: 'missing_required_fields' });
     }
 
-    const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(LEADS_SHEET_NAME);
+    const sheet = SpreadsheetApp.openById(CRM_SPREADSHEET_ID).getSheetByName(LEADS_SHEET_NAME);
     if (!sheet) throw new Error('Missing sheet: ' + LEADS_SHEET_NAME);
 
     const row = new Array(33).fill('');
@@ -40,14 +41,15 @@ function doPost(e) {
     row[12] = safeCell_(data.adId, 120);          // M: Ad ID
     row[13] = 'חדש';                              // N: סטטוס נוכחי
 
-    // Locate the next lead using the name column; preserve array formulas in A and AE:AG.
-    const names = sheet.getRange(2, 3, sheet.getMaxRows() - 1, 1).getValues();
-    let lastLead = -1;
-    names.forEach(function (value, index) { if (value[0] !== '') lastLead = index; });
-    const nextRow = lastLead + 3;
+    // Template formulas may contain invisible values far below the visible table.
+    // Use the first visually empty name cell so new leads stay at the top.
+    const names = sheet.getRange(2, 3, sheet.getMaxRows() - 1, 1).getDisplayValues();
+    const firstEmpty = names.findIndex(function (value) { return clean_(value[0]) === ''; });
+    const nextRow = firstEmpty === -1 ? sheet.getMaxRows() + 1 : firstEmpty + 2;
     if (nextRow > sheet.getMaxRows()) sheet.insertRowAfter(sheet.getMaxRows());
-    sheet.getRange(nextRow, 2, 1, 29).setValues([row.slice(1, 30)]);
+    sheet.getRange(nextRow, 2, 1, 13).setValues([row.slice(1, 14)]);
     sheet.getRange(nextRow, 2).setNumberFormat('dd/MM/yyyy HH:mm');
+    SpreadsheetApp.flush();
 
     return jsonResponse_({ ok: true });
   } catch (error) {
