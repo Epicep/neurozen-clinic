@@ -11,6 +11,7 @@
 .landing-centered .landing-lead { max-width:740px; margin:28px auto; font-size:1.3rem; }
 .landing-centered .landing-wide-copy { max-width:740px; margin:24px auto 34px; font-size:1.125rem; line-height:1.9; }
 .landing-centered .landing-cta { justify-content:center; margin:12px auto; max-width:100%; box-sizing:border-box; font-size:1.05rem; }
+.landing-centered .landing-hero .landing-cta { min-width:340px; padding:18px 28px; font-size:1.15rem; font-weight:700; }
 .landing-centered .landing-micro { font-size:.95rem; }
 .landing-centered .landing-trust .landing-shell { justify-content:center; font-size:1rem; padding-block:14px; }
 .landing-centered h2 { max-width:850px; margin-inline:auto; text-wrap:balance; }
@@ -35,6 +36,8 @@
 .landing-centered .landing-story-experience { padding:25px; margin:26px 0; background:#eef5f1; border-radius:12px; }
 .landing-centered .landing-story-experience span { color:#336458; font-size:.95rem; }
 .landing-centered .landing-story-experience p { margin:10px 0 0; color:#193b35; font-size:1.2rem; }
+.landing-centered .landing-story-experience .landing-story-quote { margin:10px auto 0; }
+.landing-centered .landing-story-quote { margin:22px auto 26px; max-width:720px; color:#164d40; font-size:1.28rem; line-height:1.75; font-weight:500; }
 .landing-centered .landing-story-metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin:30px 0; }
 .landing-centered .landing-story-metrics dt { font-size:1rem; min-height:3em; }
 .landing-centered .landing-story-metrics dd { display:flex; justify-content:center; gap:24px; margin:10px 0; }
@@ -46,6 +49,12 @@
 .landing-centered .landing-note { max-width:760px; margin:28px auto; font-size:.95rem; color:#536b61; }
 .landing-centered .landing-price { max-width:540px; margin:40px auto 0; padding:42px 30px; border-radius:20px; background:#edf5f1; box-sizing:border-box; }
 .landing-centered .landing-price>span { font-size:1.05rem; }
+.landing-centered .landing-lead-form { max-width:540px; margin:26px auto 0; display:grid; gap:14px; text-align:right; }
+.landing-centered .landing-lead-form label { display:grid; gap:6px; color:#234d43; font-size:.98rem; }
+.landing-centered .landing-lead-form input,.landing-centered .landing-lead-form select { width:100%; box-sizing:border-box; border:1px solid #bfd5cc; border-radius:10px; background:#fff; padding:13px 14px; font:inherit; color:#173e35; }
+.landing-centered .landing-lead-form button { border:0; border-radius:10px; background:#176653; color:#fff; padding:15px 18px; font:inherit; font-weight:600; cursor:pointer; }
+.landing-centered .landing-lead-form button:disabled { opacity:.65; cursor:wait; }
+
 .landing-centered .landing-faq { background:#edf3f0; }
 .landing-centered .landing-faq-list { max-width:800px; margin:40px auto 0; }
 .landing-centered .landing-faq summary { gap:20px; align-items:center; text-align:center; font-size:1.15rem; padding:10px; }
@@ -53,6 +62,8 @@
 .landing-centered .landing-faq details p { max-width:740px; margin:18px auto; font-size:1.05rem; }
 .landing-centered .landing-final a:not(.landing-cta) { color:#fff; }
 .landing-centered .landing-location { display:flex; justify-content:center; font-size:1rem; }
+.landing-centered .landing-story-list { gap:27px; margin-block:40px; }
+.landing-centered .landing-feature-grid { gap:22px; margin-block:38px; }
 @media(max-width:760px) {
  .landing-centered .landing-shell { width:calc(100% - 36px); }
  .landing-centered .landing-hero { padding:64px 0; }
