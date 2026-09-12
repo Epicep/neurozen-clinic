@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   description:
     "טיפול נוירוביולוגי באמצעות נוירופונקטורה בתל אביב למצבים הקשורים לבריאות הנפש ולמערכת העצבים.",
-  metadataBase: new URL("https://neurozen.co.il"),
+  metadataBase: new URL("https://neurozen-clinic.com"),
   icons: {
     icon: [{ url: "/favicon.svg?v=2", type: "image/svg+xml" }],
     shortcut: "/favicon.svg?v=2",
