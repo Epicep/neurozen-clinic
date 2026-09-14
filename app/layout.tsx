@@ -3,6 +3,7 @@ import "./globals.css";
 import "./modern.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import CampaignPixel from "@/components/CampaignPixel";
 
 export const metadata: Metadata = {
   title: {
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteHeader />
         {children}
         <SiteFooter />
+        <CampaignPixel />
       </body>
     </html>
   );

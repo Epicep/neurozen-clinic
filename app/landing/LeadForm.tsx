@@ -1,7 +1,6 @@
 'use client';
 import { FormEvent, useState } from 'react';
 
-const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbynUtAHg39aV7TWvb00qDTuQ35wKJcY9I2-WkVrlK_WyuQJ-OfRgX9AsOv3q5lU2QPT/exec';
 
 export default function LeadForm() {
   const [sending, setSending] = useState(false);
@@ -9,10 +8,6 @@ export default function LeadForm() {
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError('');
-    if (!GOOGLE_APPS_SCRIPT_URL.startsWith('https://script.google.com/macros/s/')) {
-      setError('הטופס אינו זמין כרגע. אפשר לשלוח לנו הודעה בוואטסאפ או להתקשר, ונשמח לעזור.');
-      return;
-    }
     setSending(true);
     const data = new FormData(event.currentTarget);
     const query = new URLSearchParams(window.location.search);
@@ -24,7 +19,14 @@ export default function LeadForm() {
     data.set('utmTerm', query.get('utm_term') || '');
     data.set('adId', query.get('ad_id') || '');
     try {
-      await fetch(GOOGLE_APPS_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: data });
+      const body = new URLSearchParams();
+      data.forEach((value, key) => body.set(key, String(value)));
+      const response = await fetch('/.netlify/functions/submit-lead', { method: 'POST', body });
+      const result = await response.json();
+      if (!response.ok || result.ok !== true) throw new Error('Lead not confirmed');
+      try {
+        sessionStorage.setItem('neurozen-confirmed-lead', JSON.stringify({ id: crypto.randomUUID(), at: Date.now() }));
+      } catch (_) {}
       window.location.href = '/thank-you.html';
     } catch {
       setError('השליחה לא הושלמה. הפרטים נשארו בטופס — אפשר לנסות שוב או לפנות אלינו ישירות.');
