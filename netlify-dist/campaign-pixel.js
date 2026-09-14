@@ -8,6 +8,16 @@
   var consentKey = 'neurozen-marketing-consent';
   var leadKey = 'neurozen-confirmed-lead';
   var started = false;
+  var active = false;
+  var sentLead = false;
+
+  function sendLead(lead) {
+    if (!active || sentLead || !lead || typeof lead.id !== 'string' || lead.at > Date.now() || Date.now() - lead.at >= 30 * 60 * 1000) return;
+    sentLead = true;
+    try { window.sessionStorage.removeItem(leadKey); } catch (_) {}
+    window.fbq('trackSingle', pixelId, 'Lead', {}, { eventID: lead.id });
+  }
+  window.addEventListener('neurozen:lead-confirmed', function (event) { sendLead(event.detail); });
 
   function read(storage, key) {
     try { return storage.getItem(key); } catch (_) { return null; }
@@ -15,6 +25,7 @@
   function start() {
     if (started) return;
     started = true;
+    active = true;
     !function(f,b,e,v,n,t,s) {
       if(f.fbq)return;n=f.fbq=function(){n.callMethod?
       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -29,10 +40,7 @@
     if (path === '/thank-you.html') {
       try {
         var lead = JSON.parse(read(window.sessionStorage, leadKey) || 'null');
-        if (lead && typeof lead.id === 'string' && lead.at <= Date.now() && Date.now() - lead.at < 30 * 60 * 1000) {
-          window.sessionStorage.removeItem(leadKey);
-          window.fbq('trackSingle', pixelId, 'Lead', {}, { eventID: lead.id });
-        }
+        sendLead(lead);
       } catch (_) {}
     }
   }
@@ -56,10 +64,11 @@
     try { window.localStorage.setItem(consentKey, value); } catch (_) {}
     panel.remove(); panel = null;
     if (value === 'granted') {
-      if (started) window.fbq('consent', 'grant');
+      if (started) { active = true; window.fbq('consent', 'grant'); }
       else start();
     }
     else {
+      active = false;
       if (window.fbq) window.fbq('consent', 'revoke');
       try { window.sessionStorage.removeItem(leadKey); } catch (_) {}
     }

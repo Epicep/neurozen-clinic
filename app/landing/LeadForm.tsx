@@ -24,9 +24,10 @@ export default function LeadForm() {
       const response = await fetch('/.netlify/functions/submit-lead', { method: 'POST', body });
       const result = await response.json();
       if (!response.ok || result.ok !== true) throw new Error('Lead not confirmed');
-      try {
-        sessionStorage.setItem('neurozen-confirmed-lead', JSON.stringify({ id: crypto.randomUUID(), at: Date.now() }));
-      } catch (_) {}
+      const lead = { id: `lead-${Date.now()}-${Math.random().toString(36).slice(2)}`, at: Date.now() };
+      try { sessionStorage.setItem('neurozen-confirmed-lead', JSON.stringify(lead)); } catch (_) {}
+      window.dispatchEvent(new CustomEvent('neurozen:lead-confirmed', { detail: lead }));
+      await new Promise(resolve => setTimeout(resolve, 500));
       window.location.href = '/thank-you.html';
     } catch {
       setError('השליחה לא הושלמה. הפרטים נשארו בטופס — אפשר לנסות שוב או לפנות אלינו ישירות.');

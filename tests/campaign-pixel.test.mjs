@@ -22,10 +22,11 @@ function run(path, consent, lead) {
     head: { appendChild() {} }, body: { appendChild() {} },
     getElementsByTagName: () => [{ parentNode: { insertBefore() {} } }],
   };
-  const window = { location: { pathname: path }, localStorage, sessionStorage };
+  const listeners = {};
+  const window = { location: { pathname: path }, localStorage, sessionStorage, addEventListener: (name, callback) => { listeners[name] = callback; } };
   const context = vm.createContext({ window, document, Date });
   vm.runInContext(source, context);
-  return { window, elements, context, events: () => Array.from(window.fbq?.queue || []).filter(args => args[0] === 'trackSingle').map(args => args[2]) };
+  return { window, elements, context, listeners, events: () => Array.from(window.fbq?.queue || []).filter(args => args[0] === 'trackSingle').map(args => args[2]) };
 }
 
 test('no tracking on medical pages or before consent', () => {
@@ -55,6 +56,16 @@ test('consent can be revoked and granted again', () => {
   result.elements.filter(el => el.tag === 'section').at(-1).querySelectorAll()[0].onclick();
   assert.equal(result.window.fbq.queue.at(-1)[1], 'grant');
   assert.deepEqual(result.events(), ['PageView']);
+});
+test('confirmed submission counts immediately, once, without relying on redirect storage', () => {
+  const result = run('/landing', 'granted');
+  const event = { detail: { id: 'confirmation', at: Date.now() } };
+  result.listeners['neurozen:lead-confirmed'](event);
+  result.listeners['neurozen:lead-confirmed'](event);
+  assert.deepEqual(result.events(), ['PageView', 'Lead']);
+  const denied = run('/landing', 'denied');
+  denied.listeners['neurozen:lead-confirmed'](event);
+  assert.deepEqual(denied.events(), []);
 });
 test('form confirms only successful CRM responses', async () => {
   const original = globalThis.fetch;

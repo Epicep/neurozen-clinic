@@ -1,6 +1,6 @@
 {
   "../neurozen-site/node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "assets/layout-segment-context-DueG1quH.js",
+    "file": "assets/layout-segment-context-Cy-Eyzx6.js",
     "name": "layout-segment-context",
     "src": "../neurozen-site/node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -11,7 +11,7 @@
     ]
   },
   "../neurozen-site/node_modules/vinext/dist/shims/link.js": {
-    "file": "assets/link-B8JQGtPF.js",
+    "file": "assets/link-DdVEWmkx.js",
     "name": "link",
     "src": "../neurozen-site/node_modules/vinext/dist/shims/link.js",
     "isDynamicEntry": true,
@@ -25,7 +25,7 @@
     ]
   },
   "../neurozen-site/node_modules/vinext/dist/shims/router.js": {
-    "file": "assets/router-BLbyGLdW.js",
+    "file": "assets/router-D0f9uaRZ.js",
     "name": "router",
     "src": "../neurozen-site/node_modules/vinext/dist/shims/router.js",
     "isDynamicEntry": true,
@@ -59,7 +59,7 @@
     "name": "rolldown-runtime"
   },
   "app/landing/LeadForm.tsx": {
-    "file": "assets/LeadForm-7WbRlkE_.js",
+    "file": "assets/LeadForm-s0kvzjhg.js",
     "name": "LeadForm",
     "src": "app/landing/LeadForm.tsx",
     "isDynamicEntry": true,
@@ -69,7 +69,7 @@
     ]
   },
   "app/welcome/page.tsx": {
-    "file": "assets/page-40movRMq.js",
+    "file": "assets/page-CgYK88G_.js",
     "name": "page",
     "src": "app/welcome/page.tsx",
     "isDynamicEntry": true,
@@ -91,7 +91,7 @@
     ]
   },
   "components/SiteHeader.tsx": {
-    "file": "assets/SiteHeader-DjiQ4vfi.js",
+    "file": "assets/SiteHeader-D8zQS3CZ.js",
     "name": "SiteHeader",
     "src": "components/SiteHeader.tsx",
     "isDynamicEntry": true,
@@ -102,7 +102,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "assets/index-BEaKXTzY.js",
+    "file": "assets/index-5hIX-abu.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
