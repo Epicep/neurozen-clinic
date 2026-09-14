@@ -35,6 +35,7 @@ export default function LandingPage() {
     <section className="landing-hero"><div className="landing-shell">
       <p className="landing-eyebrow">למי שהחרדה והדריכות כבר מורגשות בגוף</p>
       <h1>80% שיפור בחרדה<br /><em>בתוך 8 טיפולים</em></h1>
+      <img className="landing-hero-testimonials" src="/landing-testimonials.png" width={1536} height={1024} alt="מטפל מחזיק מכשיר נוירופונקטורה, לצד הודעות מטופלים על שיפור בחרדה, בתפקוד ובשמחת החיים" decoding="async" />
       <p className="landing-lead">טיפול ממוקד להפעלת עצב הוואגוס — בלי צורך בכדורים, לדבר על העבר או לשחזר טראומות.</p>
       <p className="landing-wide-copy">בדיקת התאמה ומפגש ראשון בקליניקה: מיפוי אישי של התסמינים והתנסות בטיפול.</p>
       <CTA /><p className="landing-micro">ללא התחייבות מראש לסדרה · הטיפול עצמו אינו תרופתי</p>

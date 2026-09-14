@@ -15,6 +15,7 @@
 .landing-centered .landing-hero h1 { font-size:clamp(3.1rem,6.65vw,6rem); line-height:1.08; text-wrap:balance; }
 .landing-centered .landing-hero h1 em { margin-top:8px; }
 .landing-centered .landing-lead { max-width:740px; margin:28px auto; font-size:1.3rem; }
+.landing-centered .landing-hero-testimonials { display:block; width:100%; max-width:920px; height:auto; margin:32px auto 0; border-radius:18px; }
 .landing-centered .landing-wide-copy { max-width:740px; margin:24px auto 34px; font-size:1.125rem; line-height:1.9; }
 .landing-centered .landing-cta { justify-content:center; margin:12px auto; max-width:100%; box-sizing:border-box; font-size:1.05rem; }
 .landing-centered .landing-hero .landing-cta { min-width:340px; padding:18px 28px; font-size:1.15rem; font-weight:700; }
