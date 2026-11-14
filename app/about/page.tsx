@@ -17,4 +17,4 @@ export const metadata: Metadata = {
   }
 };
 
-export default function Page() { return <ContentPage content={content} />; }
+export default function Page() { return <ContentPage content={content} showPractitionerPortrait />; }

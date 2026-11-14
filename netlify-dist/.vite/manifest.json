@@ -1,44 +1,4 @@
 {
-  "../neurozen-site/node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "assets/layout-segment-context-Cy-Eyzx6.js",
-    "name": "layout-segment-context",
-    "src": "../neurozen-site/node_modules/vinext/dist/shims/layout-segment-context.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "_rolldown-runtime-BYbx6iT9.js",
-      "virtual:vinext-app-browser-entry",
-      "_framework-DkySH6nJ.js"
-    ]
-  },
-  "../neurozen-site/node_modules/vinext/dist/shims/link.js": {
-    "file": "assets/link-DdVEWmkx.js",
-    "name": "link",
-    "src": "../neurozen-site/node_modules/vinext/dist/shims/link.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "_rolldown-runtime-BYbx6iT9.js",
-      "virtual:vinext-app-browser-entry",
-      "_framework-DkySH6nJ.js"
-    ],
-    "dynamicImports": [
-      "../neurozen-site/node_modules/vinext/dist/shims/router.js"
-    ]
-  },
-  "../neurozen-site/node_modules/vinext/dist/shims/router.js": {
-    "file": "assets/router-D0f9uaRZ.js",
-    "name": "router",
-    "src": "../neurozen-site/node_modules/vinext/dist/shims/router.js",
-    "isDynamicEntry": true,
-    "imports": [
-      "_rolldown-runtime-BYbx6iT9.js",
-      "virtual:vinext-app-browser-entry",
-      "_framework-DkySH6nJ.js",
-      "../neurozen-site/node_modules/vinext/dist/shims/link.js"
-    ],
-    "dynamicImports": [
-      "_framework-DkySH6nJ.js"
-    ]
-  },
   "_Icon-59oP99i2.js": {
     "file": "assets/Icon-59oP99i2.js",
     "name": "Icon",
@@ -69,7 +29,7 @@
     ]
   },
   "app/welcome/page.tsx": {
-    "file": "assets/page-CgYK88G_.js",
+    "file": "assets/page-DbxxIWyH.js",
     "name": "page",
     "src": "app/welcome/page.tsx",
     "isDynamicEntry": true,
@@ -77,7 +37,7 @@
       "_rolldown-runtime-BYbx6iT9.js",
       "_Icon-59oP99i2.js",
       "_framework-DkySH6nJ.js",
-      "../neurozen-site/node_modules/vinext/dist/shims/link.js"
+      "node_modules/vinext/dist/shims/link.js"
     ]
   },
   "components/CampaignPixel.tsx": {
@@ -91,18 +51,58 @@
     ]
   },
   "components/SiteHeader.tsx": {
-    "file": "assets/SiteHeader-D8zQS3CZ.js",
+    "file": "assets/SiteHeader-ChLuSICs.js",
     "name": "SiteHeader",
     "src": "components/SiteHeader.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-BYbx6iT9.js",
       "_framework-DkySH6nJ.js",
-      "../neurozen-site/node_modules/vinext/dist/shims/link.js"
+      "node_modules/vinext/dist/shims/link.js"
+    ]
+  },
+  "node_modules/vinext/dist/shims/layout-segment-context.js": {
+    "file": "assets/layout-segment-context-CHvZ2mNO.js",
+    "name": "layout-segment-context",
+    "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-BYbx6iT9.js",
+      "virtual:vinext-app-browser-entry",
+      "_framework-DkySH6nJ.js"
+    ]
+  },
+  "node_modules/vinext/dist/shims/link.js": {
+    "file": "assets/link-CF9nm8oc.js",
+    "name": "link",
+    "src": "node_modules/vinext/dist/shims/link.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-BYbx6iT9.js",
+      "virtual:vinext-app-browser-entry",
+      "_framework-DkySH6nJ.js"
+    ],
+    "dynamicImports": [
+      "node_modules/vinext/dist/shims/router.js"
+    ]
+  },
+  "node_modules/vinext/dist/shims/router.js": {
+    "file": "assets/router-B4BK0EWx.js",
+    "name": "router",
+    "src": "node_modules/vinext/dist/shims/router.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-BYbx6iT9.js",
+      "virtual:vinext-app-browser-entry",
+      "_framework-DkySH6nJ.js",
+      "node_modules/vinext/dist/shims/link.js"
+    ],
+    "dynamicImports": [
+      "_framework-DkySH6nJ.js"
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "assets/index-5hIX-abu.js",
+    "file": "assets/index-B6FZ5QQ4.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
@@ -111,13 +111,13 @@
       "_framework-DkySH6nJ.js"
     ],
     "dynamicImports": [
+      "node_modules/vinext/dist/shims/layout-segment-context.js",
       "components/CampaignPixel.tsx",
       "components/SiteHeader.tsx",
       "_Icon-59oP99i2.js",
-      "app/landing/LeadForm.tsx",
       "virtual:vinext-app-browser-entry",
-      "../neurozen-site/node_modules/vinext/dist/shims/layout-segment-context.js",
-      "../neurozen-site/node_modules/vinext/dist/shims/link.js",
+      "app/landing/LeadForm.tsx",
+      "node_modules/vinext/dist/shims/link.js",
       "app/welcome/page.tsx"
     ]
   }

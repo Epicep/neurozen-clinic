@@ -34,7 +34,13 @@ function sectionBody(text: string, faq = false, cards = false) {
   })}</div>{prose(after)}</>;
 }
 
-export default function ContentPage({ content, home = false, faq = false, comingSoon = false, sectionIds = [] }: {content:string; home?:boolean; faq?:boolean; comingSoon?:boolean; sectionIds?:string[]}) {
+function PractitionerPortrait() {
+  return <figure className="practitioner-photo">
+    <img src="/ilay-paran-clinic.webp" width={960} height={1447} alt="עילאי פארן בקליניקת NeuroZen" loading="lazy" decoding="async" />
+  </figure>;
+}
+
+export default function ContentPage({ content, home = false, faq = false, comingSoon = false, sectionIds = [], showPractitionerPortrait = false }: {content:string; home?:boolean; faq?:boolean; comingSoon?:boolean; sectionIds?:string[]; showPractitionerPortrait?:boolean}) {
   const sections = content.trim().split(/^## /m);
   const hero = sections[0];
   const titleMatch = hero.match(/^# (.+)$/m);
@@ -64,8 +70,16 @@ export default function ContentPage({ content, home = false, faq = false, coming
       const isCta=i===sections.length-2 && body.includes('https://wa.me/');
       const id=sectionIds[i] ?? (home && heading==='תחומי הטיפול בקליניקה' ? 'treatments' : home && isProcess ? 'process' : `section-${i+1}`);
       const layout = home ? ['understanding', 'domains', 'journey', 'method', 'practitioner', 'questions', 'conversation'][i] : undefined;
-      return <section key={heading} id={id} className={`copy-section${isCta?' copy-cta':''}${isFaq?' copy-faq-section':''}${layout?` home-${layout}`:''}${isProcess?' copy-process':''}`}>
-        <div className={`editorial-shell ${cards?'':'copy-reading-width'}`}><div className="copy-section-heading">{home && <span className="section-kicker">{['עבודה ישירה עם מערכת העצבים','תחומי הטיפול','צעד אחר צעד','הגישה הטיפולית','האדם שמאחורי הטיפול','טוב לדעת','בואו נדבר'][i]}</span>}<h2>{heading}</h2>{layout === 'practitioner' && <figure className="practitioner-photo-slot" aria-label="מקום שמור לתמונה של עילאי פארן"><span>התמונה של עילאי תתווסף כאן</span></figure>}</div><div className="copy-section-content">{sectionBody(body,isFaq,cards)}</div></div>
+      const aboutPortrait = showPractitionerPortrait && i === 0;
+      return <section key={heading} id={id} className={`copy-section${isCta?' copy-cta':''}${isFaq?' copy-faq-section':''}${layout?` home-${layout}`:''}${isProcess?' copy-process':''}${aboutPortrait?' about-practitioner':''}`}>
+        <div className={`editorial-shell ${cards?'':'copy-reading-width'}`}>
+          <div className="copy-section-heading">
+            {home && <span className="section-kicker">{['עבודה ישירה עם מערכת העצבים','תחומי הטיפול','צעד אחר צעד','הגישה הטיפולית','האדם שמאחורי הטיפול','טוב לדעת','בואו נדבר'][i]}</span>}
+            <h2>{heading}</h2>
+            {(layout === 'practitioner' || aboutPortrait) && <PractitionerPortrait />}
+          </div>
+          <div className="copy-section-content">{sectionBody(body,isFaq,cards)}</div>
+        </div>
       </section>;
     })}
   </main>;
