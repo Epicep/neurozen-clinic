@@ -96,4 +96,10 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://neurozen-clinic.com/stellate-ganglion/</loc>
+  </url>
+  <url>
+    <loc>https://neurozen-clinic.com/macular-degeneration-glaucoma/</loc>
+  </url>
 </urlset>

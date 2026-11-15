@@ -62,6 +62,7 @@ export default `Neuropuncture™
 [למחקרים ולבסיס המדעי](/science)
 [למחקר על דיקור חשמלי ו־BDNF](/science#bdnf)
 [על עצב הוואגוס והגירוי האוזני](/vagus-nerve)
+[על גירוי באזור הסטלה גנגליון](/stellate-ganglion)
 
 ## מפתח השיטה
 

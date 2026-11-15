@@ -5,7 +5,7 @@ import { pathToFileURL } from 'node:url';
 const root = process.cwd();
 const output = path.join(root, 'netlify-dist');
 const workerPath = path.join(root, 'dist', 'server', 'index.js');
-const routes = ['/', '/about', '/accessibility', '/adhd', '/cases', '/depression', '/faq', '/landing', '/mental-health', '/mental-health/adhd', '/mental-health/anxiety', '/mental-health/depression', '/mental-health/ocd', '/mental-health/ptsd', '/neurology', '/neuropuncture', '/ocd', '/ocd-treatment', '/privacy', '/ptsd', '/science', '/vagus-nerve', '/welcome'];
+const routes = ['/', '/about', '/accessibility', '/adhd', '/cases', '/depression', '/faq', '/landing', '/macular-degeneration-glaucoma', '/mental-health', '/mental-health/adhd', '/mental-health/anxiety', '/mental-health/depression', '/mental-health/ocd', '/mental-health/ptsd', '/neurology', '/neuropuncture', '/ocd', '/ocd-treatment', '/privacy', '/ptsd', '/science', '/stellate-ganglion', '/vagus-nerve', '/welcome'];
 
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
