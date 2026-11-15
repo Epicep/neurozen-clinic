@@ -1,1 +1,5 @@
-export { default, metadata } from "../mental-health/ptsd/page";
+import { permanentRedirect } from "next/navigation";
+
+export default function Page() {
+  permanentRedirect("/mental-health/ptsd/");
+}

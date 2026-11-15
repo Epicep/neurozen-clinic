@@ -1,20 +1,22 @@
+import { socialImage } from '@/components/StructuredData';
 import type { Metadata } from 'next';
 import ContentPage from '@/components/ContentPage';
 import content from '@/content/adhd';
 
 export const metadata: Metadata = {
-  "title": "טיפול ב־ADHD בגישת נוירופונקטורה",
-  "description": "אתם יודעים מה צריך לעשות, אבל קשה להתחיל. פותחים משימה, עוברים לאחרת ומגלים שהזמן נעלם. לפעמים רק הלחץ של הרגע האחרון מצליח להניע.",
+  "title": "הפרעת קשב וריכוז (ADHD) ונוירופונקטורה",
+  "description": "נוירופונקטורה והפרעת קשב וריכוז (ADHD) בתל אביב. מידע על הערכה אישית ומעקב אחר קשב, התארגנות ותפקוד בחיי היומיום.",
   "alternates": {
-    "canonical": "/mental-health/adhd"
+    "canonical": "/mental-health/adhd/"
   },
   "openGraph": {
-    "title": "טיפול ב־ADHD בגישת נוירופונקטורה",
-    "description": "אתם יודעים מה צריך לעשות, אבל קשה להתחיל. פותחים משימה, עוברים לאחרת ומגלים שהזמן נעלם. לפעמים רק הלחץ של הרגע האחרון מצליח להניע.",
+    images: [socialImage],
+    "title": "הפרעת קשב וריכוז (ADHD) ונוירופונקטורה",
+    "description": "נוירופונקטורה והפרעת קשב וריכוז (ADHD) בתל אביב. מידע על הערכה אישית ומעקב אחר קשב, התארגנות ותפקוד בחיי היומיום.",
     "type": "website",
     "locale": "he_IL",
-    "url": "/mental-health/adhd"
+    "url": "/mental-health/adhd/"
   }
 };
 
-export default function Page() { return <ContentPage content={content} />; }
+export default function Page() { return <ContentPage content={content} canonicalPath="/mental-health/adhd/" />; }

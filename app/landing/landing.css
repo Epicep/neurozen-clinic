@@ -1,7 +1,7 @@
 .landing-centered { text-align:center; overflow:hidden; background:#f5f9f8; }
 .landing-centered .landing-shell { width:min(1060px,calc(100% - 48px)); }
 .landing-centered .landing-hero { position:relative; isolation:isolate; padding:100px 0 90px; background:radial-gradient(ellipse at center,#fcfefd 25%,#e6f0ed 100%); }
-.landing-centered .landing-hero::before,.landing-centered .landing-hero::after { content:""; position:absolute; z-index:-1; pointer-events:none; top:0; bottom:0; width:38%; background:url('/production-hero.png') center/cover no-repeat; opacity:.18; mix-blend-mode:multiply; mask-image:linear-gradient(to right,#000,transparent); }
+.landing-centered .landing-hero::before,.landing-centered .landing-hero::after { content:""; position:absolute; z-index:-1; pointer-events:none; top:0; bottom:0; width:38%; background:url('/production-hero-480.webp') center/cover no-repeat; opacity:.18; mix-blend-mode:multiply; mask-image:linear-gradient(to right,#000,transparent); }
 .landing-centered .landing-hero::before { left:-9%; }
 .landing-centered .landing-hero::after { right:-9%; transform:scaleX(-1); }
 .landing-centered .landing-hero .landing-shell { max-width:920px; }

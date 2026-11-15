@@ -46,7 +46,7 @@ export default function LandingPage() {
         <p>מתחילים עם הגוף · מכוונים למערכת העצבים</p>
       </div>
     </section>
-    <section className="landing-trust"><div className="landing-shell"><span>גישה אישית · מעקב מדיד · מדעי המוח</span><a href="#landing-stories">לסיפורים ולתוצאות מהקליניקה ←</a><a href="/science">למחקרים ולבסיס המדעי ←</a></div></section>
+    <section className="landing-trust"><div className="landing-shell"><span>גישה אישית · מעקב מדיד · מדעי המוח</span><a href="#landing-stories">לסיפורים ולתוצאות מהקליניקה ←</a><a href="/science/">למחקרים ולבסיס המדעי ←</a></div></section>
     <section className="landing-section"><div className="landing-shell">
       <p className="landing-overline">כשהחרדה מורגשת בגוף</p><h2>מבינים שאין סכנה.<br />ועדיין קשה להרפות.</h2>
       <p className="landing-wide-copy">אולי כבר ניסיתם שיחות, נשימות או תרופות, ועדיין משהו נשאר דרוך. זה לא אומר שחסר לכם כוח רצון. חרדה יכולה להתבטא גם בתגובות גופניות שקשה לשנות בכוח המחשבה בלבד.</p>
@@ -60,7 +60,7 @@ export default function LandingPage() {
         <article><h3>בלי לשחזר את הטראומה</h3><p>אפשר לעבוד עם התסמינים כאן ועכשיו, ללא צורך לפרט את האירועים או לעבד אותם בשיחה במהלך הטיפול.</p></article>
         <article><h3>עבודה ממוקדת עם מערכת העצבים</h3><p>המטרה היא להקל על דריכות ועל תסמינים גופניים ולתמוך בוויסות. עוצמת הגירוי מותאמת לתחושה ולתגובה האישית.</p></article>
         <article><h3>מרשם אישי, מבוסס מחקר וניסיון קליני</h3><p>בניית המרשם משלבת ידע ממחקרי גירוי עצבי ודיקור חשמלי עם הניסיון הקליני. בקליניקה בוחנים את השינוי אצלכם ומתאימים את המרשם לאורך הדרך.</p></article>
-      </div><a className="landing-text-link" href="/vagus-nerve">איך עצב הוואגוס קשור לטיפול? ←</a><InlineCTA />
+      </div><a className="landing-text-link" href="/vagus-nerve/">איך עצב הוואגוס קשור לטיפול? ←</a><InlineCTA />
     </div></section>
     <section className="landing-section landing-measurement" id="landing-measurement"><div className="landing-shell">
       <p className="landing-overline">מסגרת ברורה · התאמה לאורך הדרך</p><h2>מגדירים מטרות.<br />עוקבים אחרי השינוי.</h2>
@@ -79,7 +79,7 @@ export default function LandingPage() {
         <dl className="landing-story-metrics">{item.metrics.map(metric => <div key={metric.label}><dt>{metric.label}</dt><dd><span>לפני <b>{metric.before}</b></span><span>אחרי <b>{metric.after}</b></span></dd><small>ירידה של {metric.before-metric.after} נקודות</small></div>)}</dl>
         <details><summary>משך המעקב והקשר קליני</summary><p>{item.followup}</p></details>
       </article>)}</div>
-      <a className="landing-text-link" href="/cases">לעוד סיפורים, כולל תוצאות חלקיות ומורכבות ←</a><InlineCTA />
+      <a className="landing-text-link" href="/cases/">לעוד סיפורים, כולל תוצאות חלקיות ומורכבות ←</a><InlineCTA />
     </div></section>
     <section className="landing-section landing-offer" id="landing-first"><div className="landing-shell">
       <p className="landing-overline">הצעד הראשון</p><h2>מתחילים במפגש אחד.<br />מכירים, בודקים ומתנסים.</h2><p className="landing-wide-copy">המפגש הראשון נועד להכיר את התסמינים, הרקע הרפואי והמטרות שלכם, לבדוק התאמה ולהתנסות בטיפול.</p>

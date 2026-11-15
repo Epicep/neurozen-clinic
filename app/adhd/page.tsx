@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
-export default function ADHDRedirect() {
-  redirect("/mental-health/adhd");
+export default function Page() {
+  permanentRedirect("/mental-health/adhd/");
 }

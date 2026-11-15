@@ -1,3 +1,4 @@
+import { socialImage } from '@/components/StructuredData';
 import type { Metadata } from 'next';
 import ContentPage from '@/components/ContentPage';
 import content from '@/content/home';
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
     "canonical": "/"
   },
   "openGraph": {
+    images: [socialImage],
     "title": "נוירופונקטורה בתל אביב | טיפול ממוקד במערכת העצבים",
     "description": "בקליניקת NeuroZen אנו מטפלים באנשים המתמודדים עם חרדה, דיכאון, טראומה וקשיי שינה, באמצעות גירוי חשמלי עדין ומבוקר.",
     "type": "website",

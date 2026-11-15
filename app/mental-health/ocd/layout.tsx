@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     "טיפול ב־OCD בתל אביב",
     "נוירופונקטורה",
   ],
-  alternates: { canonical: "/mental-health/ocd" },
+  alternates: { canonical: "/mental-health/ocd/" },
   openGraph: {
     title: "טיפול ב־OCD בגישת נוירופונקטורה | NeuroZen",
     description:
       "גישה נוירוביולוגית המכוונת למעגלי הבקרה, ההרגלים והעוררות המעורבים ב־OCD, בקליניקת NeuroZen בתל אביב.",
     type: "website",
     locale: "he_IL",
-    url: "/mental-health/ocd",
+    url: "/mental-health/ocd/",
   },
 };
 

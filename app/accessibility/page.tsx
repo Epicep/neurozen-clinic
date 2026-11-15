@@ -1,8 +1,11 @@
+import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import SEO from "@/components/SEO";
+
+export const metadata: Metadata = { title: "הצהרת נגישות", alternates: { canonical: "/accessibility/" } };
 
 const Accessibility = () => {
   return (

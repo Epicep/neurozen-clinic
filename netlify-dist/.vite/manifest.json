@@ -29,7 +29,7 @@
     ]
   },
   "app/welcome/page.tsx": {
-    "file": "assets/page-BHvQnoK4.js",
+    "file": "assets/page-ZdAfpluG.js",
     "name": "page",
     "src": "app/welcome/page.tsx",
     "isDynamicEntry": true,
@@ -51,7 +51,7 @@
     ]
   },
   "components/SiteHeader.tsx": {
-    "file": "assets/SiteHeader-puI_xCXn.js",
+    "file": "assets/SiteHeader-DU9Cayy3.js",
     "name": "SiteHeader",
     "src": "components/SiteHeader.tsx",
     "isDynamicEntry": true,
@@ -62,7 +62,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "assets/layout-segment-context-DyYPXfoT.js",
+    "file": "assets/layout-segment-context-DqmjE3IL.js",
     "name": "layout-segment-context",
     "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -73,7 +73,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/link.js": {
-    "file": "assets/link-B-ez2RpQ.js",
+    "file": "assets/link-CAyT37Nk.js",
     "name": "link",
     "src": "node_modules/vinext/dist/shims/link.js",
     "isDynamicEntry": true,
@@ -87,7 +87,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/router.js": {
-    "file": "assets/router-Cm9FOdW5.js",
+    "file": "assets/router-D1Ud8m8L.js",
     "name": "router",
     "src": "node_modules/vinext/dist/shims/router.js",
     "isDynamicEntry": true,
@@ -102,7 +102,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "assets/index-BJB8tFo8.js",
+    "file": "assets/index-DJam7-pj.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,

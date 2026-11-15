@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { BreadcrumbData } from '@/components/StructuredData';
 
 // A small, deliberately limited renderer for the clinic's reviewed copy.
 // Content stays in plain text; HTML from content is never interpreted.
@@ -40,13 +41,14 @@ function PractitionerPortrait() {
   </figure>;
 }
 
-export default function ContentPage({ content, home = false, faq = false, comingSoon = false, sectionIds = [], showPractitionerPortrait = false }: {content:string; home?:boolean; faq?:boolean; comingSoon?:boolean; sectionIds?:string[]; showPractitionerPortrait?:boolean}) {
+export default function ContentPage({ content, home = false, faq = false, comingSoon = false, sectionIds = [], showPractitionerPortrait = false, canonicalPath }: {content:string; home?:boolean; faq?:boolean; comingSoon?:boolean; sectionIds?:string[]; showPractitionerPortrait?:boolean; canonicalPath?:string}) {
   const sections = content.trim().split(/^## /m);
   const hero = sections[0];
   const titleMatch = hero.match(/^# (.+)$/m);
   const title = titleMatch?.[1] ?? '';
   const [eyebrow, intro = ''] = titleMatch ? hero.split(titleMatch[0]) : ['', hero];
   return <main id="main-content" className={`editorial-home reviewed-copy${home ? ' copy-home' : ''}${sectionIds.length ? ' copy-research' : ''}`}>
+    {!home && canonicalPath && <BreadcrumbData title={title} path={canonicalPath} />}
     <section className={home ? 'editorial-hero' : 'copy-page-hero'}>
       <div className={home ? 'editorial-hero-inner' : 'editorial-shell copy-page-heading'}>
         <div className={home ? 'editorial-hero-content' : ''}>
@@ -57,7 +59,7 @@ export default function ContentPage({ content, home = false, faq = false, coming
           <div className="copy-intro">{faq ? sectionBody(intro,true) : prose(intro)}</div>
           {comingSoon && <figure className="copy-coming-soon-image"><img src="/synapse-placeholder.png" alt="איור מופשט של סינפסה והסתעפויות עצביות" /></figure>}
         </div>
-        {home && <figure className="editorial-hero-media"><img src="/production-hero.png" width="1024" height="1536" fetchPriority="high" alt="איור אנטומי של המוח, עמוד השדרה ומערכת העצבים"/><figcaption><span>NEUROZEN</span><span>הקשבה לאדם. הבנה של מערכת העצבים.</span></figcaption></figure>}
+        {home && <figure className="editorial-hero-media"><img src="/production-hero-768.webp" srcSet="/production-hero-480.webp 480w, /production-hero-768.webp 768w, /production-hero-1024.webp 1024w" sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1200px) 45vw, 540px" width="1024" height="1536" fetchPriority="high" alt="איור אנטומי של המוח, עמוד השדרה ומערכת העצבים"/><figcaption><span>NEUROZEN</span><span>הקשבה לאדם. הבנה של מערכת העצבים.</span></figcaption></figure>}
       </div>
     </section>
     {sections.slice(1).map((section,i)=>{

@@ -1,3 +1,4 @@
+import { socialImage } from '@/components/StructuredData';
 import type { Metadata } from 'next';
 import ContentPage from '@/components/ContentPage';
 import content from '@/content/faq';
@@ -6,15 +7,16 @@ export const metadata: Metadata = {
   "title": "שאלות ותשובות על הטיפול",
   "description": "הטיפול נעשה באמצעות מחטים דקות וגירוי חשמלי עדין ומבוקר. נקודות הטיפול והגירוי נבחרים בהתאם לתמונה האישית ולמטרות שהוגדרו.",
   "alternates": {
-    "canonical": "/faq"
+    "canonical": "/faq/"
   },
   "openGraph": {
+    images: [socialImage],
     "title": "שאלות ותשובות על הטיפול",
     "description": "הטיפול נעשה באמצעות מחטים דקות וגירוי חשמלי עדין ומבוקר. נקודות הטיפול והגירוי נבחרים בהתאם לתמונה האישית ולמטרות שהוגדרו.",
     "type": "website",
     "locale": "he_IL",
-    "url": "/faq"
+    "url": "/faq/"
   }
 };
 
-export default function Page() { return <ContentPage content={content} faq />; }
+export default function Page() { return <ContentPage content={content} canonicalPath="/faq/" faq />; }
