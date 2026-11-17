@@ -3,13 +3,13 @@ import ContentPage from '@/components/ContentPage';
 import content from '@/content/pain';
 
 export const metadata: Metadata = {
-  "title": "כאב כרוני ועצבי: טיפול בנוירופונקטורה",
+  "title": "כאב כרוני ותסמונות כאב: טיפול בנוירופונקטורה",
   "description": "מידע על נוירופונקטורה לפיברומיאלגיה, נוירופתיה היקפית ונוירלגיה של העצב המשולש בקליניקת NeuroZen בתל אביב.",
   "alternates": {
     "canonical": "/pain/"
   },
   "openGraph": {
-    "title": "כאב כרוני ועצבי: טיפול בנוירופונקטורה",
+    "title": "כאב כרוני ותסמונות כאב: טיפול בנוירופונקטורה",
     "description": "מידע על נוירופונקטורה לפיברומיאלגיה, נוירופתיה היקפית ונוירלגיה של העצב המשולש בקליניקת NeuroZen בתל אביב.",
     "type": "website",
     "locale": "he_IL",

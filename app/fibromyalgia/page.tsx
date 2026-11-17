@@ -25,4 +25,4 @@ export const metadata: Metadata = {
   }
 };
 
-export default function Page() { return <ContentPage content={content} canonicalPath="/fibromyalgia/" sectionIds={["condition", "fit", "approach", "process", "whole-plan", "safety", "faq", "further-reading", "contact"]} parentBreadcrumb={{"title": "כאב כרוני ועצבי", "path": "/pain/"}} />; }
+export default function Page() { return <ContentPage content={content} canonicalPath="/fibromyalgia/" sectionIds={["condition", "fit", "approach", "process", "whole-plan", "safety", "faq", "further-reading", "contact"]} parentBreadcrumb={{"title": "כאב כרוני ותסמונות כאב", "path": "/pain/"}} />; }

@@ -24,14 +24,15 @@ function prose(text: string) {
   });
 }
 
-function sectionBody(text: string, faq = false, cards = false) {
+function sectionBody(text: string, faq = false, cards = false, linkCardHeadings = false) {
   const [main, after = ''] = text.split('\n:::after\n');
   const chunks = main.split(/^### /m);
   return <>{prose(chunks[0])}<div className={faq ? 'editorial-faq-list' : cards ? 'copy-card-grid' : 'copy-subsections'}>{chunks.slice(1).map((chunk,i)=>{
     const newline = chunk.indexOf('\n');
     const title = chunk.slice(0,newline).trim();
     const body = chunk.slice(newline+1);
-    return faq ? <details key={i}><summary>{title}<span aria-hidden="true">+</span></summary><div className="copy-faq-answer">{prose(body)}</div></details> : <article key={i}><h3>{title}</h3>{prose(body)}</article>;
+    const destination = linkCardHeadings ? body.match(/\[[^\]]+\]\((\/[^)#]+\/)\)/)?.[1] : undefined;
+    return faq ? <details key={i}><summary>{title}<span aria-hidden="true">+</span></summary><div className="copy-faq-answer">{prose(body)}</div></details> : <article key={i}><h3>{destination ? <Link className="domain-heading-link" href={destination}>{title}<span aria-hidden="true"> ←</span></Link> : title}</h3>{prose(body)}</article>;
   })}</div>{prose(after)}</>;
 }
 
@@ -80,7 +81,7 @@ export default function ContentPage({ content, home = false, faq = false, coming
             <h2>{heading}</h2>
             {layout === 'practitioner' && <PractitionerPortrait />}
           </div>
-          <div className="copy-section-content">{sectionBody(body,isFaq,cards)}</div>
+          <div className="copy-section-content">{sectionBody(body,isFaq,cards,layout === 'domains')}</div>
         </div>
       </section>;
     })}

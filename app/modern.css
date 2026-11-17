@@ -133,9 +133,20 @@ button, input { font: inherit; }
 @media (max-width:760px) { .landing-shell { width:min(100% - 36px,600px); } .landing-hero { padding-top:46px; } .landing-hero-grid,.landing-two-col { grid-template-columns:1fr; gap:42px; } .landing-visual { min-height:390px; border-radius:90px 12px 12px 12px; } .landing-visual img { height:300px; } .landing-section { padding:68px 0; } .landing-symptom-grid,.landing-measures { grid-template-columns:1fr 1fr; } .landing-symptom-grid article,.landing-measures article { border-bottom:1px solid #cbd8d0; } .landing-symptom-grid article:nth-child(2n),.landing-measures article:nth-child(2n) { border-left:0; } .landing-symptom-grid article:nth-last-child(-n+2),.landing-measures article:nth-last-child(-n+2) { border-bottom:0; } .landing-price { margin:0; max-width:none; } .landing-trust .landing-shell { padding:18px 0; } }
 @media (max-width:480px) { .landing-hero h1 { font-size:2.2rem; } .landing-symptom-grid,.landing-measures { grid-template-columns:1fr; } .landing-symptom-grid article,.landing-measures article,.landing-symptom-grid article:nth-child(2n),.landing-measures article:nth-child(2n) { border-left:0; border-bottom:1px solid #cbd8d0; } .landing-symptom-grid article:last-child,.landing-measures article:last-child { border-bottom:0; } }
 .copy-home .editorial-hero-media figcaption { direction: rtl; position: absolute; bottom: 0; inset-inline: 0; display: flex; flex-direction: column; gap: 7px; padding: 22px 28px; background: rgba(250,249,243,.94); border-top: 1px solid #d8d9ce; }
+.home-domains .domain-heading-link { color: inherit; text-decoration: none; display: inline-flex; align-items: baseline; gap: .35em; border-bottom: 1px solid transparent; }
+.home-domains .domain-heading-link span { color: var(--editorial-green); font-size: .8em; transition: transform .18s ease; }
+.home-domains .domain-heading-link:hover { color: var(--editorial-green); border-bottom-color: currentColor; }
+.home-domains .domain-heading-link:hover span { transform: translateX(-4px); }
+.home-domains .domain-heading-link:focus-visible { outline: 3px solid var(--editorial-gold); outline-offset: 5px; }
 .copy-home .editorial-hero-media figcaption span { position: static; color: #344e43; font-size: .875rem; letter-spacing: 0; }
 .copy-home .editorial-hero-media figcaption span:first-child { font: 600 .75rem Arial, sans-serif; letter-spacing: .18em; }
 .copy-section { padding: 80px 0; border-bottom: 1px solid var(--editorial-line); scroll-margin-top: 100px; }
+.reviewed-copy:not(.copy-home) .copy-section { padding: 54px 0; }
+.reviewed-copy:not(.copy-home) .copy-page-hero { padding-bottom: 48px; }
+.reviewed-copy:not(.copy-home) .copy-breadcrumb { margin-bottom: 26px; }
+.reviewed-copy:not(.copy-home) h2 { font-size: clamp(1.8rem, 2.7vw, 2.5rem); margin-bottom: 1.2rem; }
+.reviewed-copy:not(.copy-home) p, .reviewed-copy:not(.copy-home) li { line-height: 1.72; }
+.reviewed-copy:not(.copy-home) .copy-subsections article { margin-block: 22px; }
 .copy-section:nth-of-type(even) { background: #f0f4f0; }
 .copy-home .copy-section > .editorial-shell { max-width: 1200px; }
 .home-understanding > .editorial-shell, .home-practitioner > .editorial-shell, .home-questions > .editorial-shell, .home-method > .editorial-shell, .home-conversation > .editorial-shell { display: grid; grid-template-columns: .85fr 1.15fr; gap: 96px; }
@@ -233,6 +244,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   .copy-home .editorial-hero-media figcaption { padding: 14px 20px; }
   .copy-home .copy-intro > p:first-child { font-size: 1.1rem; }
   .copy-section { padding: 50px 0; scroll-margin-top: 85px; }
+  .reviewed-copy:not(.copy-home) .copy-section { padding: 38px 0; }
+  .reviewed-copy:not(.copy-home) .copy-page-hero { padding-bottom: 36px; }
   .home-understanding > .editorial-shell, .home-practitioner > .editorial-shell, .home-questions > .editorial-shell, .home-method > .editorial-shell, .home-conversation > .editorial-shell { grid-template-columns: 1fr; gap: 20px; }
   .section-kicker { margin-bottom: 14px; }
   .home-domains .copy-card-grid article { grid-template-columns: 28px 1fr; gap: 0 15px; padding: 26px 0; }

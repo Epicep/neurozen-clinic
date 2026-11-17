@@ -25,4 +25,4 @@ export const metadata: Metadata = {
   }
 };
 
-export default function Page() { return <ContentPage content={content} canonicalPath="/trigeminal-neuralgia/" sectionIds={["condition", "approach", "process", "safety", "faq", "related", "contact"]} parentBreadcrumb={{"title": "כאב כרוני ועצבי", "path": "/pain/"}} />; }
+export default function Page() { return <ContentPage content={content} canonicalPath="/trigeminal-neuralgia/" sectionIds={["condition", "approach", "process", "safety", "faq", "related", "contact"]} parentBreadcrumb={{"title": "כאב כרוני ותסמונות כאב", "path": "/pain/"}} />; }
