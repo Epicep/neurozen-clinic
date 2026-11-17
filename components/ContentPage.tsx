@@ -50,7 +50,7 @@ export default function ContentPage({ content, home = false, faq = false, coming
   return <main id="main-content" className={`editorial-home reviewed-copy${home ? ' copy-home' : ''}${sectionIds.length ? ' copy-research' : ''}`}>
     {!home && canonicalPath && <BreadcrumbData title={title} path={canonicalPath} />}
     <section className={home ? 'editorial-hero' : 'copy-page-hero'}>
-      <div className={home ? 'editorial-hero-inner' : 'editorial-shell copy-page-heading'}>
+      <div className={home ? 'editorial-hero-inner' : `editorial-shell copy-page-heading${showPractitionerPortrait ? ' about-practitioner' : ''}`}>
         <div className={home ? 'editorial-hero-content' : ''}>
           {!home && <nav className="copy-breadcrumb" aria-label="פירורי לחם"><Link href="/">דף הבית</Link><span aria-hidden="true"> / </span><span>{title}</span></nav>}
           {eyebrow.trim() && <p className="editorial-eyebrow">{eyebrow.trim()}</p>}
@@ -59,6 +59,7 @@ export default function ContentPage({ content, home = false, faq = false, coming
           <div className="copy-intro">{faq ? sectionBody(intro,true) : prose(intro)}</div>
           {comingSoon && <figure className="copy-coming-soon-image"><img src="/synapse-placeholder.png" alt="איור מופשט של סינפסה והסתעפויות עצביות" /></figure>}
         </div>
+        {showPractitionerPortrait && <PractitionerPortrait />}
         {home && <figure className="editorial-hero-media"><img src="/production-hero-768.webp" srcSet="/production-hero-480.webp 480w, /production-hero-768.webp 768w, /production-hero-1024.webp 1024w" sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1200px) 45vw, 540px" width="1024" height="1536" fetchPriority="high" alt="איור אנטומי של המוח, עמוד השדרה ומערכת העצבים"/><figcaption><span>NEUROZEN</span><span>הקשבה לאדם. הבנה של מערכת העצבים.</span></figcaption></figure>}
       </div>
     </section>
@@ -72,13 +73,12 @@ export default function ContentPage({ content, home = false, faq = false, coming
       const isCta=i===sections.length-2 && body.includes('https://wa.me/');
       const id=sectionIds[i] ?? (home && heading==='תחומי הטיפול בקליניקה' ? 'treatments' : home && isProcess ? 'process' : `section-${i+1}`);
       const layout = home ? ['understanding', 'domains', 'journey', 'method', 'practitioner', 'questions', 'conversation'][i] : undefined;
-      const aboutPortrait = showPractitionerPortrait && i === 0;
-      return <section key={heading} id={id} className={`copy-section${isCta?' copy-cta':''}${isFaq?' copy-faq-section':''}${layout?` home-${layout}`:''}${isProcess?' copy-process':''}${aboutPortrait?' about-practitioner':''}`}>
+      return <section key={heading} id={id} className={`copy-section${isCta?' copy-cta':''}${isFaq?' copy-faq-section':''}${layout?` home-${layout}`:''}${isProcess?' copy-process':''}`}>
         <div className={`editorial-shell ${cards?'':'copy-reading-width'}`}>
           <div className="copy-section-heading">
             {home && <span className="section-kicker">{['עבודה ישירה עם מערכת העצבים','תחומי הטיפול','צעד אחר צעד','הגישה הטיפולית','האדם שמאחורי הטיפול','טוב לדעת','בואו נדבר'][i]}</span>}
             <h2>{heading}</h2>
-            {(layout === 'practitioner' || aboutPortrait) && <PractitionerPortrait />}
+            {layout === 'practitioner' && <PractitionerPortrait />}
           </div>
           <div className="copy-section-content">{sectionBody(body,isFaq,cards)}</div>
         </div>

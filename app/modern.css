@@ -166,7 +166,7 @@ button, input { font: inherit; }
 .practitioner-photo { width: 100%; max-width: 360px; margin: 24px 0 0; }
 .practitioner-photo img { display: block; width: 100%; height: auto; border-radius: 6px; }
 @media (min-width: 821px) {
-  .about-practitioner > .editorial-shell { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); gap: clamp(32px, 6vw, 80px); align-items: start; }
+  .about-practitioner { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 64px); align-items: center; }
 }
 .editorial-faq-list details { border-bottom: 1px solid var(--editorial-line); }
 .reviewed-copy .editorial-faq-list summary { padding-block: 23px; font-weight: 500; min-height: 72px; }
