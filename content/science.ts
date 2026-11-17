@@ -76,7 +76,7 @@ Neuropuncture מחברת בין דיקור חשמלי לבין נוירואנט�
 **פרטי המחקר:** בכל מפגש ניתן גירוי חשמלי במשך 30 דקות בנקודות בקרקפת ובגוף. ההערכה המוטורית בוצעה גם בידי בודק נוסף. בדיקות השתן שנכללו במאמר אינן מדידה ישירה של רמות דופמין במוח. המחברים עצמם מציינים שנדרשים ניסויים אקראיים גדולים יותר.
 
 [Brekke, Corradino, Conte ו־Linebarger · Journal of Clinical Research and Case Studies · למאמר המלא](https://oaskpublishers.com/assets/article-pdf/the-efficacy-of-neuropuncture-electrical-acupuncture-treatment-of-patients-with-parkinsons-disease.pdf)
-[על הטיפול בפרקינסון ובמצבים נוירולוגיים בקליניקה](/neurology/)
+[על הטיפול בפרקינסון בקליניקה](/parkinsons-disease/)
 
 ### טינטון וירידה בשמיעה: שלושה תיאורי מקרה
 

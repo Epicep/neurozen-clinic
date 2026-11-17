@@ -1,21 +1,27 @@
-import { socialImage } from '@/components/StructuredData';
 import type { Metadata } from 'next';
 import ContentPage from '@/components/ContentPage';
 import content from '@/content/neurology';
 
 export const metadata: Metadata = {
-  "title": "נוירופונקטורה בפרקינסון ובמצבים נוירולוגיים",
-  "description": "לקום מכיסא, להתחיל ללכת, להשתמש בידיים או לישון טוב יותר. במצבים נוירולוגיים, שינוי בתפקוד היומיומי יכול להיות משמעותי מאוד.",
+  "title": "נוירולוגיה ושיקום בנוירופונקטורה",
+  "description": "נוירופונקטורה בפרקינסון, בשיקום לאחר שבץ, ב־FND ובהפרעות תחושה. מידע על תהליך הטיפול ב־NeuroZen לצד המעקב הרפואי והשיקום.",
   "alternates": {
     "canonical": "/neurology/"
   },
   "openGraph": {
-    images: [socialImage],
-    "title": "נוירופונקטורה בפרקינסון ובמצבים נוירולוגיים",
-    "description": "לקום מכיסא, להתחיל ללכת, להשתמש בידיים או לישון טוב יותר. במצבים נוירולוגיים, שינוי בתפקוד היומיומי יכול להיות משמעותי מאוד.",
+    "title": "נוירולוגיה ושיקום בנוירופונקטורה",
+    "description": "נוירופונקטורה בפרקינסון, בשיקום לאחר שבץ, ב־FND ובהפרעות תחושה. מידע על תהליך הטיפול ב־NeuroZen לצד המעקב הרפואי והשיקום.",
     "type": "website",
     "locale": "he_IL",
-    "url": "/neurology/"
+    "url": "/neurology/",
+    "images": [
+      {
+        "url": "/neurozen-social.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "עילאי פארן בקליניקת NeuroZen"
+      }
+    ]
   }
 };
 

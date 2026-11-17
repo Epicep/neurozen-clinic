@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
-import { BreadcrumbData } from '@/components/StructuredData';
+import { BreadcrumbData, type BreadcrumbParent } from '@/components/StructuredData';
 
 // A small, deliberately limited renderer for the clinic's reviewed copy.
 // Content stays in plain text; HTML from content is never interpreted.
@@ -41,18 +41,18 @@ function PractitionerPortrait() {
   </figure>;
 }
 
-export default function ContentPage({ content, home = false, faq = false, comingSoon = false, sectionIds = [], showPractitionerPortrait = false, canonicalPath }: {content:string; home?:boolean; faq?:boolean; comingSoon?:boolean; sectionIds?:string[]; showPractitionerPortrait?:boolean; canonicalPath?:string}) {
+export default function ContentPage({ content, home = false, faq = false, comingSoon = false, sectionIds = [], showPractitionerPortrait = false, canonicalPath, parentBreadcrumb }: {content:string; home?:boolean; faq?:boolean; comingSoon?:boolean; sectionIds?:string[]; showPractitionerPortrait?:boolean; canonicalPath?:string; parentBreadcrumb?:BreadcrumbParent}) {
   const sections = content.trim().split(/^## /m);
   const hero = sections[0];
   const titleMatch = hero.match(/^# (.+)$/m);
   const title = titleMatch?.[1] ?? '';
   const [eyebrow, intro = ''] = titleMatch ? hero.split(titleMatch[0]) : ['', hero];
   return <main id="main-content" className={`editorial-home reviewed-copy${home ? ' copy-home' : ''}${sectionIds.length ? ' copy-research' : ''}`}>
-    {!home && canonicalPath && <BreadcrumbData title={title} path={canonicalPath} />}
+    {!home && canonicalPath && <BreadcrumbData title={title} path={canonicalPath} parent={parentBreadcrumb} />}
     <section className={home ? 'editorial-hero' : 'copy-page-hero'}>
       <div className={home ? 'editorial-hero-inner' : `editorial-shell copy-page-heading${showPractitionerPortrait ? ' about-practitioner' : ''}`}>
         <div className={home ? 'editorial-hero-content' : ''}>
-          {!home && <nav className="copy-breadcrumb" aria-label="פירורי לחם"><Link href="/">דף הבית</Link><span aria-hidden="true"> / </span><span>{title}</span></nav>}
+          {!home && <nav className="copy-breadcrumb" aria-label="מסלול ניווט"><Link href="/">דף הבית</Link><span aria-hidden="true"> / </span>{parentBreadcrumb && <><Link href={parentBreadcrumb.path}>{parentBreadcrumb.title}</Link><span aria-hidden="true"> / </span></>}<span aria-current="page">{title}</span></nav>}
           {eyebrow.trim() && <p className="editorial-eyebrow">{eyebrow.trim()}</p>}
           <h1>{title}</h1>
           {comingSoon && <p className="coming-soon-status">העמוד בבנייה</p>}
@@ -69,7 +69,7 @@ export default function ContentPage({ content, home = false, faq = false, coming
       const body=section.slice(newline+1);
       const isFaq=faq || heading.includes('שאלות') || heading==='לפני שמתחילים';
       const isProcess=/תהליך|התהליך|נבחר הטיפול/.test(heading);
-      const cards=!isFaq && (/תחומי הטיפול|מה מעסיק|מצבים נוירולוגיים נוספים|חמישה תחומים/.test(heading) || isProcess);
+      const cards=!isFaq && (/תחומי הטיפול|מה מעסיק|מצבים נוירולוגיים נוספים|חמישה תחומים|מצבים ותחומי טיפול/.test(heading) || isProcess);
       const isCta=i===sections.length-2 && body.includes('https://wa.me/');
       const id=sectionIds[i] ?? (home && heading==='תחומי הטיפול בקליניקה' ? 'treatments' : home && isProcess ? 'process' : `section-${i+1}`);
       const layout = home ? ['understanding', 'domains', 'journey', 'method', 'practitioner', 'questions', 'conversation'][i] : undefined;
