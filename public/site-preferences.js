@@ -53,6 +53,15 @@
     try { lead(JSON.parse(read(sessionStorage, leadKey) || 'null')); } catch (_) {}
   }
   addEventListener('neurozen:lead-confirmed', function (event) { lead(event.detail); });
+  document.addEventListener('click', function (event) {
+    if (!gaActive || !event.target || typeof event.target.closest !== 'function') return;
+    var link = event.target.closest('a[href]');
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    var method = /^https:\/\/(wa\.me|api\.whatsapp\.com)\//i.test(href) ? 'whatsapp' :
+      /^tel:/i.test(href) ? 'phone' : null;
+    if (method) gtag('event', 'contact_click', { send_to: gaId, contact_method: method });
+  });
   function startGA() {
     if (gaStarted) { gaActive = true; pageView(); return; }
     gaStarted = gaActive = true;

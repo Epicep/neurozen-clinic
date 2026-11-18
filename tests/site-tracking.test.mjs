@@ -9,12 +9,13 @@ function storage(initial = {}) {
   return { getItem: key => values.get(key) ?? null, setItem: (key, value) => values.set(key, value), removeItem: key => values.delete(key) };
 }
 function run(path, consent = {}, confirmed = null) {
-  const nodes = [], listeners = {};
+  const nodes = [], listeners = {}, documentListeners = {};
   const localStorage = storage(consent);
   const sessionStorage = storage(confirmed ? { 'neurozen-confirmed-lead': JSON.stringify(confirmed) } : {});
   const location = { pathname: path, href: 'https://neurozen-clinic.com' + path + '?private=phone123&utm_source=chatgpt', reload() {} };
   const document = {
     title: 'NeuroZen',
+    addEventListener: (name, callback) => { documentListeners[name] = callback; },
     head: { appendChild(node) { nodes.push(node); } },
     body: { appendChild(node) { nodes.push(node); } },
     createElement(tag) {
@@ -32,7 +33,7 @@ function run(path, consent = {}, confirmed = null) {
   vm.runInNewContext(source, context);
   const gaEvents = () => Array.from(context.dataLayer || []).filter(call => call[0] === 'event').map(call => [call[1], call[2]]);
   const metaEvents = () => Array.from(context.fbq?.queue || []).filter(call => call[0] === 'trackSingle').map(call => call[2]);
-  return { context, nodes, listeners, gaEvents, metaEvents, localStorage, sessionStorage };
+  return { context, nodes, listeners, documentListeners, gaEvents, metaEvents, localStorage, sessionStorage };
 }
 
 test('no analytics or Meta script loads before consent', () => {
@@ -66,4 +67,16 @@ test('a direct thank-you visit does not count as a lead', () => {
   const result = run('/thank-you.html', { 'neurozen-analytics-consent': 'granted', 'neurozen-marketing-consent': 'granted' });
   assert.deepEqual(result.gaEvents().map(event => event[0]), ['page_view']);
   assert.deepEqual(result.metaEvents(), ['PageView']);
+});
+
+test('contact links are measured separately from confirmed leads', () => {
+  const consent = { 'neurozen-analytics-consent': 'granted', 'neurozen-marketing-consent': 'denied' };
+  const result = run('/', consent);
+  result.documentListeners.click({ target: { closest: () => ({ getAttribute: () => 'https://wa.me/972548082487' }) } });
+  result.documentListeners.click({ target: { closest: () => ({ getAttribute: () => 'tel:0548082487' }) } });
+  assert.deepEqual(result.gaEvents().map(event => event[0]), ['page_view', 'contact_click', 'contact_click']);
+  assert.deepEqual(result.gaEvents().slice(1).map(event => event[1].contact_method), ['whatsapp', 'phone']);
+  const denied = run('/', { 'neurozen-analytics-consent': 'denied' });
+  denied.documentListeners.click({ target: { closest: () => ({ getAttribute: () => 'tel:0548082487' }) } });
+  assert.deepEqual(denied.gaEvents(), []);
 });
