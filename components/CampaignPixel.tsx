@@ -9,7 +9,7 @@ export default function CampaignPixel() {
     if (document.getElementById('neurozen-site-tracking')) return;
     const script = document.createElement('script');
     script.id = 'neurozen-site-tracking';
-    script.src = '/site-tracking.js';
+    script.src = '/site-preferences.js';
     script.defer = true;
     document.body.appendChild(script);
   }, []);
