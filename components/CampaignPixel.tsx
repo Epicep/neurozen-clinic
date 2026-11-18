@@ -1,15 +1,20 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function CampaignPixel() {
+  const pathname = usePathname();
   useEffect(() => {
-    if (document.getElementById('neurozen-campaign-pixel')) return;
+    if (document.getElementById('neurozen-site-tracking')) return;
     const script = document.createElement('script');
-    script.id = 'neurozen-campaign-pixel';
-    script.src = '/campaign-pixel.js';
+    script.id = 'neurozen-site-tracking';
+    script.src = '/site-tracking.js';
     script.defer = true;
     document.body.appendChild(script);
   }, []);
+  useEffect(() => {
+    if (window.neurozenTracking) window.dispatchEvent(new Event('neurozen:route-change'));
+  }, [pathname]);
   return null;
 }
