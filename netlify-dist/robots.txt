@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /welcome
+Disallow: /thank-you.html
+
+Sitemap: https://neurozen-clinic.com/sitemap.xml

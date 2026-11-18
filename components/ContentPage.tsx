@@ -1,0 +1,89 @@
+import Link from 'next/link';
+import type { ReactNode } from 'react';
+import { BreadcrumbData, type BreadcrumbParent } from '@/components/StructuredData';
+
+// A small, deliberately limited renderer for the clinic's reviewed copy.
+// Content stays in plain text; HTML from content is never interpreted.
+function inline(text: string): ReactNode[] {
+  return text.split(/(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*)/g).filter(Boolean).map((part, i) => {
+    const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (link) return <Link key={i} href={link[2]}>{link[1]}</Link>;
+    if (part.startsWith('**')) return <strong key={i}>{part.slice(2,-2)}</strong>;
+    return part;
+  });
+}
+
+function prose(text: string) {
+  return text.trim().split(/\n\s*\n/).filter(Boolean).map((block, i) => {
+    const lines = block.split('\n');
+    if (block.startsWith('**פרטי המחקר:**')) return <details key={i} className="research-details"><summary>פרטי המחקר והמתודולוגיה</summary><p>{inline(block.slice('**פרטי המחקר:**'.length).trim())}</p></details>;
+    if (block.startsWith('**פרטי המקור:**')) return <details key={i} className="research-details"><summary>פרטי המקור</summary><p>{inline(block.slice('**פרטי המקור:**'.length).trim())}</p></details>;
+    if (lines.every(line => line.startsWith('- '))) return <ul key={i}>{lines.map((line,j)=><li key={j}>{inline(line.slice(2))}</li>)}</ul>;
+    if (lines.every(line => /^\[.+\]\(.+\)$/.test(line))) return <div key={i} className="copy-links">{lines.map((line,j)=><span key={j}>{inline(line)}</span>)}</div>;
+    return <p key={i}>{inline(block)}</p>;
+  });
+}
+
+function sectionBody(text: string, faq = false, cards = false, linkCardHeadings = false) {
+  const [main, after = ''] = text.split('\n:::after\n');
+  const chunks = main.split(/^### /m);
+  return <>{prose(chunks[0])}<div className={faq ? 'editorial-faq-list' : cards ? 'copy-card-grid' : 'copy-subsections'}>{chunks.slice(1).map((chunk,i)=>{
+    const newline = chunk.indexOf('\n');
+    const title = chunk.slice(0,newline).trim();
+    const body = chunk.slice(newline+1);
+    const destination = linkCardHeadings ? body.match(/\[[^\]]+\]\((\/[^)#]+\/)\)/)?.[1] : undefined;
+    return faq ? <details key={i}><summary>{title}<span aria-hidden="true">+</span></summary><div className="copy-faq-answer">{prose(body)}</div></details> : <article key={i}><h3>{destination ? <Link className="domain-heading-link" href={destination}>{title}<span aria-hidden="true"> ←</span></Link> : title}</h3>{prose(body)}</article>;
+  })}</div>{prose(after)}</>;
+}
+
+function PractitionerPortrait() {
+  return <figure className="practitioner-photo">
+    <img src="/ilay-paran-clinic.webp" width={960} height={1447} alt="עילאי פארן בקליניקת NeuroZen" loading="lazy" decoding="async" />
+  </figure>;
+}
+
+export default function ContentPage({ content, home = false, faq = false, comingSoon = false, sectionIds = [], showPractitionerPortrait = false, canonicalPath, parentBreadcrumb }: {content:string; home?:boolean; faq?:boolean; comingSoon?:boolean; sectionIds?:string[]; showPractitionerPortrait?:boolean; canonicalPath?:string; parentBreadcrumb?:BreadcrumbParent}) {
+  const sections = content.trim().split(/^## /m);
+  const hero = sections[0];
+  const titleMatch = hero.match(/^# (.+)$/m);
+  const title = titleMatch?.[1] ?? '';
+  const [eyebrow, intro = ''] = titleMatch ? hero.split(titleMatch[0]) : ['', hero];
+  return <main id="main-content" className={`editorial-home reviewed-copy${home ? ' copy-home' : ''}${sectionIds.length ? ' copy-research' : ''}`}>
+    {!home && canonicalPath && <BreadcrumbData title={title} path={canonicalPath} parent={parentBreadcrumb} />}
+    <section className={home ? 'editorial-hero' : 'copy-page-hero'}>
+      <div className={home ? 'editorial-hero-inner' : `editorial-shell copy-page-heading${showPractitionerPortrait ? ' about-practitioner' : ''}`}>
+        <div className={home ? 'editorial-hero-content' : ''}>
+          {!home && <nav className="copy-breadcrumb" aria-label="מסלול ניווט"><Link href="/">דף הבית</Link><span aria-hidden="true"> / </span>{parentBreadcrumb && <><Link href={parentBreadcrumb.path}>{parentBreadcrumb.title}</Link><span aria-hidden="true"> / </span></>}<span aria-current="page">{title}</span></nav>}
+          {eyebrow.trim() && <p className="editorial-eyebrow">{eyebrow.trim()}</p>}
+          <h1>{title}</h1>
+          {comingSoon && <p className="coming-soon-status">העמוד בבנייה</p>}
+          <div className="copy-intro">{faq ? sectionBody(intro,true) : prose(intro)}</div>
+          {comingSoon && <figure className="copy-coming-soon-image"><img src="/synapse-placeholder.png" alt="איור מופשט של סינפסה והסתעפויות עצביות" /></figure>}
+        </div>
+        {showPractitionerPortrait && <PractitionerPortrait />}
+        {home && <figure className="editorial-hero-media"><img src="/production-hero-768.webp" srcSet="/production-hero-480.webp 480w, /production-hero-768.webp 768w, /production-hero-1024.webp 1024w" sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1200px) 45vw, 540px" width="1024" height="1536" fetchPriority="high" alt="איור אנטומי של המוח, עמוד השדרה ומערכת העצבים"/><figcaption><span>NEUROZEN</span><span>הקשבה לאדם. הבנה של מערכת העצבים.</span></figcaption></figure>}
+      </div>
+    </section>
+    {sections.slice(1).map((section,i)=>{
+      const newline=section.indexOf('\n');
+      const heading=section.slice(0,newline).trim();
+      const body=section.slice(newline+1);
+      const isFaq=faq || heading.includes('שאלות') || heading==='לפני שמתחילים';
+      const isProcess=/תהליך|התהליך|נבחר הטיפול/.test(heading);
+      const cards=!isFaq && (/תחומי הטיפול|מה מעסיק|מצבים נוירולוגיים נוספים|חמישה תחומים|מצבים ותחומי טיפול/.test(heading) || isProcess);
+      const isCta=i===sections.length-2 && body.includes('https://wa.me/');
+      const id=sectionIds[i] ?? (home && heading==='תחומי הטיפול בקליניקה' ? 'treatments' : home && isProcess ? 'process' : `section-${i+1}`);
+      const layout = home ? ['understanding', 'domains', 'journey', 'method', 'practitioner', 'questions', 'conversation'][i] : undefined;
+      return <section key={heading} id={id} className={`copy-section${isCta?' copy-cta':''}${isFaq?' copy-faq-section':''}${layout?` home-${layout}`:''}${isProcess?' copy-process':''}`}>
+        <div className={`editorial-shell ${cards?'':'copy-reading-width'}`}>
+          <div className="copy-section-heading">
+            {home && <span className="section-kicker">{['עבודה ישירה עם מערכת העצבים','תחומי הטיפול','צעד אחר צעד','הגישה הטיפולית','האדם שמאחורי הטיפול','טוב לדעת','בואו נדבר'][i]}</span>}
+            <h2>{heading}</h2>
+            {layout === 'practitioner' && <PractitionerPortrait />}
+          </div>
+          <div className="copy-section-content">{sectionBody(body,isFaq,cards,layout === 'domains')}</div>
+        </div>
+      </section>;
+    })}
+  </main>;
+}

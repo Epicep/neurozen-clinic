@@ -1,0 +1,1 @@
+import{a as e}from"./rolldown-runtime-BYbx6iT9.js";import{i as t}from"./framework-DkySH6nJ.js";var n=e(t(),1);function r(){return(0,n.useEffect)(()=>{if(document.getElementById(`neurozen-campaign-pixel`))return;let e=document.createElement(`script`);e.id=`neurozen-campaign-pixel`,e.src=`/campaign-pixel.js`,e.defer=!0,document.body.appendChild(e)},[]),null}export{r as default};
