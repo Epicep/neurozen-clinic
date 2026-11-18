@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           },
           {
             '@type': 'Person', '@id': siteOrigin + '/about/#ilay-paran',
-            name: 'עילאי פארן', jobTitle: 'מטפל בנוירופונקטורה',
+            name: 'עילאי פארן', jobTitle: 'מטפל מוסמך בנוירופונקטורה וחוקר קליני',
             url: siteOrigin + '/about/', worksFor: { '@id': siteOrigin + '/#clinic' },
           },
         ] }} />
