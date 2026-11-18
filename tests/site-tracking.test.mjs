@@ -20,9 +20,10 @@ function run(path, consent = {}, confirmed = null) {
     body: { appendChild(node) { nodes.push(node); } },
     createElement(tag) {
       const inputs = { analytics: { checked: false }, meta: { checked: false } };
-      const buttons = [{}, {}];
-      return { tag, inputs, buttons, setAttribute() {}, remove() {},
-        querySelector: selector => inputs[selector.match(/name="(.*?)"/)[1]],
+      const buttons = [{}, {}, {}, {}];
+      const custom = { hidden: true };
+      return { tag, inputs, buttons, custom, setAttribute() {}, remove() {},
+        querySelector: selector => selector === '.nz-consent-custom' ? custom : inputs[selector.match(/name="(.*?)"/)[1]],
         querySelectorAll: () => buttons };
     },
     getElementsByTagName: () => [{ parentNode: { insertBefore(node) { nodes.push(node); } } }],
@@ -33,8 +34,33 @@ function run(path, consent = {}, confirmed = null) {
   vm.runInNewContext(source, context);
   const gaEvents = () => Array.from(context.dataLayer || []).filter(call => call[0] === 'event').map(call => [call[1], call[2]]);
   const metaEvents = () => Array.from(context.fbq?.queue || []).filter(call => call[0] === 'trackSingle').map(call => call[2]);
-  return { context, nodes, listeners, documentListeners, gaEvents, metaEvents, localStorage, sessionStorage };
+  return { context, nodes, listeners, documentListeners, gaEvents, metaEvents, localStorage, sessionStorage,
+    panel: nodes.find(node => node.tag === 'section') };
 }
+
+test('one-click consent choices keep measurement opt-in', () => {
+  const accepted = run('/landing/');
+  accepted.panel.buttons[0].onclick();
+  assert.equal(accepted.localStorage.getItem('neurozen-analytics-consent'), 'granted');
+  assert.equal(accepted.localStorage.getItem('neurozen-marketing-consent'), 'granted');
+  assert.deepEqual(accepted.gaEvents().map(event => event[0]), ['page_view']);
+  assert.deepEqual(accepted.metaEvents(), ['PageView']);
+
+  const declined = run('/landing/');
+  declined.panel.buttons[1].onclick();
+  assert.equal(declined.localStorage.getItem('neurozen-analytics-consent'), 'denied');
+  assert.equal(declined.localStorage.getItem('neurozen-marketing-consent'), 'denied');
+  assert.deepEqual(declined.gaEvents(), []);
+  assert.deepEqual(declined.metaEvents(), []);
+
+  const custom = run('/landing/');
+  custom.panel.buttons[2].onclick();
+  assert.equal(custom.panel.custom.hidden, false);
+  custom.panel.inputs.analytics.checked = true;
+  custom.panel.buttons[3].onclick();
+  assert.equal(custom.localStorage.getItem('neurozen-analytics-consent'), 'granted');
+  assert.equal(custom.localStorage.getItem('neurozen-marketing-consent'), 'denied');
+});
 
 test('no analytics or Meta script loads before consent', () => {
   const result = run('/landing/');

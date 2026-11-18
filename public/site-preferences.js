@@ -99,7 +99,7 @@
   });
 
   var style = document.createElement('style');
-  style.textContent = '.nz-consent{position:fixed;bottom:16px;left:16px;right:16px;z-index:10000;max-width:620px;margin:auto;padding:18px;background:#fff;color:#163f35;border:1px solid #c9ddd5;border-radius:14px;box-shadow:0 8px 32px #0002;font-family:inherit;font-size:15px;line-height:1.6;direction:rtl}.nz-consent p{margin:0 0 12px}.nz-consent a{color:#176653;text-decoration:underline}.nz-consent label{display:flex;align-items:start;gap:9px;margin:8px 0;cursor:pointer}.nz-consent input{margin-top:5px;accent-color:#176653}.nz-consent-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.nz-consent button{font:inherit;cursor:pointer;border:1px solid #176653;border-radius:8px;padding:8px 16px;background:#fff;color:#163f35}.nz-consent button:first-child{background:#176653;color:#fff}.nz-consent button:focus-visible,.nz-consent-toggle:focus-visible,.nz-consent input:focus-visible{outline:3px solid #b68b4c;outline-offset:3px}.nz-consent-toggle{position:fixed;bottom:8px;left:8px;z-index:9999;font:inherit;font-size:12px;background:#fff;color:#163f35;border:1px solid #c9ddd5;border-radius:6px;padding:5px 8px;cursor:pointer}';
+  style.textContent = '.nz-consent{position:fixed;bottom:16px;left:16px;right:16px;z-index:10000;max-width:620px;margin:auto;padding:18px;background:#fff;color:#163f35;border:1px solid #c9ddd5;border-radius:14px;box-shadow:0 8px 32px #0002;font-family:inherit;font-size:15px;line-height:1.6;direction:rtl}.nz-consent p{margin:0 0 12px}.nz-consent a{color:#176653;text-decoration:underline}.nz-consent label{display:flex;align-items:start;gap:9px;margin:8px 0;cursor:pointer}.nz-consent input{margin-top:5px;accent-color:#176653}.nz-consent-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.nz-consent button{font:inherit;cursor:pointer;border:1px solid #176653;border-radius:8px;padding:8px 16px;background:#fff;color:#163f35}.nz-consent-actions button:nth-child(-n+2){background:#176653;color:#fff;flex:1 1 170px}.nz-consent-custom{margin-top:12px;padding-top:10px;border-top:1px solid #c9ddd5}.nz-consent-custom[hidden]{display:none}.nz-consent button:focus-visible,.nz-consent-toggle:focus-visible,.nz-consent input:focus-visible{outline:3px solid #b68b4c;outline-offset:3px}.nz-consent-toggle{position:fixed;bottom:8px;left:8px;z-index:9999;font:inherit;font-size:12px;background:#fff;color:#163f35;border:1px solid #c9ddd5;border-radius:6px;padding:5px 8px;cursor:pointer}';
   document.head.appendChild(style);
   function choose(ga, meta) {
     write(gaKey, ga ? 'granted' : 'denied');
@@ -120,14 +120,17 @@
     panel = document.createElement('section');
     panel.className = 'nz-consent';
     panel.setAttribute('aria-label', 'העדפות מדידה ועוגיות');
-    panel.innerHTML = '<p>אפשר לבחור אם לאפשר מדידת ביקורים ופניות. המדידה מופעלת רק לאחר אישורכם. שמות, טלפונים ותוכן הטופס אינם נשלחים לכלי המדידה. <a href="/privacy/">מדיניות פרטיות</a></p><label><input type="checkbox" name="analytics"> מדידת ביקורים ופניות ב־Google Analytics</label>' + (isMetaPage() ? '<label><input type="checkbox" name="meta"> מדידת פרסום ב־Meta בדף הנחיתה ובדף התודה</label>' : '') + '<div class="nz-consent-actions"><button type="button">שמירת הבחירה</button><button type="button">המשך ללא מדידה</button></div>';
+    panel.innerHTML = '<p>אפשר לאשר מדידת ביקורים ופניות ב־Google Analytics ומדידת פרסום ב־Meta בדף הנחיתה ובדף התודה, או להמשיך ללא מדידה. המדידה מופעלת רק לאחר אישור מפורש. שמות, טלפונים ותוכן הטופס אינם נשלחים לכלי המדידה. <a href="/privacy/">מדיניות פרטיות</a></p><div class="nz-consent-actions"><button type="button">אישור הכול</button><button type="button">המשך ללא מדידה</button><button type="button">בחירה מותאמת</button></div><div class="nz-consent-custom" hidden><label><input type="checkbox" name="analytics"> מדידת ביקורים ופניות ב־Google Analytics</label><label><input type="checkbox" name="meta"> מדידת פרסום ב־Meta בדף הנחיתה ובדף התודה</label><button type="button">שמירת הבחירה</button></div>';
     var gaBox = panel.querySelector('input[name="analytics"]');
     var metaBox = panel.querySelector('input[name="meta"]');
+    var custom = panel.querySelector('.nz-consent-custom');
     gaBox.checked = read(localStorage, gaKey) === 'granted';
-    if (metaBox) metaBox.checked = read(localStorage, metaKey) === 'granted';
+    metaBox.checked = read(localStorage, metaKey) === 'granted';
     var buttons = panel.querySelectorAll('button');
-    buttons[0].onclick = function () { choose(gaBox.checked, metaBox ? metaBox.checked : null); };
-    buttons[1].onclick = function () { choose(false, metaBox ? false : null); };
+    buttons[0].onclick = function () { choose(true, true); };
+    buttons[1].onclick = function () { choose(false, false); };
+    buttons[2].onclick = function () { custom.hidden = false; buttons[2].hidden = true; };
+    buttons[3].onclick = function () { choose(gaBox.checked, metaBox.checked); };
     document.body.appendChild(panel);
   }
   var toggle = document.createElement('button');
